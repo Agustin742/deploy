@@ -31,3 +31,27 @@ describe("debounce", () => {
     expect(fn).toHaveBeenCalledTimes(1);
   });
 });
+
+describe("debounce.cancel", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  it("drops the pending call", () => {
+    const fn = vi.fn();
+    const d = debounce(fn, 100);
+    d();
+    d.cancel();
+    vi.advanceTimersByTime(500);
+    expect(fn).not.toHaveBeenCalled();
+  });
+
+  it("can be called again after cancelling", () => {
+    const fn = vi.fn();
+    const d = debounce(fn, 100);
+    d();
+    d.cancel();
+    d();
+    vi.advanceTimersByTime(100);
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
+});
