@@ -1,0 +1,559 @@
+{
+ "profile": {
+  "name": "Maria Fernandez",
+  "nameAuto": true,
+  "shareName": false,
+  "headline": "Frontend",
+  "years": "2",
+  "english": "2",
+  "extraSkills": "",
+  "cv": "Maria Fernandez\nFrontend"
+ },
+ "apps": [
+  {
+   "id": "a1",
+   "fecha": "2026-03-02",
+   "empresa": "Empresa a1",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "LinkedIn",
+   "estado": "Postulado",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": {
+    "pct": 80,
+    "hardX": [
+     "Docker"
+    ],
+    "softX": [
+     "Liderazgo"
+    ],
+    "hardM": [],
+    "softM": [],
+    "comps": [],
+    "kwX": [],
+    "eng": {},
+    "at": "2026-03-01"
+   },
+   "report": "R",
+   "entrevistas": [],
+   "revisado": true,
+   "hallazgos": "corregí algo",
+   "ficha": {
+    "industria": "Fintech",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": ""
+   }
+  },
+  {
+   "id": "a2",
+   "fecha": "2026-03-05",
+   "empresa": "Empresa a2",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "Indeed",
+   "estado": "Entrevista",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": {
+    "pct": 60,
+    "hardX": [
+     "Docker",
+     "AWS"
+    ],
+    "softX": [],
+    "hardM": [],
+    "softM": [],
+    "comps": [],
+    "kwX": [],
+    "eng": {},
+    "at": "2026-03-01"
+   },
+   "report": "R2",
+   "entrevistas": [
+    {
+     "id": "e1",
+     "fecha": "2026-03-08",
+     "prep": "preparé"
+    },
+    {
+     "id": "e2",
+     "fecha": "2026-03-10",
+     "prep": "  "
+    }
+   ],
+   "revisado": false,
+   "hallazgos": "",
+   "ficha": {
+    "industria": "",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": ""
+   }
+  },
+  {
+   "id": "a3",
+   "fecha": "2026-02-20",
+   "empresa": "Empresa a3",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "Referido",
+   "estado": "Oferta",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": null,
+   "report": "",
+   "entrevistas": [],
+   "revisado": false,
+   "hallazgos": "",
+   "ficha": {
+    "industria": "",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": "n"
+   }
+  },
+  {
+   "id": "a4",
+   "fecha": "2026-03-09",
+   "empresa": "Empresa a4",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "",
+   "estado": "Por postular",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": null,
+   "report": "",
+   "entrevistas": [],
+   "revisado": false,
+   "hallazgos": "",
+   "ficha": {
+    "industria": "",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": ""
+   }
+  },
+  {
+   "id": "a5",
+   "fecha": "2026-03-10",
+   "empresa": "Empresa a5",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "Tecla",
+   "estado": "Sin respuesta",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": null,
+   "report": "",
+   "entrevistas": [],
+   "revisado": false,
+   "hallazgos": "",
+   "ficha": {
+    "industria": "",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": ""
+   }
+  },
+  {
+   "id": "a6",
+   "fecha": "2026-03-10",
+   "empresa": "Empresa a6",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "LinkedIn",
+   "estado": "Prueba técnica",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": null,
+   "report": "",
+   "entrevistas": [],
+   "revisado": false,
+   "hallazgos": "",
+   "ficha": {
+    "industria": "x",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": ""
+   }
+  },
+  {
+   "id": "a7",
+   "fecha": "2026-03-03",
+   "empresa": "Empresa a7",
+   "puesto": "Dev",
+   "link": "",
+   "fuente": "Remotive",
+   "estado": "Rechazado",
+   "respuesta": "",
+   "reclutador": "",
+   "contacto": "",
+   "proximos": "",
+   "comentarios": "",
+   "jd": "",
+   "match": null,
+   "report": "",
+   "entrevistas": [],
+   "revisado": false,
+   "hallazgos": "",
+   "ficha": {
+    "industria": "",
+    "tamano": "",
+    "modalidad": "",
+    "valores": "",
+    "cultura": "",
+    "notas": ""
+   }
+  }
+ ],
+ "checks": {
+  "2026-03": {
+   "linkedin": [
+    1,
+    2,
+    11
+   ],
+   "indeed": [
+    11
+   ]
+  },
+  "2026-02": {
+   "linkedin": [
+    3
+   ]
+  }
+ },
+ "goal": 10,
+ "goalSet": true,
+ "mods": {
+  "valores": true,
+  "marca": true,
+  "empleadores": true,
+  "seguimiento": false,
+  "informativas": false,
+  "experimentos": true,
+  "visibilidad": true,
+  "ia": true
+ },
+ "objetivos": [
+  {
+   "id": "o1",
+   "periodo": "Semanal",
+   "semana": "2026-03-09",
+   "mes": "2026-03",
+   "variable": "Postulaciones",
+   "objetivo": "Enviar 5",
+   "valor": "",
+   "adapt": "",
+   "recursos": "",
+   "plazo": "2026-03-15",
+   "prioridad": "Alta",
+   "indicador": "n",
+   "tipoInd": "Actividad",
+   "meta": "5",
+   "estado": "En curso",
+   "doneAt": ""
+  },
+  {
+   "id": "o2",
+   "periodo": "Mensual",
+   "semana": "",
+   "mes": "2026-03",
+   "variable": "Actualización profesional",
+   "objetivo": "Curso",
+   "valor": "",
+   "adapt": "",
+   "recursos": "",
+   "plazo": "2026-03-31",
+   "prioridad": "Media",
+   "indicador": "",
+   "tipoInd": "Resultado",
+   "meta": "",
+   "estado": "Hecho",
+   "doneAt": "2026-03-10"
+  },
+  {
+   "id": "o3",
+   "periodo": "Mensual",
+   "semana": "",
+   "mes": "2026-02",
+   "variable": "Actualización profesional",
+   "objetivo": "Otro",
+   "valor": "",
+   "adapt": "",
+   "recursos": "",
+   "plazo": "",
+   "prioridad": "Baja",
+   "indicador": "",
+   "tipoInd": "Actividad",
+   "meta": "",
+   "estado": "Pendiente",
+   "doneAt": ""
+  }
+ ],
+ "red": [
+  {
+   "id": "r1",
+   "fecha": "2026-03-10",
+   "conexiones": "520",
+   "paginas": "12",
+   "nota": ""
+  },
+  {
+   "id": "r2",
+   "fecha": "2026-02-10",
+   "conexiones": "500",
+   "paginas": "",
+   "nota": ""
+  },
+  {
+   "id": "r3",
+   "fecha": "2026-01-10",
+   "conexiones": "480",
+   "paginas": "10",
+   "nota": ""
+  }
+ ],
+ "posts": [
+  {
+   "id": "p1",
+   "fecha": "2026-03-09",
+   "tipo": "Publicación",
+   "tema": "t",
+   "url": "",
+   "interacciones": "10"
+  },
+  {
+   "id": "p2",
+   "fecha": "2026-03-10",
+   "tipo": "Comentario",
+   "tema": "",
+   "url": "",
+   "interacciones": ""
+  },
+  {
+   "id": "p3",
+   "fecha": "2026-03-11",
+   "tipo": "Artículo",
+   "tema": "",
+   "url": "",
+   "interacciones": "5"
+  },
+  {
+   "id": "p4",
+   "fecha": "2026-03-02",
+   "tipo": "Publicación",
+   "tema": "",
+   "url": "",
+   "interacciones": "2"
+  },
+  {
+   "id": "p5",
+   "fecha": "2026-02-24",
+   "tipo": "Publicación",
+   "tema": "",
+   "url": "",
+   "interacciones": ""
+  },
+  {
+   "id": "p6",
+   "fecha": "2026-02-25",
+   "tipo": "Publicación",
+   "tema": "",
+   "url": "",
+   "interacciones": ""
+  },
+  {
+   "id": "p7",
+   "fecha": "2026-02-26",
+   "tipo": "Publicación",
+   "tema": "",
+   "url": "",
+   "interacciones": ""
+  }
+ ],
+ "tiempos": [
+  {
+   "id": "t1",
+   "fecha": "2026-03-05",
+   "actividad": "Postulaciones",
+   "est": "30",
+   "real": "45",
+   "nota": ""
+  },
+  {
+   "id": "t2",
+   "fecha": "2026-03-06",
+   "actividad": "Red de contactos",
+   "est": "60",
+   "real": "90",
+   "nota": ""
+  },
+  {
+   "id": "t3",
+   "fecha": "2026-01-01",
+   "actividad": "Postulaciones",
+   "est": "10",
+   "real": "10",
+   "nota": ""
+  }
+ ],
+ "revisiones": [
+  {
+   "id": "v1",
+   "fecha": "2026-03-08",
+   "desde": "2026-03-01",
+   "hasta": "2026-03-08",
+   "avanzo": "",
+   "hice": "",
+   "aprendi": "",
+   "ajuste": "",
+   "no": "",
+   "aplicado": false
+  },
+  {
+   "id": "v2",
+   "fecha": "2026-03-08",
+   "desde": "",
+   "hasta": "",
+   "avanzo": "",
+   "hice": "",
+   "aprendi": "",
+   "ajuste": "",
+   "no": "",
+   "aplicado": false
+  }
+ ],
+ "empleadores": [
+  {
+   "id": "m1",
+   "empresa": "A",
+   "quien": "",
+   "motivacion": "Alta",
+   "posting": "Sin avisos",
+   "prioridad": "Alta",
+   "notas": ""
+  },
+  {
+   "id": "m2",
+   "empresa": "B",
+   "quien": "",
+   "motivacion": "Media",
+   "posting": "Sin avisos",
+   "prioridad": "",
+   "notas": ""
+  }
+ ],
+ "experimentos": [
+  {
+   "id": "x1",
+   "rol": "PM",
+   "pregunta": "",
+   "accion": "",
+   "inicio": "2026-03-01",
+   "fin": "",
+   "aprendi": "",
+   "decision": "Seguir"
+  },
+  {
+   "id": "x2",
+   "rol": "UX",
+   "pregunta": "",
+   "accion": "",
+   "inicio": "2026-03-02",
+   "fin": "",
+   "aprendi": "",
+   "decision": "Pendiente"
+  }
+ ],
+ "metricas": [
+  {
+   "id": "k1",
+   "fecha": "2026-03-10",
+   "fortaleza": "",
+   "conexiones": "520",
+   "seguidores": "",
+   "vistas": "100",
+   "interaccion": "",
+   "articulos": "",
+   "ssi": "",
+   "notas": ""
+  },
+  {
+   "id": "k2",
+   "fecha": "2026-02-10",
+   "fortaleza": "",
+   "conexiones": "500",
+   "seguidores": "",
+   "vistas": "",
+   "interaccion": "",
+   "articulos": "",
+   "ssi": "",
+   "notas": ""
+  }
+ ],
+ "base": {
+  "activos": "a",
+  "aspiraciones": "",
+  "mercado": "m",
+  "sintesis": "",
+  "objetivoLaboral": "Ser dev"
+ },
+ "marca": {
+  "promesa": "p",
+  "audiencia": "",
+  "historia": "h",
+  "titular": ""
+ },
+ "metas": {
+  "networking:a0": "5"
+ },
+ "planVars": {
+  "2026-03-09": [
+   "networking",
+   "postulaciones",
+   "valores",
+   "bogus",
+   "marca"
+  ]
+ }
+}

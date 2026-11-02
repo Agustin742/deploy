@@ -1,0 +1,959 @@
+{
+ "objetivos": {
+  "def": {
+   "periodo": "Semanal",
+   "semana": "2026-03-09",
+   "mes": "2026-03",
+   "variable": "",
+   "objetivo": "",
+   "valor": "",
+   "adapt": "",
+   "recursos": "",
+   "plazo": "",
+   "prioridad": "Media",
+   "indicador": "",
+   "tipoInd": "Actividad",
+   "meta": "",
+   "estado": "Pendiente",
+   "doneAt": ""
+  },
+  "fields": [
+   {
+    "k": "periodo",
+    "l": "Tipo de objetivo",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Semanal",
+     "Mensual"
+    ]
+   },
+   {
+    "k": "semana",
+    "l": "Semana que empieza (lunes)",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": [
+     true,
+     false
+    ],
+    "o": null
+   },
+   {
+    "k": "mes",
+    "l": "Mes",
+    "t": "m",
+    "p": null,
+    "mod": null,
+    "showFor": [
+     false,
+     true
+    ],
+    "o": null
+   },
+   {
+    "k": "variable",
+    "l": "Variable",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": {
+     "fn": [
+      [
+       "Red de contactos",
+       "Postulaciones (directas, LinkedIn, plataformas)",
+       "Valores y objetivo laboral",
+       "Marca personal y propuesta de valor"
+      ],
+      [
+       "Red de contactos",
+       "Investigación de empresas del rubro",
+       "Investigación de puestos",
+       "Investigación de plataformas de empleo",
+       "Postulaciones (directas, LinkedIn, plataformas)",
+       "Participación en comunidades / publicaciones en LinkedIn",
+       "Entrevistas (preparación y feedback)",
+       "Actualización profesional",
+       "Valores y objetivo laboral",
+       "Marca personal y propuesta de valor",
+       "Lista de empleadores objetivo y priorización",
+       "Experimentos de rol (si hay cambio de carrera)",
+       "Indicadores de visibilidad en LinkedIn",
+       "Uso de IA con verificación humana"
+      ]
+     ]
+    }
+   },
+   {
+    "k": "objetivo",
+    "l": "S · Específico: qué voy a hacer, cuándo y dónde",
+    "t": "a",
+    "p": "Ej. acciones concretas que dependan de mí",
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "valor",
+    "l": "M · Con sentido: qué valor mío expresa",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "adapt",
+    "l": "A · Adaptativo: cómo me acerca a una mejor vida laboral",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "recursos",
+    "l": "R · Realista: tiempo, energía y apoyos con los que cuento",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "plazo",
+    "l": "T · Plazo (se completa solo; podés cambiarlo)",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "prioridad",
+    "l": "Prioridad",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Alta",
+     "Media",
+     "Baja"
+    ]
+   },
+   {
+    "k": "indicador",
+    "l": "Indicador: cómo voy a saber que avanzó",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "tipoInd",
+    "l": "Tipo de indicador",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Actividad",
+     "Resultado"
+    ]
+   },
+   {
+    "k": "meta",
+    "l": "Meta",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "estado",
+    "l": "Estado",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Pendiente",
+     "En curso",
+     "Hecho",
+     "Descartado"
+    ]
+   }
+  ],
+  "empty": [
+   "Todavía no hay objetivos",
+   "Escribí uno con el botón de arriba. Poné pocos y concretos."
+  ],
+  "titles": [
+   "Enviar 5",
+   "Curso",
+   "Otro"
+  ],
+  "subs": [
+   "Semana del 09/03/26 · Postulaciones · Prioridad alta · En curso",
+   "Marzo 2026 · Actualización profesional · Prioridad media · Hecho",
+   "Febrero 2026 · Actualización profesional · Prioridad baja · Pendiente"
+  ],
+  "sortIds": [
+   "o1",
+   "o2",
+   "o3"
+  ],
+  "hasExtra": true
+ },
+ "red": {
+  "def": {
+   "fecha": "2026-03-11",
+   "conexiones": "",
+   "paginas": "",
+   "nota": ""
+  },
+  "fields": [
+   {
+    "k": "fecha",
+    "l": "Fecha del registro",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "conexiones",
+    "l": "Número en la red (conexiones)",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "paginas",
+    "l": "Número de páginas",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "nota",
+    "l": "Nota (opcional)",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Sin registros todavía",
+   "Anotá el número de conexiones y de páginas cada vez que lo quieras controlar."
+  ],
+  "titles": [
+   "Registro del 10/03/26",
+   "Registro del 10/02/26",
+   "Registro del 10/01/26"
+  ],
+  "subs": [
+   "520 conexiones · 12 páginas",
+   "500 conexiones",
+   "480 conexiones · 10 páginas"
+  ],
+  "sortIds": null,
+  "hasExtra": false
+ },
+ "posts": {
+  "def": {
+   "fecha": "2026-03-11",
+   "tipo": "Publicación",
+   "tema": "",
+   "url": "",
+   "interacciones": ""
+  },
+  "fields": [
+   {
+    "k": "fecha",
+    "l": "Fecha",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "tipo",
+    "l": "Tipo",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Publicación",
+     "Artículo",
+     "Comentario",
+     "Participación en comunidad"
+    ]
+   },
+   {
+    "k": "tema",
+    "l": "Tema",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "url",
+    "l": "Link (opcional)",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "interacciones",
+    "l": "Interacciones recibidas (opcional)",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Sin registros todavía",
+   "Anotá cada publicación o participación en comunidades para ver tu semana."
+  ],
+  "titles": [
+   "t",
+   "Comentario",
+   "Artículo",
+   "Publicación",
+   "Publicación",
+   "Publicación",
+   "Publicación"
+  ],
+  "subs": [
+   "Publicación · 09/03/26",
+   "Comentario · 10/03/26",
+   "Artículo · 11/03/26",
+   "Publicación · 02/03/26",
+   "Publicación · 24/02/26",
+   "Publicación · 25/02/26",
+   "Publicación · 26/02/26"
+  ],
+  "sortIds": null,
+  "hasExtra": false
+ },
+ "metricas": {
+  "def": {
+   "fecha": "2026-03-11",
+   "fortaleza": "",
+   "conexiones": "",
+   "seguidores": "",
+   "vistas": "",
+   "interaccion": "",
+   "articulos": "",
+   "ssi": "",
+   "notas": ""
+  },
+  "fields": [
+   {
+    "k": "fecha",
+    "l": "Fecha de la medición",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "fortaleza",
+    "l": "Fortaleza del perfil",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "conexiones",
+    "l": "Conexiones",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "seguidores",
+    "l": "Seguidores",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "vistas",
+    "l": "Vistas del perfil",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "interaccion",
+    "l": "Interacción con el contenido",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "articulos",
+    "l": "Analítica de artículos",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "ssi",
+    "l": "Social Selling Index",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "notas",
+    "l": "Notas",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Sin mediciones",
+   "Copiá desde LinkedIn los valores que te muestre tu cuenta. Esta página no se conecta con LinkedIn."
+  ],
+  "titles": [
+   "Medición del 10/03/26",
+   "Medición del 10/02/26"
+  ],
+  "subs": [
+   "Valores copiados de tu cuenta de LinkedIn",
+   "Valores copiados de tu cuenta de LinkedIn"
+  ],
+  "sortIds": null,
+  "hasExtra": false
+ },
+ "tiempos": {
+  "def": {
+   "fecha": "2026-03-11",
+   "actividad": "Postulaciones",
+   "est": "",
+   "real": "",
+   "nota": ""
+  },
+  "fields": [
+   {
+    "k": "fecha",
+    "l": "Fecha",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "actividad",
+    "l": "Actividad (variable)",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": {
+     "fn": [
+      [
+       "Red de contactos",
+       "Investigación de empresas del rubro",
+       "Investigación de puestos",
+       "Investigación de plataformas de empleo",
+       "Postulaciones (directas, LinkedIn, plataformas)",
+       "Participación en comunidades / publicaciones en LinkedIn",
+       "Entrevistas (preparación y feedback)",
+       "Actualización profesional",
+       "Valores y objetivo laboral",
+       "Marca personal y propuesta de valor",
+       "Lista de empleadores objetivo y priorización",
+       "Experimentos de rol (si hay cambio de carrera)",
+       "Indicadores de visibilidad en LinkedIn",
+       "Uso de IA con verificación humana"
+      ]
+     ]
+    }
+   },
+   {
+    "k": "est",
+    "l": "Minutos estimados",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "real",
+    "l": "Minutos reales",
+    "t": "n",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "nota",
+    "l": "Nota",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Sin bloques registrados",
+   "Anotá cuánto pensabas que ibas a tardar y cuánto tardaste."
+  ],
+  "titles": [
+   "Postulaciones",
+   "Red de contactos",
+   "Postulaciones"
+  ],
+  "subs": [
+   "05/03/26 · est. 30 min · real 45 min",
+   "06/03/26 · est. 60 min · real 90 min",
+   "01/01/26 · est. 10 min · real 10 min"
+  ],
+  "sortIds": null,
+  "hasExtra": false
+ },
+ "revisiones": {
+  "def": {
+   "fecha": "2026-03-11",
+   "desde": "",
+   "hasta": "",
+   "avanzo": "",
+   "hice": "",
+   "aprendi": "",
+   "ajuste": "",
+   "no": "",
+   "aplicado": false
+  },
+  "fields": [
+   {
+    "k": "fecha",
+    "l": "Fecha de la revisión",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "desde",
+    "l": "Período: desde",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "hasta",
+    "l": "Período: hasta",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "avanzo",
+    "l": "Qué avanzó (resultados)",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "hice",
+    "l": "Qué hice (actividad)",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "aprendi",
+    "l": "¿Qué me resultó más útil? (aprendizaje)",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "ajuste",
+    "l": "Qué voy a ajustar",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "no",
+    "l": "Si digo que sí a esto, ¿a qué le digo que no?",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "aplicado",
+    "l": "El ajuste ya se aplicó",
+    "t": "c",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Sin revisiones todavía",
+   "Revisá tu avance cada tanto y anotá qué ajustás."
+  ],
+  "titles": [
+   "Revisión del 08/03/26",
+   "Revisión del 08/03/26"
+  ],
+  "subs": [
+   "Período 01/03/26 a 08/03/26",
+   "Sin período"
+  ],
+  "sortIds": null,
+  "hasExtra": true
+ },
+ "empleadores": {
+  "def": {
+   "empresa": "",
+   "quien": "",
+   "motivacion": "Media",
+   "posting": "Sin avisos",
+   "prioridad": "Media",
+   "notas": ""
+  },
+  "fields": [
+   {
+    "k": "empresa",
+    "l": "Empresa",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "quien",
+    "l": "¿Conocés a alguien ahí? (Advocacy)",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "motivacion",
+    "l": "¿Cuánto me interesa? (Motivation)",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Alta",
+     "Media",
+     "Baja"
+    ]
+   },
+   {
+    "k": "posting",
+    "l": "Avisos actuales (Posting)",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Avisos relevantes",
+     "Avisos poco relevantes",
+     "Sin avisos"
+    ]
+   },
+   {
+    "k": "prioridad",
+    "l": "Prioridad (la definís vos)",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Alta",
+     "Media",
+     "Baja"
+    ]
+   },
+   {
+    "k": "notas",
+    "l": "Notas",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Lista vacía",
+   "Armá una lista finita de empleadores que te interesen."
+  ],
+  "titles": [
+   "A",
+   "B"
+  ],
+  "subs": [
+   "Prioridad alta · interés alta",
+   "Prioridad  · interés media"
+  ],
+  "sortIds": [
+   "m2",
+   "m1"
+  ],
+  "hasExtra": false
+ },
+ "experimentos": {
+  "def": {
+   "rol": "",
+   "pregunta": "",
+   "accion": "",
+   "inicio": "2026-03-11",
+   "fin": "",
+   "aprendi": "",
+   "decision": "Pendiente"
+  },
+  "fields": [
+   {
+    "k": "rol",
+    "l": "Rol o campo que quiero probar",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "pregunta",
+    "l": "¿Qué quiero averiguar?",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "accion",
+    "l": "Experimento (algo pequeño y concreto)",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "inicio",
+    "l": "Inicio",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "fin",
+    "l": "Plazo",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "aprendi",
+    "l": "¿Qué aprendí?",
+    "t": "a",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "decision",
+    "l": "Decisión",
+    "t": "s",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": [
+     "Pendiente",
+     "Seguir",
+     "Ajustar",
+     "Descartar"
+    ]
+   }
+  ],
+  "empty": [
+   "Sin experimentos",
+   "Probá un rol a pequeña escala antes de comprometerte con un cambio."
+  ],
+  "titles": [
+   "PM",
+   "UX"
+  ],
+  "subs": [
+   "Seguir · desde 01/03/26",
+   "Pendiente · desde 02/03/26"
+  ],
+  "sortIds": [
+   "x2",
+   "x1"
+  ],
+  "hasExtra": false
+ },
+ "descansos": {
+  "def": {
+   "fecha": "2026-03-11",
+   "nota": "",
+   "cumplido": false
+  },
+  "fields": [
+   {
+    "k": "fecha",
+    "l": "Día de descanso planificado",
+    "t": "d",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "nota",
+    "l": "Nota",
+    "t": "t",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   },
+   {
+    "k": "cumplido",
+    "l": "Lo cumplí",
+    "t": "c",
+    "p": null,
+    "mod": null,
+    "showFor": null,
+    "o": null
+   }
+  ],
+  "empty": [
+   "Sin descansos planificados",
+   "Cuántos días: lo definís vos o tu coach."
+  ],
+  "titles": [],
+  "subs": [],
+  "sortIds": null,
+  "hasExtra": false
+ },
+ "edge": {
+  "objTitleLong": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx…",
+  "objTitleEmpty": "Objetivo sin redactar",
+  "objSubMensual": "Marzo 2026 · V · Prioridad alta · Hecho",
+  "objSubSemanal": "Semana del 09/03/26 · Prioridad  · Pendiente",
+  "redSubEmpty": "",
+  "postTitleFallback": "Artículo",
+  "empTitleEmpty": "Empresa sin nombre",
+  "expTitleEmpty": "Experimento sin nombre",
+  "descSubs": [
+   "Cumplido",
+   "Planificado"
+  ],
+  "revSubNo": "Sin período",
+  "tiempoSub": "05/03/26 · est. 0 min"
+ },
+ "OPC": {
+  "canal": [
+   "LinkedIn",
+   "Email",
+   "Teléfono / videollamada",
+   "Presencial",
+   "Otro"
+  ],
+  "cres": [
+   "Sin respuesta",
+   "Respondió",
+   "Reunión agendada",
+   "Reunión hecha",
+   "Referencia/derivación",
+   "Cerrado"
+  ],
+  "nivel": [
+   "Alta",
+   "Media",
+   "Baja"
+  ],
+  "pri": [
+   "Alta",
+   "Media",
+   "Baja"
+  ],
+  "ost": [
+   "Pendiente",
+   "En curso",
+   "Hecho",
+   "Descartado"
+  ]
+ }
+}

@@ -1,0 +1,2611 @@
+{
+ "today": "2026-03-11",
+ "blank": {
+  "profile": {
+   "name": "",
+   "nameAuto": true,
+   "shareName": false,
+   "headline": "",
+   "years": "",
+   "english": "",
+   "extraSkills": "",
+   "cv": ""
+  },
+  "apps": [],
+  "platforms": [
+   {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/jobs/"
+   },
+   {
+    "id": "indeed",
+    "name": "Indeed",
+    "url": "https://ar.indeed.com/"
+   },
+   {
+    "id": "tecla",
+    "name": "Tecla",
+    "url": "https://tecla.io/"
+   },
+   {
+    "id": "kala-talent",
+    "name": "Kala Talent",
+    "url": "https://www.kalatalent.com/"
+   },
+   {
+    "id": "real-work-from-anywhere",
+    "name": "Real Work From Anywhere",
+    "url": "https://www.realworkfromanywhere.com/"
+   },
+   {
+    "id": "interfell",
+    "name": "Interfell",
+    "url": "https://interfell.com/"
+   },
+   {
+    "id": "get-on-board",
+    "name": "Get on Board",
+    "url": "https://www.getonbrd.com/"
+   },
+   {
+    "id": "remotive",
+    "name": "Remotive",
+    "url": "https://remotive.com/"
+   },
+   {
+    "id": "wellfound",
+    "name": "Wellfound",
+    "url": "https://wellfound.com/jobs"
+   },
+   {
+    "id": "working-nomads",
+    "name": "Working Nomads",
+    "url": "https://www.workingnomads.com/jobs"
+   },
+   {
+    "id": "himalayas",
+    "name": "Himalayas",
+    "url": "https://himalayas.app/jobs"
+   },
+   {
+    "id": "ziprecruiter",
+    "name": "ZipRecruiter",
+    "url": "https://www.ziprecruiter.com/"
+   },
+   {
+    "id": "remote-rocketship",
+    "name": "Remote Rocketship",
+    "url": "https://www.remoterocketship.com/"
+   },
+   {
+    "id": "power-to-fly",
+    "name": "Power to Fly",
+    "url": "https://powertofly.com/jobs"
+   },
+   {
+    "id": "torre-ai",
+    "name": "Torre.ai",
+    "url": "https://torre.ai/"
+   },
+   {
+    "id": "nodesk",
+    "name": "NoDesk",
+    "url": "https://nodesk.co/remote-jobs/"
+   },
+   {
+    "id": "jobspresso",
+    "name": "Jobspresso",
+    "url": "https://jobspresso.co/"
+   },
+   {
+    "id": "jobgether",
+    "name": "Jobgether",
+    "url": "https://jobgether.com/"
+   },
+   {
+    "id": "remoteok",
+    "name": "RemoteOK",
+    "url": "https://remoteok.com/"
+   }
+  ],
+  "checks": {},
+  "goal": 0,
+  "goalSet": false,
+  "draft": {
+   "empresa": "",
+   "puesto": "",
+   "link": "",
+   "fuente": "",
+   "estado": "Postulado",
+   "jd": ""
+  },
+  "mods": {
+   "valores": false,
+   "marca": false,
+   "empleadores": false,
+   "seguimiento": false,
+   "informativas": false,
+   "experimentos": false,
+   "visibilidad": false,
+   "ia": false
+  },
+  "objetivos": [],
+  "contactos": [],
+  "red": [],
+  "posts": [],
+  "tiempos": [],
+  "revisiones": [],
+  "empleadores": [],
+  "experimentos": [],
+  "metricas": [],
+  "descansos": [],
+  "metas": {},
+  "base": {
+   "activos": "",
+   "aspiraciones": "",
+   "mercado": "",
+   "sintesis": "",
+   "objetivoLaboral": ""
+  },
+  "marca": {
+   "promesa": "",
+   "audiencia": "",
+   "historia": "",
+   "titular": ""
+  },
+  "revFreq": "",
+  "planVars": {}
+ },
+ "hydrate": [
+  {
+   "input": {},
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "profile": {
+     "name": "Iván Gonzalez",
+     "cv": ""
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "Iván Gonzalez",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "profile": {
+     "name": "Iván Gonzalez",
+     "nameAuto": true
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "Iván Gonzalez",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "profile": {
+     "name": "Ana Perez"
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "Ana Perez",
+     "nameAuto": false,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "profile": {
+     "name": "Ana Perez",
+     "nameAuto": true,
+     "cv": "x"
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "Ana Perez",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": "x"
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "profile": {
+     "name": "",
+     "cv": "Zoe Lopez\nQA"
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": "Zoe Lopez\nQA"
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "goal": 5
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "goal": 5,
+    "goalSet": true
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 5,
+    "goalSet": true,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "objetivos": [
+     {
+      "id": "a",
+      "plazo": "2026-05-20",
+      "objetivo": "x"
+     },
+     {
+      "id": "b"
+     },
+     {
+      "id": "c",
+      "periodo": "Semanal",
+      "semana": "2026-03-09"
+     }
+    ]
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [
+     {
+      "id": "a",
+      "plazo": "2026-05-20",
+      "objetivo": "x",
+      "periodo": "Mensual",
+      "mes": "2026-05",
+      "semana": ""
+     },
+     {
+      "id": "b",
+      "periodo": "Mensual",
+      "mes": "2026-03",
+      "semana": ""
+     },
+     {
+      "id": "c",
+      "periodo": "Semanal",
+      "semana": "2026-03-09"
+     }
+    ],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "objetivos": "nope",
+    "contactos": null,
+    "red": {},
+    "posts": 3,
+    "metas": null,
+    "planVars": "x",
+    "emociones": [
+     1,
+     2
+    ]
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "metas": {
+     "a": "1"
+    },
+    "planVars": {
+     "2026-03-09": [
+      "networking"
+     ]
+    },
+    "apps": [
+     {
+      "id": "z",
+      "estado": "Postulado"
+     },
+     {
+      "id": "y",
+      "entrevistas": [
+       {
+        "id": "e"
+       }
+      ]
+     }
+    ]
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [
+     {
+      "id": "z",
+      "estado": "Postulado",
+      "entrevistas": []
+     },
+     {
+      "id": "y",
+      "entrevistas": [
+       {
+        "id": "e"
+       }
+      ]
+     }
+    ],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {
+     "a": "1"
+    },
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {
+     "2026-03-09": [
+      "networking"
+     ]
+    }
+   }
+  },
+  {
+   "input": {
+    "apps": "bad"
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  },
+  {
+   "input": {
+    "draft": {
+     "empresa": "E"
+    },
+    "mods": {
+     "valores": true
+    },
+    "base": {
+     "activos": "A"
+    },
+    "marca": {
+     "promesa": "P"
+    },
+    "revFreq": "semanal",
+    "extra": {
+     "keep": true
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/jobs/"
+     },
+     {
+      "id": "indeed",
+      "name": "Indeed",
+      "url": "https://ar.indeed.com/"
+     },
+     {
+      "id": "tecla",
+      "name": "Tecla",
+      "url": "https://tecla.io/"
+     },
+     {
+      "id": "kala-talent",
+      "name": "Kala Talent",
+      "url": "https://www.kalatalent.com/"
+     },
+     {
+      "id": "real-work-from-anywhere",
+      "name": "Real Work From Anywhere",
+      "url": "https://www.realworkfromanywhere.com/"
+     },
+     {
+      "id": "interfell",
+      "name": "Interfell",
+      "url": "https://interfell.com/"
+     },
+     {
+      "id": "get-on-board",
+      "name": "Get on Board",
+      "url": "https://www.getonbrd.com/"
+     },
+     {
+      "id": "remotive",
+      "name": "Remotive",
+      "url": "https://remotive.com/"
+     },
+     {
+      "id": "wellfound",
+      "name": "Wellfound",
+      "url": "https://wellfound.com/jobs"
+     },
+     {
+      "id": "working-nomads",
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs"
+     },
+     {
+      "id": "himalayas",
+      "name": "Himalayas",
+      "url": "https://himalayas.app/jobs"
+     },
+     {
+      "id": "ziprecruiter",
+      "name": "ZipRecruiter",
+      "url": "https://www.ziprecruiter.com/"
+     },
+     {
+      "id": "remote-rocketship",
+      "name": "Remote Rocketship",
+      "url": "https://www.remoterocketship.com/"
+     },
+     {
+      "id": "power-to-fly",
+      "name": "Power to Fly",
+      "url": "https://powertofly.com/jobs"
+     },
+     {
+      "id": "torre-ai",
+      "name": "Torre.ai",
+      "url": "https://torre.ai/"
+     },
+     {
+      "id": "nodesk",
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/"
+     },
+     {
+      "id": "jobspresso",
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/"
+     },
+     {
+      "id": "jobgether",
+      "name": "Jobgether",
+      "url": "https://jobgether.com/"
+     },
+     {
+      "id": "remoteok",
+      "name": "RemoteOK",
+      "url": "https://remoteok.com/"
+     }
+    ],
+    "checks": {},
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "E",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": true,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "A",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "P",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "semanal",
+    "planVars": {},
+    "extra": {
+     "keep": true
+    }
+   }
+  },
+  {
+   "input": {
+    "platforms": [
+     {
+      "id": "x",
+      "name": "X",
+      "url": "u"
+     }
+    ],
+    "checks": {
+     "2026-03": {
+      "x": [
+       1,
+       2
+      ]
+     }
+    }
+   },
+   "output": {
+    "profile": {
+     "name": "",
+     "nameAuto": true,
+     "shareName": false,
+     "headline": "",
+     "years": "",
+     "english": "",
+     "extraSkills": "",
+     "cv": ""
+    },
+    "apps": [],
+    "platforms": [
+     {
+      "id": "x",
+      "name": "X",
+      "url": "u"
+     }
+    ],
+    "checks": {
+     "2026-03": {
+      "x": [
+       1,
+       2
+      ]
+     }
+    },
+    "goal": 0,
+    "goalSet": false,
+    "draft": {
+     "empresa": "",
+     "puesto": "",
+     "link": "",
+     "fuente": "",
+     "estado": "Postulado",
+     "jd": ""
+    },
+    "mods": {
+     "valores": false,
+     "marca": false,
+     "empleadores": false,
+     "seguimiento": false,
+     "informativas": false,
+     "experimentos": false,
+     "visibilidad": false,
+     "ia": false
+    },
+    "objetivos": [],
+    "contactos": [],
+    "red": [],
+    "posts": [],
+    "tiempos": [],
+    "revisiones": [],
+    "empleadores": [],
+    "experimentos": [],
+    "metricas": [],
+    "descansos": [],
+    "metas": {},
+    "base": {
+     "activos": "",
+     "aspiraciones": "",
+     "mercado": "",
+     "sintesis": "",
+     "objetivoLaboral": ""
+    },
+    "marca": {
+     "promesa": "",
+     "audiencia": "",
+     "historia": "",
+     "titular": ""
+    },
+    "revFreq": "",
+    "planVars": {}
+   }
+  }
+ ],
+ "sync": [
+  {
+   "input": {
+    "name": "",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": "Maria Fernandez\nQA"
+   },
+   "output": {
+    "name": "Maria Fernandez",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": "Maria Fernandez\nQA"
+   }
+  },
+  {
+   "input": {
+    "name": "Viejo",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": ""
+   },
+   "output": {
+    "name": "",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": ""
+   }
+  },
+  {
+   "input": {
+    "name": "Keep",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": "nada 123"
+   },
+   "output": {
+    "name": "Keep",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": "nada 123"
+   }
+  },
+  {
+   "input": {
+    "name": "Manual",
+    "nameAuto": false,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": "Maria Fernandez"
+   },
+   "output": {
+    "name": "Manual",
+    "nameAuto": false,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": "Maria Fernandez"
+   }
+  },
+  {
+   "input": {
+    "name": "Iván Gonzalez",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": ""
+   },
+   "output": {
+    "name": "",
+    "nameAuto": true,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": ""
+   }
+  },
+  {
+   "input": {
+    "name": "Iván Gonzalez",
+    "nameAuto": false,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": ""
+   },
+   "output": {
+    "name": "Iván Gonzalez",
+    "nameAuto": false,
+    "shareName": false,
+    "headline": "",
+    "years": "",
+    "english": "",
+    "extraSkills": "",
+    "cv": ""
+   }
+  }
+ ]
+}

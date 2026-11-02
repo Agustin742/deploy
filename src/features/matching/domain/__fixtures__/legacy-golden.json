@@ -1,0 +1,937 @@
+{
+ "ejemplo": {
+  "pct": 62,
+  "comps": [
+   {
+    "k": "Habilidades técnicas",
+    "w": 50,
+    "s": 0.7272727272727273,
+    "d": "8 de 11"
+   },
+   {
+    "k": "Palabras clave de la oferta",
+    "w": 15,
+    "s": 0.5090909090909091,
+    "d": "7 de 25"
+   },
+   {
+    "k": "Habilidades blandas",
+    "w": 10,
+    "s": 0.3333333333333333,
+    "d": "1 de 3"
+   },
+   {
+    "k": "Inglés",
+    "w": 10,
+    "s": 0.4666666666666666,
+    "d": "pide Avanzado (C1+)"
+   },
+   {
+    "k": "Años de experiencia",
+    "w": 15,
+    "s": 0.6666666666666666,
+    "d": "pide 3 · tenés 2"
+   }
+  ],
+  "hardM": [
+   "TypeScript",
+   "React",
+   "HTML",
+   "CSS",
+   "Jest",
+   "REST/APIs",
+   "Git",
+   "Scrum/Agile"
+  ],
+  "hardX": [
+   "Next.js",
+   "Tailwind",
+   "GraphQL"
+  ],
+  "softM": [
+   "Trabajo en equipo"
+  ],
+  "softX": [
+   "Comunicación",
+   "Proactividad"
+  ],
+  "kwX": [
+   "remoto",
+   "sumarse",
+   "producto",
+   "solidos",
+   "conocimientos",
+   "manejo",
+   "flujos",
+   "pull",
+   "requests",
+   "library"
+  ],
+  "eng": {
+   "req": 3,
+   "cv": 2,
+   "status": "Parcial"
+  },
+  "yr": 3,
+  "yc": 2,
+  "cumple": "Parcial",
+  "at": "2026-11-01"
+ },
+ "ejemploNoYears": {
+  "pct": 62,
+  "comps": [
+   {
+    "k": "Habilidades técnicas",
+    "w": 50,
+    "s": 0.7272727272727273,
+    "d": "8 de 11"
+   },
+   {
+    "k": "Palabras clave de la oferta",
+    "w": 15,
+    "s": 0.5090909090909091,
+    "d": "7 de 25"
+   },
+   {
+    "k": "Habilidades blandas",
+    "w": 10,
+    "s": 0.3333333333333333,
+    "d": "1 de 3"
+   },
+   {
+    "k": "Inglés",
+    "w": 10,
+    "s": 0.4666666666666666,
+    "d": "pide Avanzado (C1+)"
+   },
+   {
+    "k": "Años de experiencia",
+    "w": 15,
+    "s": 0.6666666666666666,
+    "d": "pide 3 · tenés 2"
+   }
+  ],
+  "hardM": [
+   "TypeScript",
+   "React",
+   "HTML",
+   "CSS",
+   "Jest",
+   "REST/APIs",
+   "Git",
+   "Scrum/Agile"
+  ],
+  "hardX": [
+   "Next.js",
+   "Tailwind",
+   "GraphQL"
+  ],
+  "softM": [
+   "Trabajo en equipo"
+  ],
+  "softX": [
+   "Comunicación",
+   "Proactividad"
+  ],
+  "kwX": [
+   "remoto",
+   "sumarse",
+   "producto",
+   "solidos",
+   "conocimientos",
+   "manejo",
+   "flujos",
+   "pull",
+   "requests",
+   "library"
+  ],
+  "eng": {
+   "req": 3,
+   "cv": 2,
+   "status": "Parcial"
+  },
+  "yr": 3,
+  "yc": 2,
+  "cumple": "Parcial",
+  "at": "2026-11-01"
+ },
+ "errJd": {
+  "err": "jd"
+ },
+ "errCv": {
+  "err": "cv"
+ },
+ "backend": {
+  "pct": 29,
+  "comps": [
+   {
+    "k": "Habilidades técnicas",
+    "w": 50,
+    "s": 0.2857142857142857,
+    "d": "2 de 7"
+   },
+   {
+    "k": "Palabras clave de la oferta",
+    "w": 15,
+    "s": 0.2597402597402597,
+    "d": "2 de 14"
+   },
+   {
+    "k": "Habilidades blandas",
+    "w": 10,
+    "s": 0,
+    "d": "0 de 2"
+   },
+   {
+    "k": "Inglés",
+    "w": 10,
+    "s": 0.4666666666666666,
+    "d": "pide Avanzado (C1+)"
+   },
+   {
+    "k": "Años de experiencia",
+    "w": 15,
+    "s": 0.4,
+    "d": "pide 5 · tenés 2"
+   }
+  ],
+  "hardM": [
+   "terraform",
+   "kafka"
+  ],
+  "hardX": [
+   "Docker",
+   "Kubernetes",
+   "AWS",
+   "Python",
+   "SQL"
+  ],
+  "softM": [],
+  "softX": [
+   "Comunicación",
+   "Liderazgo"
+  ],
+  "kwX": [
+   "plus",
+   "seeking",
+   "senior",
+   "backend",
+   "engineer",
+   "fluent",
+   "english",
+   "required",
+   "valued",
+   "data"
+  ],
+  "eng": {
+   "req": 3,
+   "cv": 2,
+   "status": "Parcial"
+  },
+  "yr": 5,
+  "yc": 2,
+  "cumple": "No",
+  "at": "2026-11-01"
+ },
+ "backendNoSkills": {
+  "pct": 15,
+  "comps": [
+   {
+    "k": "Habilidades técnicas",
+    "w": 50,
+    "s": 0,
+    "d": "0 de 5"
+   },
+   {
+    "k": "Palabras clave de la oferta",
+    "w": 15,
+    "s": 0,
+    "d": "0 de 14"
+   },
+   {
+    "k": "Habilidades blandas",
+    "w": 10,
+    "s": 0,
+    "d": "0 de 2"
+   },
+   {
+    "k": "Inglés",
+    "w": 10,
+    "s": 0,
+    "d": "pide Avanzado (C1+)"
+   },
+   {
+    "k": "Años de experiencia",
+    "w": 15,
+    "s": 1,
+    "d": "pide 5 · tenés 12"
+   }
+  ],
+  "hardM": [],
+  "hardX": [
+   "Docker",
+   "Kubernetes",
+   "AWS",
+   "Python",
+   "SQL"
+  ],
+  "softM": [],
+  "softX": [
+   "Comunicación",
+   "Liderazgo"
+  ],
+  "kwX": [
+   "plus",
+   "seeking",
+   "senior",
+   "backend",
+   "engineer",
+   "fluent",
+   "english",
+   "required",
+   "terraform",
+   "kafka"
+  ],
+  "eng": {
+   "req": 3,
+   "cv": 0,
+   "status": "No cumple"
+  },
+  "yr": 5,
+  "yc": 12,
+  "cumple": "No",
+  "at": "2026-11-01"
+ },
+ "prompt1": "Prompt de Job Matching\n\nPrompt integral para análisis de empleabilidad y postulación efectiva\n\nA continuación te proporcionaré una descripción de un perfil profesional y una oferta laboral.\n\nQuiero que hagas un análisis integral que incluya:\n\n1. Análisis FODA:\n● Fortalezas del perfil en relación con el puesto\n● Oportunidades de mejora o desarrollo futuro\n● Debilidades o carencias en relación con los requisitos\n● Amenazas externas (mercado, competencia, barreras)\n\n2. Porcentaje de job matching (0-100%) entre el perfil y el puesto, teniendo en cuenta:\n● Formación académica\n● Experiencia laboral\n● Habilidades técnicas y blandas\n● Idiomas y herramientas requeridas\n● Cultura organizacional y valores (si están disponibles)\n\n3. Recomendaciones personalizadas para la postulación:\n● Qué destacar en el CV o carta de presentación\n● Cómo adaptar el perfil de LinkedIn o portfolio (si corresponde)\n● Sugerencias para enfrentar una posible entrevista\n● Áreas de mejora o formación sugerida\n\nPerfil profesional:\nNombre: Maria Fernandez\nTitular: Frontend Developer\nAños de experiencia: 2\nInglés: Intermedio (B2)\nSkills adicionales: Figma, Storybook\n\n# MARIA FERNANDEZ\nDesarrolladora Frontend\n[email omitido] | [número omitido]\n\nExperiencia\nFrontend en una fintech durante 2 años: React, TypeScript, HTML5 y CSS3 con Sass.\nConsumo de APIs REST, Git y GitHub, testing con Jest.\nTrabajo en equipo en squads con metodologías ágiles (Scrum), muy proactiva.\nInglés intermedio (B2).\n\nOferta laboral:\nFrontend Dev en Acme\n\nJD TEXT\n\nUsá solo la información provista: si falta algo, indicalo en vez de suponerlo, y marcá qué partes son inferencias. No prometas resultados ni empleo: es un insumo para que la persona decida.\n\nRespondé en español, con formato Markdown (títulos ### para cada sección, listas con guiones) y cerrá con el porcentaje final destacado.",
+ "prompt2": "Prompt de Job Matching\n\nPrompt integral para análisis de empleabilidad y postulación efectiva\n\nA continuación te proporcionaré una descripción de un perfil profesional y una oferta laboral.\n\nQuiero que hagas un análisis integral que incluya:\n\n1. Análisis FODA:\n● Fortalezas del perfil en relación con el puesto\n● Oportunidades de mejora o desarrollo futuro\n● Debilidades o carencias en relación con los requisitos\n● Amenazas externas (mercado, competencia, barreras)\n\n2. Porcentaje de job matching (0-100%) entre el perfil y el puesto, teniendo en cuenta:\n● Formación académica\n● Experiencia laboral\n● Habilidades técnicas y blandas\n● Idiomas y herramientas requeridas\n● Cultura organizacional y valores (si están disponibles)\n\n3. Recomendaciones personalizadas para la postulación:\n● Qué destacar en el CV o carta de presentación\n● Cómo adaptar el perfil de LinkedIn o portfolio (si corresponde)\n● Sugerencias para enfrentar una posible entrevista\n● Áreas de mejora o formación sugerida\n\nPerfil profesional:\nNombre: Maria Fernandez\nTitular: Frontend Developer\nAños de experiencia: 2\nInglés: Intermedio (B2)\nSkills adicionales: Figma, Storybook\n\n# MARIA FERNANDEZ\nDesarrolladora Frontend\n[email omitido] | [número omitido]\n\nExperiencia\nFrontend en una fintech durante 2 años: React, TypeScript, HTML5 y CSS3 con Sass.\nConsumo de APIs REST, Git y GitHub, testing con Jest.\nTrabajo en equipo en squads con metodologías ágiles (Scrum), muy proactiva.\nInglés intermedio (B2).\n\nOferta laboral:\nJD ONLY\n\nUsá solo la información provista: si falta algo, indicalo en vez de suponerlo, y marcá qué partes son inferencias. No prometas resultados ni empleo: es un insumo para que la persona decida.\n\nRespondé en español, con formato Markdown (títulos ### para cada sección, listas con guiones) y cerrá con el porcentaje final destacado.",
+ "prompt3": "Prompt de Job Matching\n\nPrompt integral para análisis de empleabilidad y postulación efectiva\n\nA continuación te proporcionaré una descripción de un perfil profesional y una oferta laboral.\n\nQuiero que hagas un análisis integral que incluya:\n\n1. Análisis FODA:\n● Fortalezas del perfil en relación con el puesto\n● Oportunidades de mejora o desarrollo futuro\n● Debilidades o carencias en relación con los requisitos\n● Amenazas externas (mercado, competencia, barreras)\n\n2. Porcentaje de job matching (0-100%) entre el perfil y el puesto, teniendo en cuenta:\n● Formación académica\n● Experiencia laboral\n● Habilidades técnicas y blandas\n● Idiomas y herramientas requeridas\n● Cultura organizacional y valores (si están disponibles)\n\n3. Recomendaciones personalizadas para la postulación:\n● Qué destacar en el CV o carta de presentación\n● Cómo adaptar el perfil de LinkedIn o portfolio (si corresponde)\n● Sugerencias para enfrentar una posible entrevista\n● Áreas de mejora o formación sugerida\n\nPerfil profesional:\nLinea uno [email omitido]\n[número omitido]\n\nOferta laboral:\n en Solo Co\n\nJD\n\nUsá solo la información provista: si falta algo, indicalo en vez de suponerlo, y marcá qué partes son inferencias. No prometas resultados ni empleo: es un insumo para que la persona decida.\n\nRespondé en español, con formato Markdown (títulos ### para cada sección, listas con guiones) y cerrá con el porcentaje final destacado.",
+ "prompt4": "Prompt de Job Matching\n\nPrompt integral para análisis de empleabilidad y postulación efectiva\n\nA continuación te proporcionaré una descripción de un perfil profesional y una oferta laboral.\n\nQuiero que hagas un análisis integral que incluya:\n\n1. Análisis FODA:\n● Fortalezas del perfil en relación con el puesto\n● Oportunidades de mejora o desarrollo futuro\n● Debilidades o carencias en relación con los requisitos\n● Amenazas externas (mercado, competencia, barreras)\n\n2. Porcentaje de job matching (0-100%) entre el perfil y el puesto, teniendo en cuenta:\n● Formación académica\n● Experiencia laboral\n● Habilidades técnicas y blandas\n● Idiomas y herramientas requeridas\n● Cultura organizacional y valores (si están disponibles)\n\n3. Recomendaciones personalizadas para la postulación:\n● Qué destacar en el CV o carta de presentación\n● Cómo adaptar el perfil de LinkedIn o portfolio (si corresponde)\n● Sugerencias para enfrentar una posible entrevista\n● Áreas de mejora o formación sugerida\n\nPerfil profesional:\nNombre: Zed\nTitular: H\nAños de experiencia: 0\nInglés: Avanzado (C1+)\n\nOferta laboral:\nDev\n\nJD\n\nUsá solo la información provista: si falta algo, indicalo en vez de suponerlo, y marcá qué partes son inferencias. No prometas resultados ni empleo: es un insumo para que la persona decida.\n\nRespondé en español, con formato Markdown (títulos ### para cada sección, listas con guiones) y cerrá con el porcentaje final destacado.",
+ "head": "Prompt de Job Matching\n\nPrompt integral para análisis de empleabilidad y postulación efectiva\n\nA continuación te proporcionaré una descripción de un perfil profesional y una oferta laboral.\n\nQuiero que hagas un análisis integral que incluya:\n\n1. Análisis FODA:\n● Fortalezas del perfil en relación con el puesto\n● Oportunidades de mejora o desarrollo futuro\n● Debilidades o carencias en relación con los requisitos\n● Amenazas externas (mercado, competencia, barreras)\n\n2. Porcentaje de job matching (0-100%) entre el perfil y el puesto, teniendo en cuenta:\n● Formación académica\n● Experiencia laboral\n● Habilidades técnicas y blandas\n● Idiomas y herramientas requeridas\n● Cultura organizacional y valores (si están disponibles)\n\n3. Recomendaciones personalizadas para la postulación:\n● Qué destacar en el CV o carta de presentación\n● Cómo adaptar el perfil de LinkedIn o portfolio (si corresponde)\n● Sugerencias para enfrentar una posible entrevista\n● Áreas de mejora o formación sugerida",
+ "tokens": [
+  "desarrollador",
+  "frontend",
+  "sumarse",
+  "remoto",
+  "producto",
+  "experiencia",
+  "react",
+  "typescript",
+  "lidos",
+  "conocimientos",
+  "html5",
+  "css3",
+  "tailwind",
+  "experiencia",
+  "consumiendo",
+  "apis",
+  "rest",
+  "graphql",
+  "manejo",
+  "flujos",
+  "pull",
+  "requests",
+  "testing",
+  "jest",
+  "testing",
+  "library",
+  "experiencia",
+  "next.js",
+  "plus",
+  "ingl",
+  "avanzado",
+  "comunicaci",
+  "diaria",
+  "proactividad",
+  "buena",
+  "comunicaci",
+  "metodolog",
+  "giles",
+  "scrum",
+  "remoto",
+  "contrato",
+  "lares",
+  "horarios",
+  "flexibles"
+ ],
+ "sk": [
+  [
+   "JavaScript",
+   "h",
+   [
+    "(?<![a-z0-9+#.])javascript(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])js(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ecmascript(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])es6(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "TypeScript",
+   "h",
+   [
+    "(?<![a-z0-9+#.])typescript(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ts(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "React",
+   "h",
+   [
+    "(?<![a-z0-9+#.])react(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])reactjs(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])react\\.js(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Next.js",
+   "h",
+   [
+    "(?<![a-z0-9+#.])next\\.js(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])nextjs(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Vue",
+   "h",
+   [
+    "(?<![a-z0-9+#.])vue(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])vuejs(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])vue\\.js(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Angular",
+   "h",
+   [
+    "(?<![a-z0-9+#.])angular(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])angularjs(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Svelte",
+   "h",
+   [
+    "(?<![a-z0-9+#.])svelte(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])sveltekit(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "HTML",
+   "h",
+   [
+    "(?<![a-z0-9+#.])html(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])html5(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "CSS",
+   "h",
+   [
+    "(?<![a-z0-9+#.])css(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])css3(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Sass",
+   "h",
+   [
+    "(?<![a-z0-9+#.])sass(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])scss(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Tailwind",
+   "h",
+   [
+    "(?<![a-z0-9+#.])tailwind(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])tailwindcss(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Bootstrap",
+   "h",
+   [
+    "(?<![a-z0-9+#.])bootstrap(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Redux",
+   "h",
+   [
+    "(?<![a-z0-9+#.])redux(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])zustand(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])context api(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Jest",
+   "h",
+   [
+    "(?<![a-z0-9+#.])jest(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])vitest(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])testing library(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])unit testing(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])tests unitarios(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Cypress",
+   "h",
+   [
+    "(?<![a-z0-9+#.])cypress(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])playwright(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])e2e(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Vite/Webpack",
+   "h",
+   [
+    "(?<![a-z0-9+#.])vite(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])webpack(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Storybook",
+   "h",
+   [
+    "(?<![a-z0-9+#.])storybook(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Figma",
+   "h",
+   [
+    "(?<![a-z0-9+#.])figma(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Responsive",
+   "h",
+   [
+    "(?<![a-z0-9+#.])responsive(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])diseno responsivo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])mobile first(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Accesibilidad",
+   "h",
+   [
+    "(?<![a-z0-9+#.])accesibilidad(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])accessibility(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])a11y(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])wcag(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "UX/UI",
+   "h",
+   [
+    "(?<![a-z0-9+#.])ux(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ui(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ux\\/ui(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ui\\/ux(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])experiencia de usuario(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "REST/APIs",
+   "h",
+   [
+    "(?<![a-z0-9+#.])rest(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])restful(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])api rest(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])apis(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])api(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "GraphQL",
+   "h",
+   [
+    "(?<![a-z0-9+#.])graphql(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Git",
+   "h",
+   [
+    "(?<![a-z0-9+#.])git(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])github(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])gitlab(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])bitbucket(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "CI/CD",
+   "h",
+   [
+    "(?<![a-z0-9+#.])ci\\/cd(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])cicd(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])github actions(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])jenkins(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Docker",
+   "h",
+   [
+    "(?<![a-z0-9+#.])docker(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Kubernetes",
+   "h",
+   [
+    "(?<![a-z0-9+#.])kubernetes(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])k8s(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "AWS",
+   "h",
+   [
+    "(?<![a-z0-9+#.])aws(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])amazon web services(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Azure",
+   "h",
+   [
+    "(?<![a-z0-9+#.])azure(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "GCP",
+   "h",
+   [
+    "(?<![a-z0-9+#.])gcp(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])google cloud(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Node.js",
+   "h",
+   [
+    "(?<![a-z0-9+#.])node(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])node\\.js(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])nodejs(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])express(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])nestjs(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Python",
+   "h",
+   [
+    "(?<![a-z0-9+#.])python(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])django(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])flask(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])fastapi(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Java",
+   "h",
+   [
+    "(?<![a-z0-9+#.])java(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])spring(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])spring boot(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "C#/.NET",
+   "h",
+   [
+    "(?<![a-z0-9+#.])c#(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])\\.net(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])dotnet(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])asp\\.net(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "PHP",
+   "h",
+   [
+    "(?<![a-z0-9+#.])php(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])laravel(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])symfony(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Ruby",
+   "h",
+   [
+    "(?<![a-z0-9+#.])ruby(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])rails(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Go",
+   "h",
+   [
+    "(?<![a-z0-9+#.])golang(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "SQL",
+   "h",
+   [
+    "(?<![a-z0-9+#.])sql(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])postgresql(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])postgres(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])mysql(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])sql server(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "MongoDB",
+   "h",
+   [
+    "(?<![a-z0-9+#.])mongodb(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])mongo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])nosql(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Firebase/Supabase",
+   "h",
+   [
+    "(?<![a-z0-9+#.])firebase(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])supabase(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Redis",
+   "h",
+   [
+    "(?<![a-z0-9+#.])redis(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Linux",
+   "h",
+   [
+    "(?<![a-z0-9+#.])linux(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])bash(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "React Native",
+   "h",
+   [
+    "(?<![a-z0-9+#.])react native(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])flutter(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])swift(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])kotlin(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])android(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ios(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "WordPress",
+   "h",
+   [
+    "(?<![a-z0-9+#.])wordpress(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])woocommerce(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Shopify",
+   "h",
+   [
+    "(?<![a-z0-9+#.])shopify(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Scrum/Agile",
+   "h",
+   [
+    "(?<![a-z0-9+#.])scrum(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])agile(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])agil(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])agiles(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])kanban(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])metodologias agiles(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Jira",
+   "h",
+   [
+    "(?<![a-z0-9+#.])jira(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])trello(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])asana(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "SEO",
+   "h",
+   [
+    "(?<![a-z0-9+#.])seo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])sem(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Google Analytics",
+   "h",
+   [
+    "(?<![a-z0-9+#.])google analytics(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ga4(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])tag manager(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Ads",
+   "h",
+   [
+    "(?<![a-z0-9+#.])google ads(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])meta ads(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])facebook ads(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])paid media(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Email marketing",
+   "h",
+   [
+    "(?<![a-z0-9+#.])email marketing(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])mailchimp(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])hubspot(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])crm(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])salesforce(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Marketing digital",
+   "h",
+   [
+    "(?<![a-z0-9+#.])marketing digital(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])content marketing(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])growth(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])redes sociales(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])community manager(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Excel",
+   "h",
+   [
+    "(?<![a-z0-9+#.])excel(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])google sheets(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Power BI/Tableau",
+   "h",
+   [
+    "(?<![a-z0-9+#.])power bi(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])tableau(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])looker(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])data studio(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Análisis de datos",
+   "h",
+   [
+    "(?<![a-z0-9+#.])analisis de datos(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])data analysis(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])pandas(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])data science(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Machine Learning/IA",
+   "h",
+   [
+    "(?<![a-z0-9+#.])machine learning(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])ia(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])inteligencia artificial(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])llm(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])openai(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])prompt engineering(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Comunicación",
+   "s",
+   [
+    "(?<![a-z0-9+#.])comunicacion(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])comunicacion efectiva(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])communication(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])comunicativo(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Trabajo en equipo",
+   "s",
+   [
+    "(?<![a-z0-9+#.])trabajo en equipo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])teamwork(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])colaboracion(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])colaborativo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])collaboration(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Liderazgo",
+   "s",
+   [
+    "(?<![a-z0-9+#.])liderazgo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])leadership(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])lider(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Resolución de problemas",
+   "s",
+   [
+    "(?<![a-z0-9+#.])resolucion de problemas(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])problem solving(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])pensamiento critico(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Proactividad",
+   "s",
+   [
+    "(?<![a-z0-9+#.])proactividad(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])proactivo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])proactive(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])iniciativa(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Autonomía",
+   "s",
+   [
+    "(?<![a-z0-9+#.])autonomia(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])autonomo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])autonomous(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])self-starter(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])independiente(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Adaptabilidad",
+   "s",
+   [
+    "(?<![a-z0-9+#.])adaptabilidad(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])flexibilidad(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])adaptable(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ],
+  [
+   "Gestión del tiempo",
+   "s",
+   [
+    "(?<![a-z0-9+#.])gestion del tiempo(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])time management(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])organizacion(?![a-z0-9+#]|\\.[a-z0-9])",
+    "(?<![a-z0-9+#.])organizado(?![a-z0-9+#]|\\.[a-z0-9])"
+   ]
+  ]
+ ]
+}

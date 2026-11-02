@@ -1,0 +1,1509 @@
+{
+ "modsOn": {
+  "vars": [
+   {
+    "id": "networking",
+    "n": "Red de contactos",
+    "t": "actual",
+    "mod": null,
+    "tab": "red",
+    "d": null,
+    "nInd": 5,
+    "act": [
+     [
+      "Registros de la red cargados",
+      3,
+      null
+     ],
+     [
+      "Registro cargado esta semana",
+      "Sí",
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Conexiones (último registro)",
+      "520",
+      null
+     ],
+     [
+      "Páginas (último registro)",
+      "12",
+      null
+     ],
+     [
+      "Cambio de conexiones desde el registro anterior",
+      "+20",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "empresas",
+    "n": "Investigación de empresas del rubro",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Postulaciones con ficha de empresa cargada",
+      3,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "De esas, con proceso avanzado (revisión, entrevista, prueba u oferta)",
+      2,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "puestos",
+    "n": "Investigación de puestos",
+    "t": "actual",
+    "mod": null,
+    "tab": "nueva",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Ofertas con descripción analizada",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Coincidencia promedio con tu CV (estimación orientativa)",
+      "70%",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "plataformas",
+    "n": "Investigación de plataformas de empleo",
+    "t": "actual",
+    "mod": null,
+    "tab": "busqueda",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Revisiones de plataformas este mes",
+      4,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Fuentes con al menos una respuesta",
+      4,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "postulaciones",
+    "n": "Postulaciones (directas, LinkedIn, plataformas)",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 5,
+    "act": [
+     [
+      "Postulaciones enviadas este mes",
+      5,
+      null
+     ],
+     [
+      "Postulaciones enviadas en total",
+      6,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Respuestas recibidas",
+      4,
+      null
+     ],
+     [
+      "Procesos en curso",
+      2,
+      null
+     ],
+     [
+      "Ofertas recibidas",
+      1,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "comunidades",
+    "n": "Participación en comunidades / publicaciones en LinkedIn",
+    "t": "actual",
+    "mod": null,
+    "tab": "visibilidad",
+    "d": null,
+    "nInd": 3,
+    "act": [
+     [
+      "Publicaciones o participaciones esta semana",
+      3,
+      "mín. 3 por semana (definido en tu programa)"
+     ],
+     [
+      "Semanas con el mínimo cumplido (últimas 8)",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Interacciones recibidas (las que cargaste)",
+      17,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "entrevistas",
+    "n": "Entrevistas (preparación y feedback)",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 3,
+    "act": [
+     [
+      "Entrevistas registradas",
+      2,
+      null
+     ],
+     [
+      "Entrevistas con preparación anotada",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Procesos que llegaron a prueba técnica u oferta",
+      2,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "actualizacion",
+    "n": "Actualización profesional",
+    "t": "actual",
+    "mod": null,
+    "tab": "plan",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Objetivos de actualización en curso o cumplidos",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Skills que más te faltan (ver Análisis)",
+      "Docker, Liderazgo, AWS",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "valores",
+    "n": "Valores y objetivo laboral",
+    "t": "prop",
+    "mod": "valores",
+    "tab": "plan",
+    "d": "Activos, aspiraciones y valores, realidades del mercado y objetivo laboral.",
+    "nInd": 2,
+    "act": [
+     [
+      "Campos de dirección completados (de 5)",
+      3,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Objetivo laboral definido",
+      "Sí",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "marca",
+    "n": "Marca personal y propuesta de valor",
+    "t": "prop",
+    "mod": "marca",
+    "tab": "plan",
+    "d": "Propuesta de valor, a quién te dirigís, historia y titular de LinkedIn.",
+    "nInd": 2,
+    "act": [
+     [
+      "Elementos de marca completados (de 4)",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Resultado: a definir por la persona o la coach",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "empleadores",
+    "n": "Lista de empleadores objetivo y priorización",
+    "t": "prop",
+    "mod": "empleadores",
+    "tab": "empleadores",
+    "d": "Lista finita de empleadores con quién conocés, interés y avisos actuales.",
+    "nInd": 3,
+    "act": [
+     [
+      "Empleadores en la lista",
+      2,
+      null
+     ],
+     [
+      "Con prioridad asignada",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Empleadores de prioridad alta",
+      1,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "experimentos",
+    "n": "Experimentos de rol (si hay cambio de carrera)",
+    "t": "prop",
+    "mod": "experimentos",
+    "tab": "experimentos",
+    "d": "Solo si estás considerando un cambio de carrera: probar a pequeña escala y aprender.",
+    "nInd": 2,
+    "act": [
+     [
+      "Experimentos registrados",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Experimentos con decisión tomada (seguir, ajustar o descartar)",
+      1,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "visibilidad",
+    "n": "Indicadores de visibilidad en LinkedIn",
+    "t": "prop",
+    "mod": "visibilidad",
+    "tab": "visibilidad",
+    "d": "Mediciones periódicas que copiás de tu cuenta de LinkedIn.",
+    "nInd": 2,
+    "act": [
+     [
+      "Mediciones registradas",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Cambio de conexiones y vistas desde la medición anterior",
+      "+20 / —",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "ia",
+    "n": "Uso de IA con verificación humana",
+    "t": "prop",
+    "mod": "ia",
+    "tab": "postulaciones",
+    "d": "Marcar que revisaste cada informe de IA y anotar lo que corregiste.",
+    "nInd": 3,
+    "act": [
+     [
+      "Informes de IA guardados",
+      2,
+      null
+     ],
+     [
+      "Con revisión humana marcada",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Informes con correcciones o descartes anotados",
+      1,
+      null
+     ]
+    ]
+   }
+  ],
+  "varNames": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional",
+   "Valores y objetivo laboral",
+   "Marca personal y propuesta de valor",
+   "Lista de empleadores objetivo y priorización",
+   "Experimentos de rol (si hay cambio de carrera)",
+   "Indicadores de visibilidad en LinkedIn",
+   "Uso de IA con verificación humana"
+  ],
+  "visVars": [
+   "networking",
+   "empresas",
+   "puestos",
+   "plataformas",
+   "postulaciones",
+   "comunidades",
+   "entrevistas",
+   "actualizacion",
+   "valores",
+   "marca",
+   "empleadores",
+   "experimentos",
+   "visibilidad",
+   "ia"
+  ],
+  "weekVars": [
+   "networking",
+   "postulaciones",
+   "valores",
+   "marca"
+  ],
+  "weekVarsEmpty": [],
+  "varOptsMonthly": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional",
+   "Valores y objetivo laboral",
+   "Marca personal y propuesta de valor",
+   "Lista de empleadores objetivo y priorización",
+   "Experimentos de rol (si hay cambio de carrera)",
+   "Indicadores de visibilidad en LinkedIn",
+   "Uso de IA con verificación humana"
+  ],
+  "varOptsWeekly": [
+   "Red de contactos",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Valores y objetivo laboral",
+   "Marca personal y propuesta de valor"
+  ],
+  "varOptsWeeklyNoSel": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional",
+   "Valores y objetivo laboral",
+   "Marca personal y propuesta de valor",
+   "Lista de empleadores objetivo y priorización",
+   "Experimentos de rol (si hay cambio de carrera)",
+   "Indicadores de visibilidad en LinkedIn",
+   "Uso de IA con verificación humana"
+  ],
+  "varOptsWeeklyDefault": [
+   "Red de contactos",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Valores y objetivo laboral",
+   "Marca personal y propuesta de valor"
+  ],
+  "topMiss": "Docker, Liderazgo, AWS",
+  "redDiffConexiones": "+20",
+  "redDiffPaginas": "—",
+  "lastRedId": "r1",
+  "postsWeek": [
+   [
+    "2026-03-09",
+    3
+   ],
+   [
+    "2026-03-02",
+    1
+   ],
+   [
+    "2026-02-23",
+    3
+   ],
+   [
+    "2026-02-16",
+    0
+   ]
+  ]
+ },
+ "modsOff": {
+  "vars": [
+   {
+    "id": "networking",
+    "n": "Red de contactos",
+    "t": "actual",
+    "mod": null,
+    "tab": "red",
+    "d": null,
+    "nInd": 5,
+    "act": [
+     [
+      "Registros de la red cargados",
+      3,
+      null
+     ],
+     [
+      "Registro cargado esta semana",
+      "Sí",
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Conexiones (último registro)",
+      "520",
+      null
+     ],
+     [
+      "Páginas (último registro)",
+      "12",
+      null
+     ],
+     [
+      "Cambio de conexiones desde el registro anterior",
+      "+20",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "empresas",
+    "n": "Investigación de empresas del rubro",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Postulaciones con ficha de empresa cargada",
+      3,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "De esas, con proceso avanzado (revisión, entrevista, prueba u oferta)",
+      2,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "puestos",
+    "n": "Investigación de puestos",
+    "t": "actual",
+    "mod": null,
+    "tab": "nueva",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Ofertas con descripción analizada",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Coincidencia promedio con tu CV (estimación orientativa)",
+      "70%",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "plataformas",
+    "n": "Investigación de plataformas de empleo",
+    "t": "actual",
+    "mod": null,
+    "tab": "busqueda",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Revisiones de plataformas este mes",
+      4,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Fuentes con al menos una respuesta",
+      4,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "postulaciones",
+    "n": "Postulaciones (directas, LinkedIn, plataformas)",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 5,
+    "act": [
+     [
+      "Postulaciones enviadas este mes",
+      5,
+      null
+     ],
+     [
+      "Postulaciones enviadas en total",
+      6,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Respuestas recibidas",
+      4,
+      null
+     ],
+     [
+      "Procesos en curso",
+      2,
+      null
+     ],
+     [
+      "Ofertas recibidas",
+      1,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "comunidades",
+    "n": "Participación en comunidades / publicaciones en LinkedIn",
+    "t": "actual",
+    "mod": null,
+    "tab": "visibilidad",
+    "d": null,
+    "nInd": 3,
+    "act": [
+     [
+      "Publicaciones o participaciones esta semana",
+      3,
+      "mín. 3 por semana (definido en tu programa)"
+     ],
+     [
+      "Semanas con el mínimo cumplido (últimas 8)",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Interacciones recibidas (las que cargaste)",
+      17,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "entrevistas",
+    "n": "Entrevistas (preparación y feedback)",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 3,
+    "act": [
+     [
+      "Entrevistas registradas",
+      2,
+      null
+     ],
+     [
+      "Entrevistas con preparación anotada",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Procesos que llegaron a prueba técnica u oferta",
+      2,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "actualizacion",
+    "n": "Actualización profesional",
+    "t": "actual",
+    "mod": null,
+    "tab": "plan",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Objetivos de actualización en curso o cumplidos",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Skills que más te faltan (ver Análisis)",
+      "Docker, Liderazgo, AWS",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "valores",
+    "n": "Valores y objetivo laboral",
+    "t": "prop",
+    "mod": "valores",
+    "tab": "plan",
+    "d": "Activos, aspiraciones y valores, realidades del mercado y objetivo laboral.",
+    "nInd": 2,
+    "act": [
+     [
+      "Campos de dirección completados (de 5)",
+      3,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Objetivo laboral definido",
+      "Sí",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "marca",
+    "n": "Marca personal y propuesta de valor",
+    "t": "prop",
+    "mod": "marca",
+    "tab": "plan",
+    "d": "Propuesta de valor, a quién te dirigís, historia y titular de LinkedIn.",
+    "nInd": 2,
+    "act": [
+     [
+      "Elementos de marca completados (de 4)",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Resultado: a definir por la persona o la coach",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "empleadores",
+    "n": "Lista de empleadores objetivo y priorización",
+    "t": "prop",
+    "mod": "empleadores",
+    "tab": "empleadores",
+    "d": "Lista finita de empleadores con quién conocés, interés y avisos actuales.",
+    "nInd": 3,
+    "act": [
+     [
+      "Empleadores en la lista",
+      2,
+      null
+     ],
+     [
+      "Con prioridad asignada",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Empleadores de prioridad alta",
+      1,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "experimentos",
+    "n": "Experimentos de rol (si hay cambio de carrera)",
+    "t": "prop",
+    "mod": "experimentos",
+    "tab": "experimentos",
+    "d": "Solo si estás considerando un cambio de carrera: probar a pequeña escala y aprender.",
+    "nInd": 2,
+    "act": [
+     [
+      "Experimentos registrados",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Experimentos con decisión tomada (seguir, ajustar o descartar)",
+      1,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "visibilidad",
+    "n": "Indicadores de visibilidad en LinkedIn",
+    "t": "prop",
+    "mod": "visibilidad",
+    "tab": "visibilidad",
+    "d": "Mediciones periódicas que copiás de tu cuenta de LinkedIn.",
+    "nInd": 2,
+    "act": [
+     [
+      "Mediciones registradas",
+      2,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Cambio de conexiones y vistas desde la medición anterior",
+      "+20 / —",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "ia",
+    "n": "Uso de IA con verificación humana",
+    "t": "prop",
+    "mod": "ia",
+    "tab": "postulaciones",
+    "d": "Marcar que revisaste cada informe de IA y anotar lo que corregiste.",
+    "nInd": 3,
+    "act": [
+     [
+      "Informes de IA guardados",
+      2,
+      null
+     ],
+     [
+      "Con revisión humana marcada",
+      1,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Informes con correcciones o descartes anotados",
+      1,
+      null
+     ]
+    ]
+   }
+  ],
+  "varNames": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "visVars": [
+   "networking",
+   "empresas",
+   "puestos",
+   "plataformas",
+   "postulaciones",
+   "comunidades",
+   "entrevistas",
+   "actualizacion"
+  ],
+  "weekVars": [
+   "networking",
+   "postulaciones"
+  ],
+  "weekVarsEmpty": [],
+  "varOptsMonthly": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "varOptsWeekly": [
+   "Red de contactos",
+   "Postulaciones (directas, LinkedIn, plataformas)"
+  ],
+  "varOptsWeeklyNoSel": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "varOptsWeeklyDefault": [
+   "Red de contactos",
+   "Postulaciones (directas, LinkedIn, plataformas)"
+  ],
+  "topMiss": "Docker, Liderazgo, AWS",
+  "redDiffConexiones": "+20",
+  "redDiffPaginas": "—",
+  "lastRedId": "r1",
+  "postsWeek": [
+   [
+    "2026-03-09",
+    3
+   ],
+   [
+    "2026-03-02",
+    1
+   ],
+   [
+    "2026-02-23",
+    3
+   ],
+   [
+    "2026-02-16",
+    0
+   ]
+  ]
+ },
+ "blank": {
+  "vars": [
+   {
+    "id": "networking",
+    "n": "Red de contactos",
+    "t": "actual",
+    "mod": null,
+    "tab": "red",
+    "d": null,
+    "nInd": 5,
+    "act": [
+     [
+      "Registros de la red cargados",
+      0,
+      null
+     ],
+     [
+      "Registro cargado esta semana",
+      "No",
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Conexiones (último registro)",
+      "—",
+      null
+     ],
+     [
+      "Páginas (último registro)",
+      "—",
+      null
+     ],
+     [
+      "Cambio de conexiones desde el registro anterior",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "empresas",
+    "n": "Investigación de empresas del rubro",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Postulaciones con ficha de empresa cargada",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "De esas, con proceso avanzado (revisión, entrevista, prueba u oferta)",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "puestos",
+    "n": "Investigación de puestos",
+    "t": "actual",
+    "mod": null,
+    "tab": "nueva",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Ofertas con descripción analizada",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Coincidencia promedio con tu CV (estimación orientativa)",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "plataformas",
+    "n": "Investigación de plataformas de empleo",
+    "t": "actual",
+    "mod": null,
+    "tab": "busqueda",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Revisiones de plataformas este mes",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Fuentes con al menos una respuesta",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "postulaciones",
+    "n": "Postulaciones (directas, LinkedIn, plataformas)",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 5,
+    "act": [
+     [
+      "Postulaciones enviadas este mes",
+      0,
+      null
+     ],
+     [
+      "Postulaciones enviadas en total",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Respuestas recibidas",
+      0,
+      null
+     ],
+     [
+      "Procesos en curso",
+      0,
+      null
+     ],
+     [
+      "Ofertas recibidas",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "comunidades",
+    "n": "Participación en comunidades / publicaciones en LinkedIn",
+    "t": "actual",
+    "mod": null,
+    "tab": "visibilidad",
+    "d": null,
+    "nInd": 3,
+    "act": [
+     [
+      "Publicaciones o participaciones esta semana",
+      0,
+      "mín. 3 por semana (definido en tu programa)"
+     ],
+     [
+      "Semanas con el mínimo cumplido (últimas 8)",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Interacciones recibidas (las que cargaste)",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "entrevistas",
+    "n": "Entrevistas (preparación y feedback)",
+    "t": "actual",
+    "mod": null,
+    "tab": "postulaciones",
+    "d": null,
+    "nInd": 3,
+    "act": [
+     [
+      "Entrevistas registradas",
+      0,
+      null
+     ],
+     [
+      "Entrevistas con preparación anotada",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Procesos que llegaron a prueba técnica u oferta",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "actualizacion",
+    "n": "Actualización profesional",
+    "t": "actual",
+    "mod": null,
+    "tab": "plan",
+    "d": null,
+    "nInd": 2,
+    "act": [
+     [
+      "Objetivos de actualización en curso o cumplidos",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Skills que más te faltan (ver Análisis)",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "valores",
+    "n": "Valores y objetivo laboral",
+    "t": "prop",
+    "mod": "valores",
+    "tab": "plan",
+    "d": "Activos, aspiraciones y valores, realidades del mercado y objetivo laboral.",
+    "nInd": 2,
+    "act": [
+     [
+      "Campos de dirección completados (de 5)",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Objetivo laboral definido",
+      "No",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "marca",
+    "n": "Marca personal y propuesta de valor",
+    "t": "prop",
+    "mod": "marca",
+    "tab": "plan",
+    "d": "Propuesta de valor, a quién te dirigís, historia y titular de LinkedIn.",
+    "nInd": 2,
+    "act": [
+     [
+      "Elementos de marca completados (de 4)",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Resultado: a definir por la persona o la coach",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "empleadores",
+    "n": "Lista de empleadores objetivo y priorización",
+    "t": "prop",
+    "mod": "empleadores",
+    "tab": "empleadores",
+    "d": "Lista finita de empleadores con quién conocés, interés y avisos actuales.",
+    "nInd": 3,
+    "act": [
+     [
+      "Empleadores en la lista",
+      0,
+      null
+     ],
+     [
+      "Con prioridad asignada",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Empleadores de prioridad alta",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "experimentos",
+    "n": "Experimentos de rol (si hay cambio de carrera)",
+    "t": "prop",
+    "mod": "experimentos",
+    "tab": "experimentos",
+    "d": "Solo si estás considerando un cambio de carrera: probar a pequeña escala y aprender.",
+    "nInd": 2,
+    "act": [
+     [
+      "Experimentos registrados",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Experimentos con decisión tomada (seguir, ajustar o descartar)",
+      0,
+      null
+     ]
+    ]
+   },
+   {
+    "id": "visibilidad",
+    "n": "Indicadores de visibilidad en LinkedIn",
+    "t": "prop",
+    "mod": "visibilidad",
+    "tab": "visibilidad",
+    "d": "Mediciones periódicas que copiás de tu cuenta de LinkedIn.",
+    "nInd": 2,
+    "act": [
+     [
+      "Mediciones registradas",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Cambio de conexiones y vistas desde la medición anterior",
+      "—",
+      null
+     ]
+    ]
+   },
+   {
+    "id": "ia",
+    "n": "Uso de IA con verificación humana",
+    "t": "prop",
+    "mod": "ia",
+    "tab": "postulaciones",
+    "d": "Marcar que revisaste cada informe de IA y anotar lo que corregiste.",
+    "nInd": 3,
+    "act": [
+     [
+      "Informes de IA guardados",
+      0,
+      null
+     ],
+     [
+      "Con revisión humana marcada",
+      0,
+      null
+     ]
+    ],
+    "res": [
+     [
+      "Informes con correcciones o descartes anotados",
+      0,
+      null
+     ]
+    ]
+   }
+  ],
+  "varNames": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "visVars": [
+   "networking",
+   "empresas",
+   "puestos",
+   "plataformas",
+   "postulaciones",
+   "comunidades",
+   "entrevistas",
+   "actualizacion"
+  ],
+  "weekVars": [],
+  "weekVarsEmpty": [],
+  "varOptsMonthly": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "varOptsWeekly": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "varOptsWeeklyNoSel": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "varOptsWeeklyDefault": [
+   "Red de contactos",
+   "Investigación de empresas del rubro",
+   "Investigación de puestos",
+   "Investigación de plataformas de empleo",
+   "Postulaciones (directas, LinkedIn, plataformas)",
+   "Participación en comunidades / publicaciones en LinkedIn",
+   "Entrevistas (preparación y feedback)",
+   "Actualización profesional"
+  ],
+  "topMiss": "—",
+  "redDiffConexiones": "—",
+  "redDiffPaginas": "—",
+  "lastRedId": null,
+  "postsWeek": [
+   [
+    "2026-03-09",
+    0
+   ],
+   [
+    "2026-03-02",
+    0
+   ],
+   [
+    "2026-02-23",
+    0
+   ],
+   [
+    "2026-02-16",
+    0
+   ]
+  ]
+ },
+ "plazoObj": [
+  [
+   {
+    "periodo": "Mensual",
+    "mes": "2026-02"
+   },
+   "2026-02-28"
+  ],
+  [
+   {
+    "periodo": "Mensual",
+    "mes": "2026-03"
+   },
+   "2026-03-31"
+  ],
+  [
+   {
+    "periodo": "Mensual",
+    "mes": "2024-02"
+   },
+   "2024-02-29"
+  ],
+  [
+   {
+    "periodo": "Mensual",
+    "mes": "2026-12"
+   },
+   "2026-12-31"
+  ],
+  [
+   {
+    "periodo": "Mensual"
+   },
+   "2026-03-31"
+  ],
+  [
+   {
+    "periodo": "Semanal",
+    "semana": "2026-03-09"
+   },
+   "2026-03-15"
+  ],
+  [
+   {
+    "periodo": "Semanal",
+    "semana": "2026-03-30"
+   },
+   "2026-04-05"
+  ],
+  [
+   {
+    "periodo": "Semanal"
+   },
+   ""
+  ]
+ ],
+ "warn": [
+  [
+   {
+    "objetivo": "x"
+   },
+   "Falta el plazo.Falta el indicador: ¿cómo vas a saber que avanzó?"
+  ],
+  [
+   {
+    "objetivo": "x",
+    "plazo": "2026-03-15"
+   },
+   "Falta el indicador: ¿cómo vas a saber que avanzó?"
+  ],
+  [
+   {
+    "objetivo": "x",
+    "plazo": "p",
+    "indicador": "i"
+   },
+   ""
+  ],
+  [
+   {
+    "objetivo": ""
+   },
+   ""
+  ]
+ ],
+ "period": [
+  [
+   {
+    "desde": "2026-03-01",
+    "hasta": "2026-03-08"
+   },
+   "Actividad del período (calculada con lo que registraste): 3 postulaciones enviadas · 0 registros de la red · 1 publicaciones o participaciones · 1 entrevistas · tiempo real 2 h 15 min (estimado 1 h 30 min)."
+  ],
+  [
+   {
+    "desde": "2026-03-01",
+    "hasta": "2026-03-31"
+   },
+   "Actividad del período (calculada con lo que registraste): 5 postulaciones enviadas · 1 registros de la red · 4 publicaciones o participaciones · 2 entrevistas · tiempo real 2 h 15 min (estimado 1 h 30 min)."
+  ],
+  [
+   {
+    "desde": "2025-01-01",
+    "hasta": "2025-01-02"
+   },
+   "Actividad del período (calculada con lo que registraste): 0 postulaciones enviadas · 0 registros de la red · 0 publicaciones o participaciones · 0 entrevistas · tiempo real 0 min (estimado 0 min)."
+  ],
+  [
+   {
+    "desde": "",
+    "hasta": "2026-03-08"
+   },
+   "Indicá el período (desde y hasta) y acá aparece el resumen de lo que hiciste."
+  ]
+ ]
+}
