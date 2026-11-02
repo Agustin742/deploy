@@ -45,7 +45,7 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
 - 2026-11-01: T0.1 done (`a4009db` on `main`). Branch `feat/nextjs-migration` created.
 - 2026-11-02: T1.1–T1.3 done by delegated writer. Stack: Next 16.4, React 19.3, Tailwind 4, TS 5.9, Vitest, zustand. Writer verification: lint ✓, typecheck ✓, test ✓ (17 files / 281 tests), build ✓. Parent spot check: `pnpm test` 281/281 ✓, `pnpm typecheck` ✓. TDD: tests written first (RED at import level), behavior pinned with golden fixtures generated from legacy code.
 - Notable deviations: time-dependent functions take a `today` arg; `hydrate` is non-mutating and tolerates non-objects; view helpers (`esc`, `md`, HTML builders) not ported yet (belong to views).
-- Review (RDD): pending — assessment for range `a4009db..76eff08`.
+- Review (RDD): range `a4009db..76eff08` assessed medium (`slice_budget_reached`); consent granted; START refused with `lens_context_budget_exceeded` (15.5k lines, mostly `pnpm-lock.yaml` + golden JSON fixtures). No authority created. Pending user decision on how to reduce scope.
 
 ## Next step
 Native review of T1.1–T1.3 range, then T1.4 (landing).
