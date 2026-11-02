@@ -23,3 +23,6 @@ Thumbs.db
 *.log
 .vercel/
 .codegraph/
+
+# agent tooling
+.atl/
