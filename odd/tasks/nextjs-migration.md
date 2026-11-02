@@ -47,5 +47,8 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
 - Notable deviations: time-dependent functions take a `today` arg; `hydrate` is non-mutating and tolerates non-objects; view helpers (`esc`, `md`, HTML builders) not ported yet (belong to views).
 - Review (RDD): range `a4009db..76eff08` assessed medium (`slice_budget_reached`); consent granted; START refused with `lens_context_budget_exceeded` (15.5k lines, mostly `pnpm-lock.yaml` + golden JSON fixtures). No authority created. Pending user decision on how to reduce scope.
 
+- 2026-11-02: User agreed to review only the store commit (`dff3959..76eff08`, ~440 lines) and treat scaffold/lockfile/fixtures as not reviewable. Not run yet — session closed.
+
 ## Next step
-Native review of T1.1–T1.3 range, then T1.4 (landing).
+1. Run native review for range `--base-ref dff3959 --committed-only` (store commit).
+2. T1.4 (landing + pricing + theme).
