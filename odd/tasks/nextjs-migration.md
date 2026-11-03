@@ -29,7 +29,7 @@ Out of scope here: DB, auth/roles, AI server calls, downloads, payments (dLocal 
 - [x] T1.2 Port pure domain logic to `src/` with tests first: utils/dates, `guessName`, `redact`, match engine, indicators (VARS), registry definitions, state `blank`/`hydrate` — route: delegated (writer) — commit `dff3959`
 - [x] T1.3 Client state store with `localStorage` persistence (same key, `hydrate` compatible) — route: delegated (writer) — commit `76eff08` (zustand)
 - [x] T1.4 Public landing `/` with plans & pricing by country, theme toggle — route: delegated (writer) — commit `e4c279f`
-- [ ] T1.5 App shell `/app` + tabs: Resumen, Plan, Red, Visibilidad, Empleadores, Experimentos — route: delegated (writer)
+- [x] T1.5 App shell `/app` + tabs: Resumen, Plan, Red, Visibilidad, Empleadores, Experimentos — route: delegated (writer) — commit `af24eff`
 - [ ] T1.6 Postulaciones list + detail drawer, Nueva oferta, Análisis, Mi CV (pdf.js), Búsqueda diaria — route: delegated (writer)
 
 Route evidence: phase 1 touches many non-trivial files (writer trigger) and requires reading the 1160-line legacy file (preparation trigger).
@@ -63,5 +63,13 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
 
 - 2026-11-03: User turned RDD off for this repo (`gentle-ai review mode disable --scope clone`). From here on: no native review; ordinary checks only (test/typecheck/lint/build); delivery under ordinary repository policy.
 
+- 2026-11-03: T1.5 done by delegated writer — commit `af24eff` (33 files, +2517/−4; exceeds the 400-line heuristic because it holds six tabs + shared UI + tests). Features: `app-shell` (tabs domain, ui-store for active tab/week/toast, header, shell), `summary`, `plan`, `registries` (generic list shared by Plan/Red/Visibilidad/Empleadores/Experimentos), `network`, `visibility`, `employers`, `experiments`; `src/shared/ui/` (styles, primitives, `SiteFooter` now shared with landing). Active tab in-memory (legacy parity), fallback to Plan; shell renders only header + "Cargando…" until `loaded`. T1.6 tabs show buttons + "Próximamente" placeholder.
+  - TDD: RED observed for all new domain modules (missing module / `isTabId is not a function`); view tests in `app-shell.test.tsx` were written after components (no RED — deviation from strict TDD).
+  - Checks (writer): test 368/368 ✓, typecheck ✓, lint ✓, build ✓ (`/`, `/app` static). Parent spot check: `pnpm test` 368/368 ✓. Not verified in a browser yet.
+  - Deviations: goal input clamps to 500 on type (legacy on blur); "Salir" links to `/`; minimal `role="status"` toast.
+  - Open: placeholder copy for T1.6 tabs; `/app` page title; should "Salir" reset anything.
+
 ## Next step
-1. T1.5 (app shell `/app` + tabs).
+1. Browser smoke check of `/` and `/app` with existing localStorage data.
+2. T1.6 (Postulaciones, Nueva oferta, Análisis, Mi CV, Búsqueda diaria).
+3. Before the first PR: choose chain strategy (branch is far above 400 authored lines).
