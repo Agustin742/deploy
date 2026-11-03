@@ -30,7 +30,7 @@ Out of scope here: DB, auth/roles, AI server calls, downloads, payments (dLocal 
 - [x] T1.3 Client state store with `localStorage` persistence (same key, `hydrate` compatible) — route: delegated (writer) — commit `76eff08` (zustand)
 - [x] T1.4 Public landing `/` with plans & pricing by country, theme toggle — route: delegated (writer) — commit `e4c279f`
 - [x] T1.5 App shell `/app` + tabs: Resumen, Plan, Red, Visibilidad, Empleadores, Experimentos — route: delegated (writer) — commit `af24eff`
-- [ ] T1.6 Postulaciones list + detail drawer, Nueva oferta, Análisis, Mi CV (pdf.js), Búsqueda diaria — route: delegated (writer)
+- [x] T1.6 Postulaciones list + detail drawer, Nueva oferta, Análisis, Mi CV (pdf.js), Búsqueda diaria — route: delegated (writer) — commits `8815450`, `75b40dc`, `171b28a`
 
 Route evidence: phase 1 touches many non-trivial files (writer trigger) and requires reading the 1160-line legacy file (preparation trigger).
 
@@ -69,7 +69,11 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
   - Deviations: goal input clamps to 500 on type (legacy on blur); "Salir" links to `/`; minimal `role="status"` toast.
   - Open: placeholder copy for T1.6 tabs; `/app` page title; should "Salir" reset anything.
 
+- 2026-11-03: User skipped the browser smoke check (no real users yet).
+- 2026-11-03: T1.6 done by delegated writer in 3 work-unit commits (53 files, +4002/−16): `8815450` applications list + drawer + new offer + shared `matching/ui/match-view`; `75b40dc` analysis + daily search; `171b28a` CV with lazy `pdfjs-dist` 5.4.296 (exact; dynamic import, worker via `new URL(... import.meta.url)`, 15-page cap, mocked in tests) + backup restore via `importBackup`. Placeholder code removed. AI report generation and "Descargar copia" hidden; "Copiar prompt completo" kept (clipboard); stored reports render as React elements.
+  - TDD: RED observed for all domain/infrastructure modules and view tests (missing import); shell integration test written after wiring (gap).
+  - Checks (writer, per commit): test ✓, typecheck ✓, lint ✓, build ✓. Final: 497/497. Parent spot check: `pnpm test` 497/497 ✓, `pnpm build` ✓ (`/`, `/app` static). pdf.js worker not runtime-verified in a browser.
+  - Open: "Descargar copia" → clipboard fallback or hidden?; report fields visibility only with stored report + IA module?; reset Postulaciones filters on tab change?
+
 ## Next step
-1. Browser smoke check of `/` and `/app` with existing localStorage data.
-2. T1.6 (Postulaciones, Nueva oferta, Análisis, Mi CV, Búsqueda diaria).
-3. Before the first PR: choose chain strategy (branch is far above 400 authored lines).
+1. Phase 1 complete. Before the first PR: choose chain strategy (branch is far above 400 authored lines).
