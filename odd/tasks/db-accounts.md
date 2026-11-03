@@ -71,5 +71,8 @@ Route evidence: every task touches several non-trivial files (writer trigger); d
 ## Progress / evidence
 - 2026-11-03: Exploration done (domain map: ~14 collections, all fixed field sets; library research with sources). Feature document created on branch `feat/db-accounts`.
 
+- 2026-11-03: Session closed by the user before confirming the plan. Plan confirmation and pending decisions deferred to the next session.
+
 ## Next step
-1. User confirms the plan → T2.1.
+1. Next session: user reviews/confirms this plan (schema, commands design, task split) → then T2.1.
+2. Later (before T2.4): Neon connection strings + Google OAuth client; prod email provider for magic link.
