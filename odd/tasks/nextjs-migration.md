@@ -49,6 +49,11 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
 
 - 2026-11-02: User agreed to review only the store commit (`dff3959..76eff08`, ~440 lines) and treat scaffold/lockfile/fixtures as not reviewable. Not run yet — session closed.
 
+- 2026-11-03: Native review of `dff3959..b75ffe9` (store + docs, 530 lines, medium, 1 lens: reliability). Consent granted → **approved**, acknowledged, authority burned (lineage `review-c05ca64753b7c247`). Reviewed boundary is now `b75ffe9`. Advisory (non-blocking) findings:
+  - WARNING `R3-update-before-load-clobbers` (`app-store.ts:57-61`): `update`/`saveNow` before `load()` can overwrite saved localStorage data with blank-based state.
+  - SUGGESTION `R3-singleton-test-order-dependence` (`use-app-store.test.tsx:11`): `beforeEach` resets only `loaded`, not `state`.
+  - SUGGESTION `R3-save-failure-unobservable` (`app-store.ts:44-46`): write failures are silent; `importBackup` returns true even if save failed; no flush on page unload.
+
 ## Next step
-1. Run native review for range `--base-ref dff3959 --committed-only` (store commit).
+1. Decide whether to address the advisory findings (esp. update-before-load) before T1.4.
 2. T1.4 (landing + pricing + theme).
