@@ -77,5 +77,8 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
 
 - 2026-11-03: Delivery: user chose to merge everything straight into `main` (no PRs, no chain). Fast-forwarded `main` to `b29cff3`. Repo has no remote; nothing pushed.
 
+- 2026-11-03: Phase order revised with the user: (a) backup downloads via client Blob, (b) DB + accounts, (c) server-side AI with quota and stored reports (needs user identity). Replaces the original "AI before DB" order.
+- 2026-11-03: (a) done on branch `feat/backup-download`, merged to `main`. "Descargar copia" restored: `cv/domain/backup.ts` (legacy file name `radar-postulaciones-<date>.json`, `JSON.stringify(state, null, 1)`), `shared/lib/download.ts` (Blob + temporary link), clipboard fallback as in legacy. TDD: RED observed (3 files, missing modules), GREEN. Checks: test 504/504 ✓, typecheck ✓, lint ✓, build ✓. Resolves the open question about "Descargar copia".
+
 ## Next step
-1. Phase 1 delivered on `main`. Next: Phase 2 (DB) planning in a new feature document.
+1. Phase 2: DB + accounts, in a new feature document.
