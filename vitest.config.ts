@@ -7,6 +7,8 @@ export default defineConfig({
   },
   test: {
     environment: "node",
+    // Cold jsdom + next/link imports can exceed the 5s default under parallel load.
+    testTimeout: 20000,
     include: ["src/**/*.test.{ts,tsx}"],
   },
 });

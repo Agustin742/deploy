@@ -1,7 +1,5 @@
+import { LandingPage } from "@/features/landing/ui/landing-page";
+
 export default function Home() {
-  return (
-    <main className="flex flex-1 items-center justify-center p-8">
-      <h1 className="text-2xl font-semibold">Deploy your Career</h1>
-    </main>
-  );
+  return <LandingPage />;
 }
