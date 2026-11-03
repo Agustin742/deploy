@@ -28,7 +28,7 @@ Out of scope here: DB, auth/roles, AI server calls, downloads, payments (dLocal 
 - [x] T1.1 Scaffold Next.js (App Router, TS strict, Tailwind, ESLint, pnpm) + Vitest; `pnpm build/lint/test` green — route: delegated (writer) — commit `21876b1`
 - [x] T1.2 Port pure domain logic to `src/` with tests first: utils/dates, `guessName`, `redact`, match engine, indicators (VARS), registry definitions, state `blank`/`hydrate` — route: delegated (writer) — commit `dff3959`
 - [x] T1.3 Client state store with `localStorage` persistence (same key, `hydrate` compatible) — route: delegated (writer) — commit `76eff08` (zustand)
-- [ ] T1.4 Public landing `/` with plans & pricing by country, theme toggle — route: delegated (writer)
+- [x] T1.4 Public landing `/` with plans & pricing by country, theme toggle — route: delegated (writer) — commit `e4c279f`
 - [ ] T1.5 App shell `/app` + tabs: Resumen, Plan, Red, Visibilidad, Empleadores, Experimentos — route: delegated (writer)
 - [ ] T1.6 Postulaciones list + detail drawer, Nueva oferta, Análisis, Mi CV (pdf.js), Búsqueda diaria — route: delegated (writer)
 
@@ -56,5 +56,10 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
 
 - 2026-11-03: Fixed findings 1–2 (route: inline, 3 files, already understood) — commit `dfca42b`. `load()` is idempotent; `update`/`saveNow` load saved state before writing; `importBackup` marks loaded; hook test resets full initial state. TDD: 3 new tests RED (goal 10 vs 3, blank overwrite), then GREEN. Checks: `pnpm test` 284/284 ✓, typecheck ✓, lint ✓. Assess vs `b75ffe9`: medium, `under_budget` (54 lines) → pending in slice. Finding 3 (silent save failures, unload flush) deferred to the DB phase.
 
+- 2026-11-03: T1.4 done by delegated writer — commit `e4c279f`. `src/features/landing/` (server `LandingPage`, client `PricingSection`, `ProductCard`, `LandingInfo`) reusing T1.2 `OFERTA`/`offerPrice`/`resolveCountry`; `src/features/theme/` (domain + `ThemeToggle` via `useSyncExternalStore`), key `radar-theme` (verified against `legacy/index.html:1156`), pre-paint init script in `layout.tsx`, legacy color tokens in `globals.css`. Country defaults to AR, not persisted (legacy parity); prices empty → "Precio a confirmar". TDD: RED observed for theme domain (missing module), views written test-first (exact message not captured). Writer checks: test 297/297 ✓, typecheck ✓, lint ✓, build ✓ (`/` static). Parent spot check: `pnpm test` 297/297 ✓.
+  - Deviations: removed `next/font` Geist (legacy font stacks Exo 2 / Source Sans 3, not bundled); `vitest.config.ts` `testTimeout` 20000 (cold `next/link` import timeout); header/footer live in `LandingPage`, not root layout; `/app` 404s until T1.5.
+  - Open: self-host legacy fonts later?
+  - Review: range `b75ffe9..e4c279f` (619 lines, medium, `slice_budget_reached`) — consent **declined** for this candidate. Boundary advances to `e4c279f`.
+
 ## Next step
-1. T1.4 (landing + pricing + theme).
+1. T1.5 (app shell `/app` + tabs).
