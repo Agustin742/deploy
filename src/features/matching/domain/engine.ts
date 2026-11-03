@@ -10,7 +10,7 @@ import { SKILLS, STOP_WORDS, type Skill, type SkillKind } from "./skills";
 
 export const ENG_TXT = ["", "Básico", "Intermedio (B2)", "Avanzado (C1+)"] as const;
 
-const hasSkill = (text: string, skill: Skill): boolean => skill.res.some((r) => r.test(text));
+export const hasSkill = (text: string, skill: Skill): boolean => skill.res.some((r) => r.test(text));
 
 /** Keyword candidates: normalized words of 4+ characters that are not stop words or plain numbers. */
 export const tokens = (t: string): string[] =>

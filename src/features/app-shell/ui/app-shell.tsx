@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { AnalysisTab } from "@/features/analysis/ui/analysis-tab";
 import { ApplicationsTab } from "@/features/applications/ui/applications-tab";
 import { applicationsUi } from "@/features/applications/store/applications-ui";
+import { CvTab } from "@/features/cv/ui/cv-tab";
 import { DailySearchTab } from "@/features/daily-search/ui/daily-search-tab";
 import { EmployersTab } from "@/features/employers/ui/employers-tab";
 import { ExperimentsTab } from "@/features/experiments/ui/experiments-tab";
@@ -13,20 +14,10 @@ import { PlanTab } from "@/features/plan/ui/plan-tab";
 import { appStore, useAppStore } from "@/features/state/store/use-app-store";
 import { SummaryTab } from "@/features/summary/ui/summary-tab";
 import { VisibilityTab } from "@/features/visibility/ui/visibility-tab";
-import { EmptyState } from "@/shared/ui/primitives";
 import { SiteFooter } from "@/shared/ui/site-footer";
 import { isTabId, resolveTab, tabCount, visibleTabs, whoLine, type TabId } from "../domain/tabs";
 import { shellUi, useShellUi } from "../store/ui-store";
 import { AppHeader } from "./app-header";
-
-/** Tabs that belong to a later migration task: the bar keeps its structure, the panel is a stub. */
-function ComingSoon({ label }: { label: string }) {
-  return (
-    <EmptyState title="Próximamente">
-      La sección «{label}» todavía no está disponible en esta versión.
-    </EmptyState>
-  );
-}
 
 export function AppShell() {
   const loaded = useAppStore((s) => s.loaded);
@@ -94,8 +85,8 @@ export function AppShell() {
         return <AnalysisTab onNavigate={navigate} />;
       case "busqueda":
         return <DailySearchTab onNotify={notify} />;
-      default:
-        return <ComingSoon label={visibleTabs(mods).find((t) => t.id === active)?.label ?? ""} />;
+      case "cv":
+        return <CvTab onNotify={notify} />;
     }
   };
 

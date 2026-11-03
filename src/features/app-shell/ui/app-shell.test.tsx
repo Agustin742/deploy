@@ -83,11 +83,19 @@ describe("AppShell", () => {
       expect(tab("Red").getAttribute("aria-current")).toBe("page");
     });
 
-    it("shows a placeholder for the tabs that are not migrated yet", () => {
+    it("renders a real panel for every tab", () => {
       render(<AppShell />);
-      for (const name of ["Mi CV"]) {
+      const headings: Record<string, string> = {
+        Postulaciones: "Postulaciones",
+        "Nueva oferta": "Nueva oferta",
+        Análisis: "Análisis",
+        "Mi CV": "Mi CV",
+        "Búsqueda diaria": "Búsqueda diaria",
+      };
+      for (const [name, heading] of Object.entries(headings)) {
         fireEvent.click(tab(name));
-        expect(screen.getByText("Próximamente")).toBeTruthy();
+        expect(screen.getByRole("heading", { level: 2, name: heading })).toBeTruthy();
+        expect(screen.queryByText("Próximamente")).toBeNull();
       }
     });
 
