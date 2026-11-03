@@ -17,6 +17,7 @@
   --warn: #a86a00;
   --bad: #bb3a2b;
   --info: #0360fe;
+  --shadow: 0 12px 40px rgba(30, 30, 30, 0.18);
   --f-display: "Exo 2", "Segoe UI", system-ui, sans-serif;
   --f-body: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -36,6 +37,7 @@
     --warn: #e0a63a;
     --bad: #f07a6a;
     --info: #6cafff;
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
     color-scheme: dark;
   }
 }
@@ -53,6 +55,7 @@
   --warn: #e0a63a;
   --bad: #f07a6a;
   --info: #6cafff;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
   color-scheme: dark;
 }
 

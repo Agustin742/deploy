@@ -85,10 +85,21 @@ describe("AppShell", () => {
 
     it("shows a placeholder for the tabs that are not migrated yet", () => {
       render(<AppShell />);
-      for (const name of ["Postulaciones", "Nueva oferta", "Análisis", "Mi CV", "Búsqueda diaria"]) {
+      for (const name of ["Análisis", "Mi CV", "Búsqueda diaria"]) {
         fireEvent.click(tab(name));
         expect(screen.getByText("Próximamente")).toBeTruthy();
       }
+    });
+
+    it("opens the new application in its drawer after saving an offer, and closes the drawer when changing tab", () => {
+      render(<AppShell />);
+      fireEvent.click(tab("Nueva oferta"));
+      fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
+      fireEvent.click(screen.getByRole("button", { name: "Guardar postulación" }));
+      expect(screen.getByRole("complementary", { name: "Detalle de postulación" })).toBeTruthy();
+      expect(screen.getByRole("status").textContent).toBe("Postulación guardada");
+      fireEvent.click(tab("Plan"));
+      expect(screen.queryByRole("complementary")).toBeNull();
     });
 
     it("lets the summary shortcuts navigate", () => {

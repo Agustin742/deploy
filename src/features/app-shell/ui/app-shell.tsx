@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { ApplicationsTab } from "@/features/applications/ui/applications-tab";
+import { applicationsUi } from "@/features/applications/store/applications-ui";
 import { EmployersTab } from "@/features/employers/ui/employers-tab";
 import { ExperimentsTab } from "@/features/experiments/ui/experiments-tab";
+import { NewOfferTab } from "@/features/new-offer/ui/new-offer-tab";
 import { NetworkTab } from "@/features/network/ui/network-tab";
 import { PlanTab } from "@/features/plan/ui/plan-tab";
 import { appStore, useAppStore } from "@/features/state/store/use-app-store";
@@ -42,11 +45,14 @@ export function AppShell() {
 
   const go = (tab: TabId) => {
     shellUi.getState().setTab(tab);
+    applicationsUi.getState().close();
     window.scrollTo(0, 0);
   };
   const navigate = (tab: string) => {
     if (isTabId(tab)) go(tab);
   };
+
+  const notify = (message: string) => shellUi.getState().showToast(message);
 
   const panel = () => {
     switch (active) {
@@ -59,6 +65,19 @@ export function AppShell() {
             onPlanWeekChange={(w) => shellUi.getState().setPlanWeek(w)}
             onNavigate={navigate}
             onNotify={(m) => shellUi.getState().showToast(m)}
+          />
+        );
+      case "postulaciones":
+        return <ApplicationsTab onNavigate={navigate} onNotify={notify} />;
+      case "nueva":
+        return (
+          <NewOfferTab
+            onNavigate={navigate}
+            onNotify={notify}
+            onSaved={(id) => {
+              go("postulaciones");
+              applicationsUi.getState().open(id);
+            }}
           />
         );
       case "red":
