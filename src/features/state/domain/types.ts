@@ -18,6 +18,8 @@ export interface Platform {
   id: string;
   name: string;
   url: string;
+  /** True for pages the person added (the initial ones come from `PLATS`). */
+  custom?: boolean;
 }
 
 export interface MatchComponent {

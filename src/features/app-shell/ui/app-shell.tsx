@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { AnalysisTab } from "@/features/analysis/ui/analysis-tab";
 import { ApplicationsTab } from "@/features/applications/ui/applications-tab";
 import { applicationsUi } from "@/features/applications/store/applications-ui";
+import { DailySearchTab } from "@/features/daily-search/ui/daily-search-tab";
 import { EmployersTab } from "@/features/employers/ui/employers-tab";
 import { ExperimentsTab } from "@/features/experiments/ui/experiments-tab";
 import { NewOfferTab } from "@/features/new-offer/ui/new-offer-tab";
@@ -88,6 +90,10 @@ export function AppShell() {
         return <EmployersTab />;
       case "experimentos":
         return <ExperimentsTab />;
+      case "analisis":
+        return <AnalysisTab onNavigate={navigate} />;
+      case "busqueda":
+        return <DailySearchTab onNotify={notify} />;
       default:
         return <ComingSoon label={visibleTabs(mods).find((t) => t.id === active)?.label ?? ""} />;
     }

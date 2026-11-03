@@ -85,7 +85,7 @@ describe("AppShell", () => {
 
     it("shows a placeholder for the tabs that are not migrated yet", () => {
       render(<AppShell />);
-      for (const name of ["Análisis", "Mi CV", "Búsqueda diaria"]) {
+      for (const name of ["Mi CV"]) {
         fireEvent.click(tab(name));
         expect(screen.getByText("Próximamente")).toBeTruthy();
       }
