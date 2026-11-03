@@ -61,5 +61,7 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
   - Open: self-host legacy fonts later?
   - Review: range `b75ffe9..e4c279f` (619 lines, medium, `slice_budget_reached`) — consent **declined** for this candidate. Boundary advances to `e4c279f`.
 
+- 2026-11-03: User turned RDD off for this repo (`gentle-ai review mode disable --scope clone`). From here on: no native review; ordinary checks only (test/typecheck/lint/build); delivery under ordinary repository policy.
+
 ## Next step
 1. T1.5 (app shell `/app` + tabs).
