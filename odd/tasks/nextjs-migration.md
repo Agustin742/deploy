@@ -54,6 +54,7 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
   - SUGGESTION `R3-singleton-test-order-dependence` (`use-app-store.test.tsx:11`): `beforeEach` resets only `loaded`, not `state`.
   - SUGGESTION `R3-save-failure-unobservable` (`app-store.ts:44-46`): write failures are silent; `importBackup` returns true even if save failed; no flush on page unload.
 
+- 2026-11-03: Fixed findings 1–2 (route: inline, 3 files, already understood) — commit `dfca42b`. `load()` is idempotent; `update`/`saveNow` load saved state before writing; `importBackup` marks loaded; hook test resets full initial state. TDD: 3 new tests RED (goal 10 vs 3, blank overwrite), then GREEN. Checks: `pnpm test` 284/284 ✓, typecheck ✓, lint ✓. Assess vs `b75ffe9`: medium, `under_budget` (54 lines) → pending in slice. Finding 3 (silent save failures, unload flush) deferred to the DB phase.
+
 ## Next step
-1. Decide whether to address the advisory findings (esp. update-before-load) before T1.4.
-2. T1.4 (landing + pricing + theme).
+1. T1.4 (landing + pricing + theme).
