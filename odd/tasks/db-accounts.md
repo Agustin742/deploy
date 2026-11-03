@@ -11,7 +11,7 @@ All state lives in one browser (`radar-postulaciones-v1`). There is no identity,
 - Login: **Google OAuth + email magic link**. No passwords.
 - Data model: **normalized tables from the start** (not one JSONB blob per user).
 - No data importer from `localStorage` (no real users). The backup JSON export/import keeps working and becomes the way to move old data in.
-- Engram note: saving the login decision to Engram failed twice (`repository_binding_unavailable`); this document is the record. Mirror pending.
+- Engram note: saving the login decision failed twice (`repository_binding_unavailable`), then Engram recovered; mirror saved under `odd/db-accounts/tasks` (includes the login decision).
 
 ## Scope
 In: DB foundation, schema, repository (load/replace state), auth (Google + magic link, sign-in page, `/app` protection, sign-out), per-entity server writes, client store synced with the server, removal of `localStorage` app-state persistence.
