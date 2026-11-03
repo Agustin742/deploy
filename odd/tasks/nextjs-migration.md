@@ -75,5 +75,7 @@ Route evidence: phase 1 touches many non-trivial files (writer trigger) and requ
   - Checks (writer, per commit): test ✓, typecheck ✓, lint ✓, build ✓. Final: 497/497. Parent spot check: `pnpm test` 497/497 ✓, `pnpm build` ✓ (`/`, `/app` static). pdf.js worker not runtime-verified in a browser.
   - Open: "Descargar copia" → clipboard fallback or hidden?; report fields visibility only with stored report + IA module?; reset Postulaciones filters on tab change?
 
+- 2026-11-03: Delivery: user chose to merge everything straight into `main` (no PRs, no chain). Fast-forwarded `main` to `b29cff3`. Repo has no remote; nothing pushed.
+
 ## Next step
-1. Phase 1 complete. Before the first PR: choose chain strategy (branch is far above 400 authored lines).
+1. Phase 1 delivered on `main`. Next: Phase 2 (DB) planning in a new feature document.
