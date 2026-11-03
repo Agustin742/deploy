@@ -5,10 +5,14 @@ import { newApp } from "@/features/applications/domain/applications";
 import { JD_EXAMPLE } from "@/features/matching/domain/example";
 import { blank } from "@/features/state/domain/state";
 import { appStore } from "@/features/state/store/use-app-store";
+import { copyToClipboard } from "@/shared/lib/clipboard";
+import { downloadText } from "@/shared/lib/download";
 import { extractPdfText } from "../infrastructure/extract-pdf-text";
 import { CvTab } from "./cv-tab";
 
 vi.mock("../infrastructure/extract-pdf-text", () => ({ extractPdfText: vi.fn() }));
+vi.mock("@/shared/lib/download", () => ({ downloadText: vi.fn() }));
+vi.mock("@/shared/lib/clipboard", () => ({ copyToClipboard: vi.fn() }));
 
 const CV = "Ana Pérez\nFrontend developer con experiencia en React, TypeScript, HTML y CSS. Trabajo en equipo y git.";
 const state = () => appStore.getState().state;
@@ -28,6 +32,8 @@ describe("CvTab", () => {
     appStore.setState(appStore.getInitialState(), true);
     appStore.getState().load();
     vi.mocked(extractPdfText).mockReset();
+    vi.mocked(downloadText).mockReset();
+    vi.mocked(copyToClipboard).mockReset();
   });
   afterEach(() => {
     appStore.getState().saveNow();
@@ -36,12 +42,12 @@ describe("CvTab", () => {
   });
 
   describe("form", () => {
-    it("asks for the CV when there is none, and hides the download and AI actions", () => {
+    it("asks for the CV when there is none and offers both backup actions", () => {
       renderTab();
       expect(screen.getByRole("heading", { level: 2, name: "Mi CV" })).toBeTruthy();
       expect(screen.getByText("Cargá tu CV para activar el match")).toBeTruthy();
       expect(screen.getByText(/cuando pegues tu CV, acá aparecen las skills/i)).toBeTruthy();
-      expect(screen.queryByRole("button", { name: "Descargar copia" })).toBeNull();
+      expect(screen.getByRole("button", { name: "Descargar copia" })).toBeTruthy();
       expect(screen.getByText("Restaurar copia")).toBeTruthy();
     });
 
@@ -147,6 +153,35 @@ describe("CvTab", () => {
       upload("Restaurar copia", new File([JSON.stringify(backup)], "copia.json", { type: "application/json" }));
       await waitFor(() => expect(onNotify).toHaveBeenCalledWith("Copia restaurada"));
       expect(state().apps.map((a) => a.empresa)).toEqual(["Restaurada"]);
+    });
+
+    it("downloads the whole state as a dated JSON backup", () => {
+      appStore.getState().update((s) => ({ ...s, goal: 5, goalSet: true }), { immediate: true });
+      vi.mocked(downloadText).mockReturnValue(true);
+      const { onNotify } = renderTab();
+      fireEvent.click(screen.getByRole("button", { name: "Descargar copia" }));
+      const [filename, data, mime] = vi.mocked(downloadText).mock.calls[0];
+      expect(filename).toMatch(/^radar-postulaciones-\d{4}-\d{2}-\d{2}\.json$/);
+      expect(JSON.parse(data)).toEqual(state());
+      expect(mime).toBe("application/json");
+      expect(onNotify).toHaveBeenCalledWith("Copia lista");
+    });
+
+    it("falls back to the clipboard when the download is not possible", async () => {
+      vi.mocked(downloadText).mockReturnValue(false);
+      vi.mocked(copyToClipboard).mockResolvedValue(true);
+      const { onNotify } = renderTab();
+      fireEvent.click(screen.getByRole("button", { name: "Descargar copia" }));
+      await waitFor(() => expect(onNotify).toHaveBeenCalledWith("Copia copiada al portapapeles"));
+      expect(JSON.parse(vi.mocked(copyToClipboard).mock.calls[0][0])).toEqual(state());
+    });
+
+    it("says so when neither the download nor the clipboard work", async () => {
+      vi.mocked(downloadText).mockReturnValue(false);
+      vi.mocked(copyToClipboard).mockResolvedValue(false);
+      const { onNotify } = renderTab();
+      fireEvent.click(screen.getByRole("button", { name: "Descargar copia" }));
+      await waitFor(() => expect(onNotify).toHaveBeenCalledWith("No se pudo descargar"));
     });
 
     it("rejects a file that is not a valid backup", async () => {

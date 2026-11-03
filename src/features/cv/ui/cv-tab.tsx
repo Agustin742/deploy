@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { recalcAll } from "@/features/applications/domain/edit";
 import { hasCv } from "@/features/matching/domain/engine";
 import { appStore, useAppStore } from "@/features/state/store/use-app-store";
+import { copyToClipboard } from "@/shared/lib/clipboard";
 import { todayIso } from "@/shared/lib/dates";
+import { downloadText } from "@/shared/lib/download";
+import { backupFile } from "../domain/backup";
 import { recognizedSkills } from "../domain/cv-skills";
 import { parseBackupText, setCvText, setProfileField } from "../domain/profile-edit";
 import { isPdf, readCvFile, READING_PDF_MESSAGE } from "../domain/read-cv-file";
@@ -51,6 +54,15 @@ export function CvTab({ onNotify }: { onNotify: (message: string) => void }) {
       onRestoreFile={async (file) => {
         const restored = appStore.getState().importBackup(parseBackupText(await file.text()));
         onNotify(restored ? "Copia restaurada" : "El archivo no es una copia válida");
+      }}
+      onDownloadBackup={async () => {
+        const { filename, data } = backupFile(appStore.getState().state, todayIso());
+        if (downloadText(filename, data, "application/json")) {
+          onNotify("Copia lista");
+          return;
+        }
+        // Same fallback as the legacy artifact when downloads are not available.
+        onNotify((await copyToClipboard(data)) ? "Copia copiada al portapapeles" : "No se pudo descargar");
       }}
     />
   );

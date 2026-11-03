@@ -16,6 +16,7 @@ export interface CvViewProps {
   onCvFile: (file: File) => void;
   onRecalcAll: () => void;
   onRestoreFile: (file: File) => void;
+  onDownloadBackup: () => void;
 }
 
 /** File picker styled as a button; the input stays focusable for keyboard users. */
@@ -33,7 +34,17 @@ function FileButton({ label, accept, onFile }: { label: string; accept: string; 
   );
 }
 
-export function CvView({ profile: p, hasCv, skills, saved, onField, onCvFile, onRecalcAll, onRestoreFile }: CvViewProps) {
+export function CvView({
+  profile: p,
+  hasCv,
+  skills,
+  saved,
+  onField,
+  onCvFile,
+  onRecalcAll,
+  onRestoreFile,
+  onDownloadBackup,
+}: CvViewProps) {
   return (
     <>
       <PageHead title="Mi CV">
@@ -147,6 +158,9 @@ export function CvView({ profile: p, hasCv, skills, saved, onField, onCvFile, on
               Tus datos viven solo en este navegador. La copia incluye todo lo que cargaste (CV, registro de la red y objetivos): guardala en un lugar privado.
             </p>
             <div className={row}>
+              <button type="button" className={btn} onClick={onDownloadBackup}>
+                Descargar copia
+              </button>
               <FileButton label="Restaurar copia" accept=".json,application/json" onFile={onRestoreFile} />
             </div>
           </div>
