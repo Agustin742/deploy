@@ -8,7 +8,7 @@ describe("useAppStore (browser localStorage)", () => {
   beforeEach(() => {
     vi.useFakeTimers();
     window.localStorage.clear();
-    appStore.setState({ loaded: false });
+    appStore.setState(appStore.getInitialState(), true);
   });
   afterEach(() => vi.useRealTimers());
 

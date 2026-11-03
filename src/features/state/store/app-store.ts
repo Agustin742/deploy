@@ -41,7 +41,15 @@ export function createAppStore(options: AppStoreOptions = {}) {
   const today = options.today ?? todayIso;
 
   return createStore<AppStoreState>()((set, get) => {
+    // Idempotent: once loaded, the in-memory state is the source of truth.
+    // Re-reading storage would drop edits still waiting on the debounce.
+    const load = () => {
+      if (get().loaded) return;
+      set({ state: loadState(getStorage(), today()), loaded: true });
+    };
     const writeNow = () => {
+      // Never persist the initial blank state over data that was not read yet.
+      load();
       saveState(getStorage(), get().state);
     };
     const writeDebounced = debounce(writeNow, options.debounceMs ?? SAVE_DEBOUNCE_MS);
@@ -53,8 +61,9 @@ export function createAppStore(options: AppStoreOptions = {}) {
     return {
       state: withSyncedName(blank()),
       loaded: false,
-      load: () => set({ state: loadState(getStorage(), today()), loaded: true }),
+      load,
       update: (recipe, opts) => {
+        load();
         set({ state: recipe(get().state) });
         if (opts?.immediate) saveNow();
         else writeDebounced();
@@ -63,7 +72,7 @@ export function createAppStore(options: AppStoreOptions = {}) {
       importBackup: (raw) => {
         const candidate = raw as { apps?: unknown } | null;
         if (!candidate || !Array.isArray(candidate.apps)) return false;
-        set({ state: withSyncedName(hydrate(candidate, today())) });
+        set({ state: withSyncedName(hydrate(candidate, today())), loaded: true });
         saveNow();
         return true;
       },

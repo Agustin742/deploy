@@ -46,6 +46,38 @@ describe("app store", () => {
     expect(setItem).not.toHaveBeenCalled();
   });
 
+  describe("writes before load", () => {
+    const savedSample = () => JSON.stringify({ ...blank(), ...sample });
+
+    it("applies an update before load on top of the saved state, not the blank one", () => {
+      const { storage, data } = memoryStorage({ [STORAGE_KEY]: savedSample() });
+      const store = createAppStore({ storage: () => storage, today: () => TODAY });
+      store.getState().update(setGoal(3));
+      vi.advanceTimersByTime(250);
+      const persisted = JSON.parse(data[STORAGE_KEY]);
+      expect(persisted.apps).toHaveLength(7);
+      expect(persisted.goal).toBe(3);
+      expect(store.getState().loaded).toBe(true);
+    });
+
+    it("does not overwrite saved data with the blank state when saveNow runs before load", () => {
+      const { storage, data } = memoryStorage({ [STORAGE_KEY]: savedSample() });
+      const store = createAppStore({ storage: () => storage, today: () => TODAY });
+      store.getState().saveNow();
+      expect(JSON.parse(data[STORAGE_KEY]).apps).toHaveLength(7);
+    });
+
+    it("keeps an earlier update when load is called afterwards", () => {
+      const { storage, data } = memoryStorage({ [STORAGE_KEY]: savedSample() });
+      const store = createAppStore({ storage: () => storage, today: () => TODAY });
+      store.getState().update(setGoal(3));
+      store.getState().load();
+      expect(store.getState().state.goal).toBe(3);
+      vi.advanceTimersByTime(250);
+      expect(JSON.parse(data[STORAGE_KEY]).goal).toBe(3);
+    });
+  });
+
   it("applies updates immediately in memory and saves after the debounce", () => {
     const { storage, setItem, data } = memoryStorage();
     const store = createAppStore({ storage: () => storage, today: () => TODAY });
