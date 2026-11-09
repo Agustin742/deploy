@@ -1,0 +1,23 @@
+# Local development database. Production uses Hostinger MySQL.
+# Started by `pnpm dev:local`; data persists in the `mysql-data` volume.
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: deploy_your_career
+      MYSQL_USER: dyc
+      MYSQL_PASSWORD: dyc
+      MYSQL_ROOT_PASSWORD: root
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-udyc", "-pdyc"]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  mysql-data:
