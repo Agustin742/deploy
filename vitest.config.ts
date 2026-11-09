@@ -27,6 +27,8 @@ export default defineConfig({
           environment: "node",
           include: ["src/**/*.db.test.ts"],
           globalSetup: ["src/shared/db/testing/global-setup.ts"],
+          // All files share one database and truncate it between tests, so they must not overlap.
+          fileParallelism: false,
           testTimeout: 30000,
           hookTimeout: 30000,
         },
