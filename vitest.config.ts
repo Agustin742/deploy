@@ -1,14 +1,36 @@
 import path from "node:path";
 import { defineConfig } from "vitest/config";
 
+const alias = { "@": path.resolve(__dirname, "src") };
+
 export default defineConfig({
-  resolve: {
-    alias: { "@": path.resolve(__dirname, "src") },
-  },
+  resolve: { alias },
   test: {
-    environment: "node",
-    // Cold jsdom + next/link imports can exceed the 5s default under parallel load.
-    testTimeout: 20000,
-    include: ["src/**/*.test.{ts,tsx}"],
+    projects: [
+      {
+        // Fast, hermetic unit tests (no Docker).
+        extends: true,
+        test: {
+          name: "unit",
+          environment: "node",
+          // Cold jsdom + next/link imports can exceed the 5s default under parallel load.
+          testTimeout: 20000,
+          include: ["src/**/*.test.{ts,tsx}"],
+          exclude: ["**/node_modules/**", "src/**/*.db.test.ts"],
+        },
+      },
+      {
+        // Database tests: one real MySQL container per run (Docker required).
+        extends: true,
+        test: {
+          name: "db",
+          environment: "node",
+          include: ["src/**/*.db.test.ts"],
+          globalSetup: ["src/shared/db/testing/global-setup.ts"],
+          testTimeout: 30000,
+          hookTimeout: 30000,
+        },
+      },
+    ],
   },
 });
