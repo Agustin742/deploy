@@ -50,7 +50,7 @@ Out: AI server calls and quota (next phase), payments, owner/admin role, redesig
 
 ## Tasks
 - [x] T2.1 DB foundation: deps, `db` factory (mysql2 pool) + Testcontainers MySQL test harness, drizzle-kit config, env schema (`DATABASE_URL`), first empty migration runs in tests — route: delegated (writer)
-- [ ] T2.2 Schema: Better Auth tables + all domain tables above, migration generated — route: delegated (writer)
+- [x] T2.2 Schema: Better Auth tables + all domain tables above, migration generated — route: delegated (writer)
 - [ ] T2.3 Repository: `loadState` / `replaceState` with fixture round-trip tests — route: delegated (writer)
 - [ ] T2.4 Auth: Better Auth config, Google + magic link (console sender), route handler, `proxy.ts`, `/ingresar` page, `/app` session gate, "Salir" sign-out — route: delegated (writer)
 - [ ] T2.5 Commands: typed per-entity commands + server actions applying them at row level, authorized by session — route: delegated (writer)
@@ -82,6 +82,8 @@ Route evidence: every task touches several non-trivial files (writer trigger); d
 
 - 2026-11-09: T2.1 done (commit 52de195). RED: db/env tests failed (missing modules, global-setup not found). GREEN: pnpm test 48 files / 511 tests pass (db project: 4 tests vs real MySQL), typecheck, lint, build pass. Installed: drizzle-orm 0.45.4, mysql2 3.24.6, drizzle-kit 0.31.11, @testcontainers/mysql 12.2.1. Test image: mysql:8.0 (Hostinger major unverified). Vitest projects: unit + db (*.db.test.ts). First migration drizzle/0000_init.sql is a no-op.
 
+- 2026-11-09: T2.2 done (commit 26e189b). RED: schema.db.test.ts failed (module ./index missing), then a first schema failed 4 tests (TEXT columns without default). GREEN: pnpm test 49 files / 518 tests, typecheck, lint, build pass. Installed better-auth 1.7.18 + @better-auth/drizzle-adapter 1.7.18 (exact). Auth schema: `npx auth@latest generate` hung (killed after ~3 min), so src/shared/db/schema/auth-schema.ts was written by hand in the CLI's MySQL shape and checked field by field against getAuthTables() of the installed package (user, session, account, verification; varchar(36) ids, fsp 3 timestamps, snake_case columns, camelCase keys). Layout: domain tables live in src/features/<feature>/infrastructure/schema.ts, re-exported from src/shared/db/schema/index.ts (drizzle.config now points there; shared helpers in schema/columns.ts); relative imports because drizzle-kit does not resolve the alias. Migration drizzle/0001_*.sql (25 tables). Mapping decisions: interviews PK (user_id, application_id, id) and checklist PK (user_id, application_id, item_key) so duplicate ids across applications in old backups cannot collide; every ordered collection has `position`; short strings varchar(255) default '', dates varchar(32) default '' (tolerates legacy values), TEXT/MEDIUMTEXT use expression default ('') because MySQL rejects literal TEXT defaults (needs MySQL 8.0.13+ / MariaDB 10.2.1+); cv, jd, report are mediumtext; `pre` -> application_checklist rows, `metas` -> plan_targets, `contactos` dropped. Unverified: Hostinger server flavor/version (MySQL vs MariaDB); T2.3 must drop orphan checks whose platform no longer exists and coerce missing legacy fields to ''.
+
 ## Next step
-1. T2.2 schema (Docker Desktop running for tests).
+1. T2.3 repository: `loadState` / `replaceState` with fixture round-trip tests (Docker Desktop running).
 2. Before T2.4: Google OAuth client. Before deploy: Hostinger MySQL credentials, verify Node app ↔ MySQL on Hostinger, Resend key + domain.
