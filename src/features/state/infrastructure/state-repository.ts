@@ -5,7 +5,10 @@ import { draftSlice } from "@/features/new-offer/infrastructure/state-slice";
 import { planSlice } from "@/features/plan/infrastructure/state-slice";
 import { profileSlice } from "@/features/profile/infrastructure/state-slice";
 import { registriesSlice } from "@/features/registries/infrastructure/state-slice";
+import { eq } from "drizzle-orm";
+import { profiles } from "@/features/profile/infrastructure/schema";
 import type { Database } from "@/shared/db/client";
+import type { DbTransaction } from "@/shared/db/rows";
 import { hydrate } from "../domain/state";
 import type { AppState } from "../domain/types";
 import { withSyncedName } from "../store/persistence";
@@ -43,10 +46,22 @@ export async function loadState(db: Database, userId: string): Promise<AppState>
  * failure the previous state stays intact. Only rows of `userId` are touched.
  */
 export async function replaceState(db: Database, userId: string, state: AppState): Promise<void> {
+  await db.transaction((tx) => replaceStateIn(tx, userId, state));
+}
+
+/** `replaceState` inside a transaction the caller already owns (e.g. a command batch). */
+export async function replaceStateIn(tx: DbTransaction, userId: string, state: AppState): Promise<void> {
   // Hydrating first fills defaults, so sparse backups (older shapes) never reach the row mappers.
   const full = hydrate(state);
-  await db.transaction(async (tx) => {
-    for (const slice of slices) await slice.clear(tx, userId);
-    for (const slice of slices) await slice.write(tx, userId, full);
-  });
+  for (const slice of slices) await slice.clear(tx, userId);
+  for (const slice of slices) await slice.write(tx, userId, full);
+}
+
+/**
+ * Row-level writes need the singleton rows to exist, and `loadState` treats a missing profile row as
+ * "nothing saved". So before a user's first change, the blank state is written out as rows.
+ */
+export async function ensureStateRows(tx: DbTransaction, userId: string): Promise<void> {
+  const [saved] = await tx.select({ userId: profiles.userId }).from(profiles).where(eq(profiles.userId, userId));
+  if (!saved) await replaceStateIn(tx, userId, withSyncedName(hydrate({})));
 }
