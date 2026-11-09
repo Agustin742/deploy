@@ -1,7 +1,11 @@
 import path from "node:path";
 import { defineConfig } from "vitest/config";
 
-const alias = { "@": path.resolve(__dirname, "src") };
+const alias = {
+  "@": path.resolve(__dirname, "src"),
+  // `server-only` throws outside Next's react-server condition; tests run on the server side.
+  "server-only": path.resolve(__dirname, "src/shared/testing/server-only-stub.ts"),
+};
 
 export default defineConfig({
   resolve: { alias },

@@ -44,7 +44,7 @@ describe("AppShell", () => {
       ]);
       expect(tab("Resumen").getAttribute("aria-current")).toBe("page");
       expect(screen.getByRole("heading", { level: 2, name: "Resumen" })).toBeTruthy();
-      expect(screen.getByRole("link", { name: "Salir" }).getAttribute("href")).toBe("/");
+      expect(screen.getByRole("button", { name: "Salir" })).toBeTruthy();
       expect(screen.getByRole("button", { name: /Modo/ })).toBeTruthy();
       expect(screen.getByText(/no garantiza empleo ni resultados/)).toBeTruthy();
     });

@@ -1,3 +1,4 @@
+import "server-only";
 import { drizzle, type MySql2Database } from "drizzle-orm/mysql2";
 import { createPool } from "mysql2/promise";
 

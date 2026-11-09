@@ -1,6 +1,5 @@
-import Link from "next/link";
+import { SignOutButton } from "@/features/auth/ui/sign-out-button";
 import { ThemeToggle } from "@/features/theme/ui/theme-toggle";
-import { btn } from "@/shared/ui/styles";
 import type { TabId } from "../domain/tabs";
 
 export interface HeaderTab {
@@ -50,9 +49,7 @@ export function AppHeader({ who, tabs, active, onSelect }: AppHeaderProps) {
       ) : (
         <div className="flex-1" />
       )}
-      <Link href="/" className={btn}>
-        Salir
-      </Link>
+      <SignOutButton />
       <ThemeToggle />
     </header>
   );
