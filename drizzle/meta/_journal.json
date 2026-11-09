@@ -8,6 +8,13 @@
       "when": 1794249765527,
       "tag": "0000_init",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1794250891672,
+      "tag": "0001_abnormal_power_pack",
+      "breakpoints": true
     }
   ]
 }
