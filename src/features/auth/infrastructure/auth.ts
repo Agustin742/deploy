@@ -1,6 +1,5 @@
 import "server-only";
-import { createDb } from "@/shared/db/client";
-import { readDatabaseUrl } from "@/shared/db/env";
+import { getDb } from "@/shared/db/get-db";
 import { readAuthEnv } from "./auth-env";
 import { consoleMagicLinkSender } from "./console-magic-link-sender";
 import { createAuth, type Auth } from "./create-auth";
@@ -13,7 +12,7 @@ let instance: Auth | undefined;
  */
 export function getAuth(): Auth {
   instance ??= createAuth({
-    db: createDb(readDatabaseUrl()).db,
+    db: getDb(),
     ...readAuthEnv(),
     // TODO(deploy): swap for the Resend adapter in production.
     sender: consoleMagicLinkSender,
