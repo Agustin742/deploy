@@ -11,7 +11,7 @@ import type { Database } from "@/shared/db/client";
 import type { DbTransaction } from "@/shared/db/rows";
 import { hydrate } from "../domain/state";
 import type { AppState } from "../domain/types";
-import { withSyncedName } from "../store/persistence";
+import { withSyncedName } from "../domain/with-synced-name";
 import type { StateSlice } from "./state-slice";
 
 /**

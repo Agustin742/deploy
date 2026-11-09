@@ -7,7 +7,7 @@ import { blank, hydrate } from "../domain/state";
 import sample from "../domain/__fixtures__/sample-state.json";
 import golden from "../domain/__fixtures__/legacy-hydrate.json";
 import type { AppState } from "../domain/types";
-import { withSyncedName } from "../store/persistence";
+import { withSyncedName } from "../domain/with-synced-name";
 import { loadState, replaceState } from "./state-repository";
 
 const now = new Date();
