@@ -2,7 +2,9 @@
 import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { JD_EXAMPLE } from "@/features/matching/domain/example";
-import type { Application, Profile } from "@/features/state/domain/types";
+import { blank } from "@/features/state/domain/state";
+import type { AppState, Application, Profile } from "@/features/state/domain/types";
+import { resetAppStore, sentCommands } from "@/features/state/store/testing";
 import { appStore } from "@/features/state/store/use-app-store";
 import { todayIso } from "@/shared/lib/dates";
 import { newApp } from "../domain/applications";
@@ -14,12 +16,9 @@ const TODAY = todayIso();
 const CV = "Ana Pérez\nFrontend developer con experiencia en React, TypeScript, HTML y CSS. Trabajo en equipo y git.";
 
 function seed(apps: Application[], profile: Partial<Profile> = { cv: CV }) {
-  const store = appStore.getState();
-  store.load();
-  store.update((s) => ({ ...s, apps, profile: { ...s.profile, ...profile } }), { immediate: true });
-  if (apps.some((a) => a.jd)) {
-    store.update((s) => apps.reduce((acc, a) => recalcOne(acc, a.id, TODAY), s), { immediate: true });
-  }
+  let next: AppState = { ...blank(), apps, profile: { ...blank().profile, ...profile } };
+  if (apps.some((a) => a.jd)) next = apps.reduce((acc, a) => recalcOne(acc, a.id, TODAY), next);
+  resetAppStore(next);
 }
 
 const state = () => appStore.getState().state;
@@ -37,12 +36,10 @@ function renderTab() {
 
 describe("ApplicationsTab", () => {
   beforeEach(() => {
-    window.localStorage.clear();
-    appStore.setState(appStore.getInitialState(), true);
+    resetAppStore();
     applicationsUi.setState(applicationsUi.getInitialState(), true);
   });
   afterEach(() => {
-    appStore.getState().saveNow();
     cleanup();
     vi.restoreAllMocks();
   });
@@ -91,13 +88,13 @@ describe("ApplicationsTab", () => {
       expect(within(screen.getAllByRole("row")[1]).getByText("Acme")).toBeTruthy();
     });
 
-    it("changes the status from the row and saves it right away", () => {
+    it("changes the status from the row and saves it right away", async () => {
       seed([acme()]);
       renderTab();
       const row = screen.getAllByRole("row")[1];
       fireEvent.change(within(row).getByLabelText("Estado"), { target: { value: "Oferta" } });
       expect(state().apps[0].estado).toBe("Oferta");
-      expect(JSON.parse(window.localStorage.getItem("radar-postulaciones-v1") ?? "{}").apps[0].estado).toBe("Oferta");
+      await waitFor(() => expect(sentCommands()).toEqual([{ type: "app.setFields", id: "a", fields: { estado: "Oferta" } }]));
       expect(screen.queryByRole("complementary")).toBeNull();
     });
 

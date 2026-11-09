@@ -3,6 +3,7 @@ import { cleanup, fireEvent, render, screen, within } from "@testing-library/rea
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { newApp } from "@/features/applications/domain/applications";
 import type { Application, MatchSuccess } from "@/features/state/domain/types";
+import { resetAppStore } from "@/features/state/store/testing";
 import { appStore } from "@/features/state/store/use-app-store";
 import { AnalysisTab } from "./analysis-tab";
 
@@ -26,17 +27,14 @@ const app = (id: string, m: MatchSuccess | null): Application => newApp({ id, ma
 
 function seed(apps: Application[], cv = "") {
   const store = appStore.getState();
-  store.load();
   store.update((s) => ({ ...s, apps, profile: { ...s.profile, cv } }), { immediate: true });
 }
 
 describe("AnalysisTab", () => {
   beforeEach(() => {
-    window.localStorage.clear();
-    appStore.setState(appStore.getInitialState(), true);
+    resetAppStore();
   });
   afterEach(() => {
-    appStore.getState().saveNow();
     cleanup();
   });
 

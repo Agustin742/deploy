@@ -15,12 +15,14 @@ import { appStore, useAppStore } from "@/features/state/store/use-app-store";
 import { SummaryTab } from "@/features/summary/ui/summary-tab";
 import { VisibilityTab } from "@/features/visibility/ui/visibility-tab";
 import { SiteFooter } from "@/shared/ui/site-footer";
+import { btn } from "@/shared/ui/styles";
 import { isTabId, resolveTab, tabCount, visibleTabs, whoLine, type TabId } from "../domain/tabs";
 import { shellUi, useShellUi } from "../store/ui-store";
 import { AppHeader } from "./app-header";
 
 export function AppShell() {
   const loaded = useAppStore((s) => s.loaded);
+  const status = useAppStore((s) => s.status);
   const mods = useAppStore((s) => s.state.mods);
   const profile = useAppStore((s) => s.state.profile);
   const appCount = useAppStore((s) => s.state.apps.length);
@@ -28,9 +30,20 @@ export function AppShell() {
   const planWeek = useShellUi((s) => s.planWeek);
   const toast = useShellUi((s) => s.toast);
 
-  // The state lives in localStorage: read it once after mount so the server render matches the first client render.
+  // The state lives on the server, per account. It is read once after mount (the server render never has it)
+  // and the edits still waiting are sent when the page is hidden or closed.
   useEffect(() => {
-    appStore.getState().load();
+    void appStore.getState().load();
+    const flush = () => void appStore.getState().flush();
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") flush();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("pagehide", flush);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("pagehide", flush);
+    };
   }, []);
 
   const tabs = loaded ? visibleTabs(mods) : null;
@@ -98,7 +111,20 @@ export function AppShell() {
         active={active}
         onSelect={go}
       />
-      <main aria-busy={!loaded}>{loaded ? panel() : <p className="text-muted">Cargando…</p>}</main>
+      <main aria-busy={!loaded && status !== "error"}>
+        {loaded ? (
+          panel()
+        ) : status === "error" ? (
+          <div role="alert" className="text-muted">
+            <p>No pudimos cargar tus datos.</p>
+            <button type="button" className={`${btn} mt-2`} onClick={() => void appStore.getState().load()}>
+              Reintentar
+            </button>
+          </div>
+        ) : (
+          <p className="text-muted">Cargando…</p>
+        )}
+      </main>
       <SiteFooter />
       {toast ? (
         <div

@@ -4,7 +4,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { newApp } from "@/features/applications/domain/applications";
 import { JD_EXAMPLE } from "@/features/matching/domain/example";
 import { blank } from "@/features/state/domain/state";
+import { resetAppStore, sentCommands } from "@/features/state/store/testing";
 import { appStore } from "@/features/state/store/use-app-store";
+import { loadMyState } from "@/features/sync/infrastructure/actions";
 import { copyToClipboard } from "@/shared/lib/clipboard";
 import { downloadText } from "@/shared/lib/download";
 import { extractPdfText } from "../infrastructure/extract-pdf-text";
@@ -28,15 +30,12 @@ function renderTab() {
 
 describe("CvTab", () => {
   beforeEach(() => {
-    window.localStorage.clear();
-    appStore.setState(appStore.getInitialState(), true);
-    appStore.getState().load();
+    resetAppStore();
     vi.mocked(extractPdfText).mockReset();
     vi.mocked(downloadText).mockReset();
     vi.mocked(copyToClipboard).mockReset();
   });
   afterEach(() => {
-    appStore.getState().saveNow();
     cleanup();
     vi.restoreAllMocks();
   });
@@ -85,7 +84,7 @@ describe("CvTab", () => {
         shareName: true,
       });
       expect(screen.getByText("Astro")).toBeTruthy();
-      expect(JSON.parse(window.localStorage.getItem("radar-postulaciones-v1") ?? "{}").profile.english).toBe("3");
+      expect(sentCommands()).toContainEqual({ type: "profile.setFields", fields: expect.objectContaining({ english: "3" }) });
     });
   });
 
@@ -149,9 +148,13 @@ describe("CvTab", () => {
 
     it("restores a backup file", async () => {
       const backup = { ...blank(), apps: [newApp({ id: "z", empresa: "Restaurada" }, "2026-11-03")] };
+      vi.mocked(loadMyState).mockResolvedValueOnce({ ok: true, state: backup }); // what the server saved
       const { onNotify } = renderTab();
       upload("Restaurar copia", new File([JSON.stringify(backup)], "copia.json", { type: "application/json" }));
       await waitFor(() => expect(onNotify).toHaveBeenCalledWith("Copia restaurada"));
+      expect(state().apps.map((a) => a.empresa)).toEqual(["Restaurada"]);
+      await waitFor(() => expect(loadMyState).toHaveBeenCalledTimes(1));
+      expect(sentCommands().map((c) => c.type)).toEqual(["state.replace"]);
       expect(state().apps.map((a) => a.empresa)).toEqual(["Restaurada"]);
     });
 

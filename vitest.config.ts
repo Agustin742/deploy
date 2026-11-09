@@ -17,6 +17,8 @@ export default defineConfig({
         test: {
           name: "unit",
           environment: "node",
+          // Server Functions (session + database) are replaced by fakes in unit tests.
+          setupFiles: ["src/shared/testing/setup-unit.ts"],
           // Cold jsdom + next/link imports can exceed the 5s default under parallel load.
           testTimeout: 20000,
           include: ["src/**/*.test.{ts,tsx}"],

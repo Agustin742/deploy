@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { resetAppStore } from "@/features/state/store/testing";
 import { appStore } from "@/features/state/store/use-app-store";
 import { shiftMonth } from "../domain/daily-search";
 import { dailySearchUi } from "../store/daily-search-ui";
@@ -18,13 +19,10 @@ function renderTab() {
 
 describe("DailySearchTab", () => {
   beforeEach(() => {
-    window.localStorage.clear();
-    appStore.setState(appStore.getInitialState(), true);
-    appStore.getState().load();
+    resetAppStore();
     dailySearchUi.setState({ ...dailySearchUi.getInitialState(), month: MONTH }, true);
   });
   afterEach(() => {
-    appStore.getState().saveNow();
     cleanup();
   });
 

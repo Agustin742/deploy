@@ -1,24 +1,24 @@
 // @vitest-environment jsdom
-import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { newApp } from "@/features/applications/domain/applications";
-import { blank, STORAGE_KEY } from "@/features/state/domain/state";
+import { blank } from "@/features/state/domain/state";
 import type { AppState } from "@/features/state/domain/types";
+import { resetAppStore, sentCommands } from "@/features/state/store/testing";
 import { appStore } from "@/features/state/store/use-app-store";
+import { loadMyState } from "@/features/sync/infrastructure/actions";
 import { mondayOf, todayIso } from "@/shared/lib/dates";
 import { shellUi } from "../store/ui-store";
 import { AppShell } from "./app-shell";
 
-const stored = (patch: Partial<AppState>) =>
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...blank(), ...patch }));
+const stored = (patch: Partial<AppState>) => resetAppStore(patch);
 
 const state = () => appStore.getState().state;
 const tab = (name: string) => screen.getByRole("button", { name });
 
 describe("AppShell", () => {
   beforeEach(() => {
-    window.localStorage.clear();
-    appStore.setState(appStore.getInitialState(), true);
+    resetAppStore();
     shellUi.setState(shellUi.getInitialState(), true);
     vi.spyOn(window, "scrollTo").mockImplementation(() => {});
   });
@@ -124,7 +124,6 @@ describe("AppShell", () => {
       unmount();
 
       stored({ apps: [newApp({ empresa: "Acme", fuente: "LinkedIn" }, todayIso())] });
-      appStore.setState(appStore.getInitialState(), true);
       render(<AppShell />);
       expect(screen.getByText("Ofertas cargadas")).toBeTruthy();
       expect(screen.getByText("Por fuente")).toBeTruthy();
@@ -328,21 +327,60 @@ describe("AppShell", () => {
     });
   });
 
-  describe("persistence", () => {
-    it("saves edits to localStorage", () => {
+  describe("sync with the server", () => {
+    const notLoaded = () => appStore.setState(appStore.getInitialState(), true);
+
+    it("loads the state from the server on mount, showing a loading message meanwhile", async () => {
+      notLoaded();
+      vi.mocked(loadMyState).mockResolvedValueOnce({
+        ok: true,
+        state: { ...blank(), profile: { ...blank().profile, name: "Ana Pérez", headline: "Frontend", nameAuto: false } },
+      });
       render(<AppShell />);
-      fireEvent.click(tab("Red"));
-      fireEvent.click(screen.getByRole("button", { name: "+ Nuevo registro" }));
-      const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) as string);
-      expect(saved.red).toHaveLength(1);
+      expect(screen.getByText("Cargando…")).toBeTruthy();
+      expect(await screen.findByText("Ana Pérez · Frontend")).toBeTruthy();
+      expect(loadMyState).toHaveBeenCalledTimes(1);
     });
 
-    it("does not overwrite saved data with the blank state", () => {
-      stored({ goal: 7, goalSet: true });
+    it("explains a failed load and retries on request", async () => {
+      notLoaded();
+      vi.mocked(loadMyState).mockResolvedValueOnce({ ok: false, error: "failed" });
+      render(<AppShell />);
+      expect(await screen.findByText("No pudimos cargar tus datos.")).toBeTruthy();
+      fireEvent.click(screen.getByRole("button", { name: "Reintentar" }));
+      expect(await screen.findByRole("heading", { level: 2, name: "Resumen" })).toBeTruthy();
+      expect(loadMyState).toHaveBeenCalledTimes(2);
+    });
+
+    it("goes to the sign-in page when the session is gone", async () => {
+      notLoaded();
+      const assign = vi.fn();
+      vi.stubGlobal("location", { ...window.location, assign });
+      vi.mocked(loadMyState).mockResolvedValueOnce({ ok: false, error: "unauthorized" });
+      render(<AppShell />);
+      await waitFor(() => expect(assign).toHaveBeenCalledWith("/ingresar"));
+      vi.unstubAllGlobals();
+    });
+
+    it("sends edits to the server as commands and never writes the app state to localStorage", () => {
+      const setItem = vi.spyOn(Storage.prototype, "setItem");
       render(<AppShell />);
       fireEvent.click(tab("Red"));
       fireEvent.click(screen.getByRole("button", { name: "+ Nuevo registro" }));
-      expect(JSON.parse(window.localStorage.getItem(STORAGE_KEY) as string).goal).toBe(7);
+      expect(state().red).toHaveLength(1);
+      expect(sentCommands().map((c) => c.type)).toEqual(["registry.add"]);
+      expect(setItem.mock.calls.filter(([key]) => key.startsWith("radar-postulaciones"))).toEqual([]);
+    });
+
+    it("sends the edits still waiting when the page is hidden", () => {
+      render(<AppShell />);
+      fireEvent.click(tab("Resumen"));
+      act(() => appStore.getState().update((s) => ({ ...s, goal: 7, goalSet: true })));
+      expect(sentCommands()).toEqual([]);
+      act(() => {
+        window.dispatchEvent(new Event("pagehide"));
+      });
+      expect(sentCommands()).toEqual([{ type: "goal.set", goal: 7, goalSet: true }]);
     });
   });
 });

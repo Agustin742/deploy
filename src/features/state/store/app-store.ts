@@ -1,79 +1,143 @@
 import { createStore } from "zustand/vanilla";
-import { debounce } from "@/shared/lib/debounce";
+import { createCommandQueue } from "@/features/sync/application/command-queue";
+import type { StatePorts } from "@/features/sync/application/ports";
+import { diffState } from "@/features/sync/domain/diff-state";
 import { todayIso } from "@/shared/lib/dates";
 import { blank, hydrate } from "../domain/state";
 import type { AppState } from "../domain/types";
-import {
-  browserStorage,
-  loadState,
-  saveState,
-  withSyncedName,
-  type StorageLike,
-} from "./persistence";
+import { withSyncedName } from "../domain/with-synced-name";
 
-export const SAVE_DEBOUNCE_MS = 250;
+export const SAVE_FAILED_MESSAGE = "No se pudo guardar el último cambio. Volvimos a cargar tus datos.";
+export const RELOAD_FAILED_MESSAGE = "No pudimos actualizar tus datos. Recargá la página.";
+
+/** Reloads that are retried because the person kept editing while the server state was on its way. */
+const MAX_RELOAD_ATTEMPTS = 3;
 
 export interface AppStoreOptions {
-  /** Resolved lazily so the store can be created on the server and used in the browser. */
-  storage?: () => StorageLike | null;
+  ports: StatePorts;
+  /** Tells the person something (a toast). */
+  onNotice?: (message: string) => void;
+  /** The session is gone: go to the sign-in page. */
+  onUnauthorized?: () => void;
   today?: () => string;
   debounceMs?: number;
 }
 
 export interface UpdateOptions {
-  /** Save now instead of after the debounce (for discrete actions, as opposed to typing). */
+  /** Send now instead of after the debounce (for discrete actions, as opposed to typing). */
   immediate?: boolean;
 }
 
+export type LoadStatus = "idle" | "loading" | "ready" | "error";
+
 export interface AppStoreState {
   state: AppState;
-  /** True once the saved state was read from storage. */
+  /** True once the state was read from the server. */
   loaded: boolean;
-  load(): void;
+  status: LoadStatus;
+  /** Reads the state from the server (once; later calls keep the in-memory state). */
+  load(): Promise<void>;
+  /** Applies the change to the screen now and sends the matching commands to the server. */
   update(recipe: (state: AppState) => AppState, options?: UpdateOptions): void;
-  saveNow(): void;
-  /** Restores a backup; returns false when the data is not a valid backup. */
+  /** Sends whatever is waiting (leaving the page, importing); false if a batch failed. */
+  flush(): Promise<boolean>;
+  /** Restores a backup through the server; returns false when the data is not a valid backup. */
   importBackup(raw: unknown): boolean;
 }
 
-export function createAppStore(options: AppStoreOptions = {}) {
-  const getStorage = options.storage ?? browserStorage;
+/**
+ * The client copy of the user's state. The server is the source of truth: every change is applied
+ * here first (so the screen reacts at once), turned into commands and sent in order. When the server
+ * refuses something, the copy is thrown away and reloaded, so what is shown is always what is saved.
+ */
+export function createAppStore(options: AppStoreOptions) {
+  const { ports } = options;
   const today = options.today ?? todayIso;
+  const notice = (message: string) => options.onNotice?.(message);
 
   return createStore<AppStoreState>()((set, get) => {
-    // Idempotent: once loaded, the in-memory state is the source of truth.
-    // Re-reading storage would drop edits still waiting on the debounce.
-    const load = () => {
-      if (get().loaded) return;
-      set({ state: loadState(getStorage(), today()), loaded: true });
+    let inflightLoad: Promise<void> | null = null;
+    /** Counts local edits, so a reload can tell whether the server state it fetched is already outdated. */
+    let edits = 0;
+
+    const fetchFresh = async (): Promise<AppState | "unauthorized" | null> => {
+      try {
+        const result = await ports.loadState();
+        if (result.ok) return result.state;
+        return result.error === "unauthorized" ? "unauthorized" : null;
+      } catch {
+        return null;
+      }
     };
-    const writeNow = () => {
-      // Never persist the initial blank state over data that was not read yet.
-      load();
-      saveState(getStorage(), get().state);
+
+    /** Replaces the local copy with the server's, discarding changes that were never saved. */
+    const reload = async (): Promise<void> => {
+      queue.discard();
+      for (let attempt = 0; attempt < MAX_RELOAD_ATTEMPTS; attempt++) {
+        const seen = edits;
+        const fresh = await fetchFresh();
+        if (fresh === "unauthorized") return options.onUnauthorized?.();
+        if (fresh === null) return notice(RELOAD_FAILED_MESSAGE);
+        if (edits === seen) {
+          set({ state: fresh, loaded: true, status: "ready" });
+          return;
+        }
+        // Edits made meanwhile reach the server first, then the fetch is repeated.
+        await queue.flush();
+      }
     };
-    const writeDebounced = debounce(writeNow, options.debounceMs ?? SAVE_DEBOUNCE_MS);
-    const saveNow = () => {
-      writeDebounced.cancel();
-      writeNow();
+
+    const onFailure = () => {
+      notice(SAVE_FAILED_MESSAGE);
+      void reload();
+    };
+
+    const queue = createCommandQueue({
+      send: ports.applyCommands,
+      onFailure,
+      onUnauthorized: () => options.onUnauthorized?.(),
+      debounceMs: options.debounceMs,
+    });
+
+    const load = (): Promise<void> => {
+      if (get().loaded) return Promise.resolve();
+      if (get().status === "loading" && inflightLoad) return inflightLoad;
+      set({ status: "loading" });
+      inflightLoad = (async () => {
+        const fresh = await fetchFresh();
+        inflightLoad = null;
+        if (fresh === "unauthorized") return options.onUnauthorized?.();
+        if (fresh === null) return set({ status: "error" });
+        set({ state: fresh, loaded: true, status: "ready" });
+      })();
+      return inflightLoad;
     };
 
     return {
       state: withSyncedName(blank()),
       loaded: false,
+      status: "idle",
       load,
       update: (recipe, opts) => {
-        load();
-        set({ state: recipe(get().state) });
-        if (opts?.immediate) saveNow();
-        else writeDebounced();
+        // Until the server state is here, "the current state" is just the blank placeholder.
+        if (!get().loaded) return;
+        const prev = get().state;
+        const next = recipe(prev);
+        if (next === prev) return;
+        edits++;
+        set({ state: next });
+        queue.enqueue(diffState(prev, next), { debounce: !opts?.immediate });
       },
-      saveNow,
+      flush: () => queue.flush(),
       importBackup: (raw) => {
         const candidate = raw as { apps?: unknown } | null;
         if (!candidate || !Array.isArray(candidate.apps)) return false;
-        set({ state: withSyncedName(hydrate(candidate, today())), loaded: true });
-        saveNow();
+        const next = withSyncedName(hydrate(candidate, today()));
+        edits++;
+        set({ state: next, loaded: true, status: "ready" });
+        queue.enqueue([{ type: "state.replace", state: next }]);
+        // On success, show what was actually saved. On failure the queue already reloaded.
+        void queue.flush().then((ok) => (ok ? reload() : undefined));
         return true;
       },
     };

@@ -155,7 +155,7 @@ export function CvView({
           <div className={panel}>
             <h3 className="mb-1.5 text-base font-bold">Copia de seguridad</h3>
             <p className="mb-2.5 text-xs text-muted">
-              Tus datos viven solo en este navegador. La copia incluye todo lo que cargaste (CV, registro de la red y objetivos): guardala en un lugar privado.
+              Tus datos se guardan en tu cuenta. La copia incluye todo lo que cargaste (CV, registro de la red y objetivos): guardala en un lugar privado.
             </p>
             <div className={row}>
               <button type="button" className={btn} onClick={onDownloadBackup}>

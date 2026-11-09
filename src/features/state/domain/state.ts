@@ -2,8 +2,6 @@ import { PLATS } from "@/features/applications/domain/platforms";
 import { todayIso } from "@/shared/lib/dates";
 import type { AppState } from "./types";
 
-export const STORAGE_KEY = "radar-postulaciones-v1";
-
 /** Keys of the state that hold lists of records. */
 export const LISTAS = [
   "objetivos",

@@ -1,6 +1,8 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { blank } from "@/features/state/domain/state";
+import { resetAppStore, sentCommands } from "@/features/state/store/testing";
 import { appStore } from "@/features/state/store/use-app-store";
 import { NewOfferTab } from "./new-offer-tab";
 
@@ -15,13 +17,9 @@ function renderTab() {
 
 describe("NewOfferTab", () => {
   beforeEach(() => {
-    window.localStorage.clear();
-    appStore.setState(appStore.getInitialState(), true);
-    appStore.getState().load();
-    appStore.getState().update((s) => ({ ...s, profile: { ...s.profile, cv: CV } }), { immediate: true });
+    resetAppStore({ profile: { ...blank().profile, cv: CV } });
   });
   afterEach(() => {
-    appStore.getState().saveNow();
     cleanup();
     vi.restoreAllMocks();
   });
@@ -71,7 +69,7 @@ describe("NewOfferTab", () => {
     expect(state().apps).toHaveLength(0);
   });
 
-  it("saves the application, clears the draft and hands over the new id", () => {
+  it("saves the application, clears the draft and hands over the new id", async () => {
     const { onNotify, onSaved } = renderTab();
     fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
     fireEvent.click(screen.getByRole("button", { name: "Probar con una oferta de ejemplo" }));
@@ -82,7 +80,7 @@ describe("NewOfferTab", () => {
     expect(state().draft.empresa).toBe("");
     expect(onSaved).toHaveBeenCalledWith(state().apps[0].id);
     expect(onNotify).toHaveBeenCalledWith("Postulación guardada");
-    expect(JSON.parse(window.localStorage.getItem("radar-postulaciones-v1") ?? "{}").apps).toHaveLength(1);
+    await waitFor(() => expect(sentCommands().map((c) => c.type).slice(-2)).toEqual(["draft.clear", "app.create"]));
   });
 
   it("clears the draft", () => {
