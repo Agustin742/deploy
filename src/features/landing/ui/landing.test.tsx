@@ -96,4 +96,14 @@ describe("LandingPage", () => {
     expect(faq.querySelectorAll("details").length).toBeGreaterThanOrEqual(3);
     expect(within(faq).getByText("¿Cuánto dura el acceso a la herramienta?")).toBeTruthy();
   });
+
+  it("illustrates the product with decorative UI mockups instead of empty boxes", () => {
+    render(<LandingPage />);
+    const product = document.getElementById("producto")!;
+    const mocks = product.querySelectorAll('[aria-hidden="true"]');
+    expect(mocks.length).toBe(2);
+    expect(mocks[0].textContent).toContain("Cargar postulación");
+    expect(mocks[0].textContent).toContain("Guardar");
+    expect(mocks[1].textContent).toContain("Postulaciones por mes");
+  });
 });
