@@ -5,8 +5,8 @@ export interface MagicLinkMessage {
 }
 
 /**
- * Port for delivering magic links. Dev uses the console adapter; production will plug an
- * email adapter (Resend) behind this same interface.
+ * Port for delivering magic links. Dev uses the console adapter; production uses the SMTP adapter
+ * behind this same interface.
  */
 export interface MagicLinkSender {
   send(message: MagicLinkMessage): Promise<void>;
