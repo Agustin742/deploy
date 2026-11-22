@@ -93,8 +93,8 @@ describe("LandingPage", () => {
     const pricing = document.getElementById("acceso")!;
     const faq = document.getElementById("preguntas")!;
     expect(pricing.nextElementSibling).toBe(faq);
-    expect(faq.querySelectorAll("details").length).toBeGreaterThanOrEqual(3);
-    expect(within(faq).getByText("¿Cuánto dura el acceso a la herramienta?")).toBeTruthy();
+    expect(faq.querySelectorAll("details").length).toBeGreaterThanOrEqual(8);
+    expect(within(faq).getByText("¿Cuánto dura el acceso?")).toBeTruthy();
   });
 
   it("illustrates the product with decorative UI mockups instead of empty boxes", () => {
@@ -105,5 +105,18 @@ describe("LandingPage", () => {
     expect(mocks[0].textContent).toContain("Cargar postulación");
     expect(mocks[0].textContent).toContain("Guardar");
     expect(mocks[1].textContent).toContain("Postulaciones por mes");
+  });
+
+  it("answers each FAQ question in a collapsible panel without payment claims", () => {
+    render(<LandingPage />);
+    const faq = document.getElementById("preguntas")!;
+    for (const item of faq.querySelectorAll("details")) {
+      expect(item.querySelector("summary")).toBeTruthy();
+      expect(item.querySelector("p")!.textContent!.length).toBeGreaterThan(60);
+      expect(item.hasAttribute("open")).toBe(false);
+    }
+    expect(faq.textContent).toContain("sin contraseñas");
+    expect(faq.textContent).toContain("archivo de respaldo");
+    expect(faq.textContent).not.toMatch(/transferencia|medios de pago|reembolso|renovaci/i);
   });
 });
