@@ -1,3 +1,4 @@
+import { CurrentYear } from "./current-year";
 import { contactLink, WHATSAPP_DISPLAY } from "@/features/offer/domain/contact";
 import { buttonClass } from "@/shared/ui/styles";
 
@@ -49,7 +50,7 @@ export function LandingFooter() {
         </div>
       </div>
       <p className="mx-auto mt-8 max-w-[1180px] border-t border-line px-4 pt-4 text-small text-muted">
-        © {new Date().getFullYear()} Deploy your Career. Todos los derechos reservados.
+        © <CurrentYear /> Deploy your Career. Todos los derechos reservados.
       </p>
     </footer>
   );

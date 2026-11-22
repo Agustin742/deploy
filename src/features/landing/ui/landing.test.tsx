@@ -123,7 +123,8 @@ describe("LandingPage", () => {
   it("shows the legal notice in the footer in every environment", () => {
     render(<LandingPage />);
     const footer = screen.getByRole("contentinfo");
-    expect(within(footer).getByText(`© ${new Date().getFullYear()} Deploy your Career. Todos los derechos reservados.`)).toBeTruthy();
+    // The year is its own client element, so match the paragraph's combined text.
+    expect(footer.textContent).toContain(`© ${new Date().getFullYear()} Deploy your Career. Todos los derechos reservados.`);
     expect(footer.textContent).toContain("no garantiza empleo ni resultados");
     expect(footer.textContent).toContain("se brinda tal como está");
     expect(footer.textContent).toContain("no se venden a terceros");
