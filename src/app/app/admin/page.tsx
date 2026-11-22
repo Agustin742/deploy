@@ -15,14 +15,14 @@ export default async function AdminPage() {
   if (!(await requireOwnerSession())) notFound();
   const rows = await listAllowed(getDb());
   return (
-    <>
-      <Link href={APP_PATH} className="text-sm text-muted hover:text-ink">
+    <div className="mx-auto max-w-[1180px] px-4 pb-12 pt-6">
+      <Link href={APP_PATH} className="text-small text-muted hover:text-ink">
         ← Volver a la app
       </Link>
       <AccessAdminContainer
         owners={readOwnerEmails()}
         initialEmails={rows.map((r) => ({ ...r, createdAt: r.createdAt.toISOString() }))}
       />
-    </>
+    </div>
   );
 }

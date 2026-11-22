@@ -14,7 +14,31 @@ import { AppShell } from "./app-shell";
 const stored = (patch: Partial<AppState>) => resetAppStore(patch);
 
 const state = () => appStore.getState().state;
-const tab = (name: string) => screen.getByRole("button", { name });
+const MORE_TABS = ["Red", "Visibilidad", "Búsqueda diaria", "Empleadores", "Experimentos"];
+
+/** The "Más" menu, opened when it is not yet. */
+const openMore = () => {
+  if (!screen.queryByRole("menu", { name: "Más secciones" })) {
+    fireEvent.click(screen.getByRole("button", { name: "Más secciones" }));
+  }
+};
+
+/** Navigation entry by name: a bar button, or an item of the "Más" menu (opened on demand). */
+const tab = (name: string) => {
+  if (MORE_TABS.includes(name)) {
+    openMore();
+    return screen.getByRole("menuitem", { name });
+  }
+  return screen.getByRole("button", { name });
+};
+
+const openAccount = () => {
+  if (!screen.queryByRole("menu", { name: "Cuenta" })) {
+    fireEvent.click(screen.getByRole("button", { name: "Cuenta" }));
+  }
+};
+
+const newApplication = () => screen.getByRole("button", { name: "Cargar postulación" });
 
 describe("AppShell", () => {
   beforeEach(() => {
@@ -30,45 +54,84 @@ describe("AppShell", () => {
   describe("shell", () => {
     it("shows the access admin link only to owners", () => {
       const { unmount } = render(<AppShell />);
-      expect(screen.queryByRole("link", { name: "Accesos" })).toBeNull();
+      openAccount();
+      expect(screen.queryByRole("menuitem", { name: "Accesos" })).toBeNull();
       unmount();
       render(<AppShell isOwner />);
-      expect(screen.getByRole("link", { name: "Accesos" }).getAttribute("href")).toBe("/app/admin");
+      openAccount();
+      expect(screen.getByRole("menuitem", { name: "Accesos" }).getAttribute("href")).toBe("/app/admin");
     });
 
-    it("renders the base tab bar, with Resumen active by default", () => {
+    it("renders the primary navigation with the rest behind \"Más\", and Resumen active by default", () => {
       render(<AppShell />);
       const nav = screen.getByRole("navigation", { name: "Secciones" });
       expect(within(nav).getAllByRole("button").map((b) => b.textContent)).toEqual([
         "Resumen",
-        "Plan",
         "Postulaciones",
-        "Nueva oferta",
+        "Análisis",
+        "Plan",
+        "Mi CV",
+        "Más",
+      ]);
+      openMore();
+      const more = within(screen.getByRole("menu", { name: "Más secciones" }));
+      expect(more.getAllByRole("menuitem").map((b) => b.textContent)).toEqual([
         "Red",
         "Visibilidad",
-        "Análisis",
-        "Mi CV",
         "Búsqueda diaria",
       ]);
       expect(tab("Resumen").getAttribute("aria-current")).toBe("page");
       expect(screen.getByRole("heading", { level: 2, name: "Resumen" })).toBeTruthy();
-      expect(screen.getByRole("button", { name: "Salir" })).toBeTruthy();
-      expect(screen.getByRole("button", { name: /Modo/ })).toBeTruthy();
       expect(screen.getByText(/no garantiza empleo ni resultados/)).toBeTruthy();
     });
 
-    it("shows the person from the saved state and the application count on Postulaciones", () => {
+    it("keeps the new-application view out of the navigation, behind a global action", () => {
+      render(<AppShell />);
+      const nav = screen.getByRole("navigation", { name: "Secciones" });
+      expect(within(nav).queryByRole("button", { name: "Nueva oferta" })).toBeNull();
+      fireEvent.click(newApplication());
+      expect(screen.getByRole("heading", { level: 2, name: "Nueva oferta" })).toBeTruthy();
+    });
+
+    it("keeps theme and sign out in the account menu, which closes with Escape", () => {
+      render(<AppShell />);
+      const trigger = screen.getByRole("button", { name: "Cuenta" });
+      expect(trigger.getAttribute("aria-expanded")).toBe("false");
+      expect(screen.queryByRole("menuitem", { name: "Salir" })).toBeNull();
+      fireEvent.click(trigger);
+      expect(trigger.getAttribute("aria-expanded")).toBe("true");
+      expect(screen.getByRole("menuitem", { name: "Salir" })).toBeTruthy();
+      expect(screen.getByRole("menuitem", { name: /Modo/ })).toBeTruthy();
+      fireEvent.keyDown(screen.getByRole("menu", { name: "Cuenta" }), { key: "Escape" });
+      expect(trigger.getAttribute("aria-expanded")).toBe("false");
+      expect(screen.queryByRole("menu")).toBeNull();
+    });
+
+    it("moves focus through the menu items with the arrow keys", () => {
+      render(<AppShell />);
+      openMore();
+      const items = screen.getAllByRole("menuitem");
+      expect(document.activeElement).toBe(items[0]);
+      fireEvent.keyDown(screen.getByRole("menu"), { key: "ArrowDown" });
+      expect(document.activeElement).toBe(items[1]);
+      fireEvent.keyDown(screen.getByRole("menu"), { key: "ArrowUp" });
+      expect(document.activeElement).toBe(items[0]);
+    });
+
+    it("shows the person from the saved state in the account menu", () => {
       stored({
         profile: { ...blank().profile, name: "Ana Pérez", headline: "Frontend", nameAuto: false },
         apps: [newApp({ empresa: "Acme" }, todayIso()), newApp({ empresa: "Beta" }, todayIso())],
       });
       render(<AppShell />);
+      openAccount();
       expect(screen.getByText("Ana Pérez · Frontend")).toBeTruthy();
-      expect(screen.getByRole("button", { name: /^Postulaciones\s*2$/ })).toBeTruthy();
+      expect(screen.getByRole("button", { name: "Postulaciones" })).toBeTruthy();
     });
 
     it("asks for the CV while there is no name", () => {
       render(<AppShell />);
+      openAccount();
       expect(screen.getByText("Cargá tu CV para ver tu nombre")).toBeTruthy();
     });
 
@@ -95,7 +158,6 @@ describe("AppShell", () => {
       render(<AppShell />);
       const headings: Record<string, string> = {
         Postulaciones: "Postulaciones",
-        "Nueva oferta": "Nueva oferta",
         Análisis: "Análisis",
         "Mi CV": "Mi CV",
         "Búsqueda diaria": "Búsqueda diaria",
@@ -109,7 +171,7 @@ describe("AppShell", () => {
 
     it("opens the new application in its drawer after saving an offer, and closes the drawer when changing tab", () => {
       render(<AppShell />);
-      fireEvent.click(tab("Nueva oferta"));
+      fireEvent.click(newApplication());
       fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
       fireEvent.click(screen.getByRole("button", { name: "Guardar postulación" }));
       expect(screen.getByRole("complementary", { name: "Detalle de postulación" })).toBeTruthy();
@@ -228,7 +290,8 @@ describe("AppShell", () => {
     it("enabling a proposal adds its tab, and the direction block", () => {
       render(<AppShell />);
       fireEvent.click(tab("Plan"));
-      expect(screen.queryByRole("button", { name: "Empleadores" })).toBeNull();
+      openMore();
+      expect(screen.queryByRole("menuitem", { name: "Empleadores" })).toBeNull();
       fireEvent.click(screen.getByRole("checkbox", { name: /Lista de empleadores objetivo/ }));
       expect(state().mods.empleadores).toBe(true);
       expect(tab("Empleadores")).toBeTruthy();
@@ -326,27 +389,29 @@ describe("AppShell", () => {
       expect(state().experimentos[0].decision).toBe("Seguir");
     });
 
-    it("falls back to Plan when the active tab disappears", () => {
+    it("falls back to Resumen when the active tab disappears", () => {
       stored({ mods: { ...blank().mods, empleadores: true } });
       render(<AppShell />);
       fireEvent.click(tab("Empleadores"));
       act(() => appStore.getState().update((s) => ({ ...s, mods: { ...s.mods, empleadores: false } })));
-      expect(screen.getByRole("heading", { level: 2, name: "Plan" })).toBeTruthy();
+      expect(screen.getByRole("heading", { level: 2, name: "Resumen" })).toBeTruthy();
     });
   });
 
   describe("sync with the server", () => {
     const notLoaded = () => appStore.setState(appStore.getInitialState(), true);
 
-    it("loads the state from the server on mount, showing a loading message meanwhile", async () => {
+    it("loads the state from the server on mount, showing a loading skeleton meanwhile", async () => {
       notLoaded();
       vi.mocked(loadMyState).mockResolvedValueOnce({
         ok: true,
         state: { ...blank(), profile: { ...blank().profile, name: "Ana Pérez", headline: "Frontend", nameAuto: false } },
       });
       render(<AppShell />);
-      expect(screen.getByText("Cargando…")).toBeTruthy();
-      expect(await screen.findByText("Ana Pérez · Frontend")).toBeTruthy();
+      expect(screen.getByRole("status", { name: "Cargando" })).toBeTruthy();
+      expect(await screen.findByRole("heading", { level: 2, name: "Resumen" })).toBeTruthy();
+      openAccount();
+      expect(screen.getByText("Ana Pérez · Frontend")).toBeTruthy();
       expect(loadMyState).toHaveBeenCalledTimes(1);
     });
 

@@ -1,6 +1,8 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { menuItemClass } from "@/shared/ui/menu";
+import { buttonClass } from "@/shared/ui/styles";
 import {
   nextTheme,
   parseTheme,
@@ -31,7 +33,13 @@ const getSnapshot = (): Theme =>
 // `null` on the server and during hydration, so markup matches the server render.
 const getServerSnapshot = (): Theme | null => null;
 
-export function ThemeToggle() {
+export interface ThemeToggleProps {
+  /** "button" is a standalone secondary button, "menuitem" a row of a menu, "icon" a compact icon button. */
+  variant?: "button" | "menuitem" | "icon";
+  className?: string;
+}
+
+export function ThemeToggle({ variant = "button", className }: ThemeToggleProps) {
   const current = useSyncExternalStore<Theme | null>(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = () => {
@@ -41,13 +49,34 @@ export function ThemeToggle() {
     window.dispatchEvent(new Event(CHANGE_EVENT));
   };
 
+  const label = themeToggleLabel(current);
+
+  if (variant === "icon") {
+    const name = label.replace(/^\S+\s*/, "");
+    return (
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={name}
+        title={name}
+        className={`btn btn-ghost size-10 p-0 ${className ?? ""}`.trim()}
+      >
+        <span aria-hidden="true" className="text-lg leading-none">
+          {label.charAt(0)}
+        </span>
+      </button>
+    );
+  }
+
   return (
     <button
       type="button"
+      role={variant === "menuitem" ? "menuitem" : undefined}
+      tabIndex={variant === "menuitem" ? -1 : undefined}
       onClick={toggle}
-      className="cursor-pointer rounded-lg border border-line bg-surface px-3.5 py-2 font-medium hover:border-muted"
+      className={className ?? (variant === "menuitem" ? menuItemClass : buttonClass("secondary"))}
     >
-      {themeToggleLabel(current)}
+      {label}
     </button>
   );
 }

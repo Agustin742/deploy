@@ -23,8 +23,10 @@ async function SignIn({ searchParams }: { searchParams: SearchParams }) {
 
 export default function SignInPage({ searchParams }: { searchParams: SearchParams }) {
   return (
-    <Suspense fallback={<p className="pt-16 text-center text-muted">Cargando…</p>}>
-      <SignIn searchParams={searchParams} />
-    </Suspense>
+    <div className="px-4 pb-12">
+      <Suspense fallback={<p className="pt-16 text-center text-muted">Cargando…</p>}>
+        <SignIn searchParams={searchParams} />
+      </Suspense>
+    </div>
   );
 }

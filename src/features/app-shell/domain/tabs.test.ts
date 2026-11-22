@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { blank } from "@/features/state/domain/state";
-import { isTabId, resolveTab, tabCount, visibleTabs, whoLine } from "./tabs";
+import { initialsOf, isTabId, mobileMoreTabs, moreTabs, primaryTabs, resolveTab, visibleTabs, whoLine } from "./tabs";
 
 const ids = (mods: Partial<ReturnType<typeof blank>["mods"]> = {}) =>
   visibleTabs({ ...blank().mods, ...mods }).map((t) => t.id);
@@ -35,13 +35,42 @@ describe("visibleTabs", () => {
   });
 });
 
+describe("navigation split", () => {
+  const mods = (patch: Partial<ReturnType<typeof blank>["mods"]> = {}) => ({ ...blank().mods, ...patch });
+  const idsOf = (tabs: { id: string }[]) => tabs.map((t) => t.id);
+
+  it("keeps five primary tabs and moves the rest behind \"Más\"", () => {
+    expect(idsOf(primaryTabs(mods()))).toEqual(["resumen", "postulaciones", "analisis", "plan", "cv"]);
+    expect(idsOf(moreTabs(mods()))).toEqual(["red", "visibilidad", "busqueda"]);
+  });
+
+  it("never lists the new-application view in the navigation", () => {
+    const all = [...primaryTabs(mods({ empleadores: true, experimentos: true })), ...moreTabs(mods({ empleadores: true, experimentos: true }))];
+    expect(idsOf(all)).not.toContain("nueva");
+  });
+
+  it("adds Empleadores and Experimentos to \"Más\" only while their modules are on", () => {
+    expect(idsOf(moreTabs(mods({ empleadores: true, experimentos: true })))).toEqual([
+      "red",
+      "visibilidad",
+      "busqueda",
+      "empleadores",
+      "experimentos",
+    ]);
+  });
+
+  it("gives the mobile sheet the primary tabs without a bar slot, then the \"Más\" tabs", () => {
+    expect(idsOf(mobileMoreTabs(mods()))).toEqual(["plan", "cv", "red", "visibilidad", "busqueda"]);
+  });
+});
+
 describe("resolveTab", () => {
   it("keeps a visible tab", () => {
     expect(resolveTab("red", blank().mods)).toBe("red");
   });
 
-  it("falls back to Plan when the tab is hidden", () => {
-    expect(resolveTab("empleadores", blank().mods)).toBe("plan");
+  it("falls back to Resumen when the tab is hidden", () => {
+    expect(resolveTab("empleadores", blank().mods)).toBe("resumen");
     expect(resolveTab("empleadores", { ...blank().mods, empleadores: true })).toBe("empleadores");
   });
 });
@@ -60,11 +89,14 @@ describe("whoLine", () => {
   });
 });
 
-describe("tabCount", () => {
-  it("shows the number of applications only on Postulaciones, and only when above zero", () => {
-    expect(tabCount("postulaciones", 3)).toBe(3);
-    expect(tabCount("postulaciones", 0)).toBeNull();
-    expect(tabCount("plan", 3)).toBeNull();
+describe("initialsOf", () => {
+  it("takes up to two initials", () => {
+    expect(initialsOf("ana pérez gómez")).toBe("AP");
+    expect(initialsOf("  Ana ")).toBe("A");
+  });
+
+  it("is empty without a name", () => {
+    expect(initialsOf("")).toBe("");
   });
 });
 

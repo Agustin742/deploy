@@ -15,17 +15,29 @@ import { appStore, useAppStore } from "@/features/state/store/use-app-store";
 import { SummaryTab } from "@/features/summary/ui/summary-tab";
 import { VisibilityTab } from "@/features/visibility/ui/visibility-tab";
 import { SiteFooter } from "@/shared/ui/site-footer";
+import { useMediaQuery } from "@/shared/lib/use-media-query";
 import { btn } from "@/shared/ui/styles";
-import { isTabId, resolveTab, tabCount, visibleTabs, whoLine, type TabId } from "../domain/tabs";
+import {
+  initialsOf,
+  isTabId,
+  MOBILE_TAB_IDS,
+  mobileMoreTabs,
+  moreTabs,
+  primaryTabs,
+  resolveTab,
+  whoLine,
+  type TabId,
+} from "../domain/tabs";
 import { shellUi, useShellUi } from "../store/ui-store";
-import { AppHeader } from "./app-header";
+import { AppHeader, type HeaderNav } from "./app-header";
+import { AppSkeleton } from "./app-skeleton";
+import { MobileNav } from "./mobile-nav";
 
 export function AppShell({ isOwner = false }: { isOwner?: boolean }) {
   const loaded = useAppStore((s) => s.loaded);
   const status = useAppStore((s) => s.status);
   const mods = useAppStore((s) => s.state.mods);
   const profile = useAppStore((s) => s.state.profile);
-  const appCount = useAppStore((s) => s.state.apps.length);
   const storedTab = useShellUi((s) => s.tab);
   const planWeek = useShellUi((s) => s.planWeek);
   const toast = useShellUi((s) => s.toast);
@@ -46,7 +58,9 @@ export function AppShell({ isOwner = false }: { isOwner?: boolean }) {
     };
   }, []);
 
-  const tabs = loaded ? visibleTabs(mods) : null;
+  const wide = useMediaQuery("(min-width: 768px)");
+  const nav: HeaderNav | null = loaded ? { primary: primaryTabs(mods), more: moreTabs(mods) } : null;
+  const mobileItems = nav ? nav.primary.filter((t) => MOBILE_TAB_IDS.includes(t.id)) : [];
   const active = resolveTab(storedTab, mods);
 
   const go = (tab: TabId) => {
@@ -104,33 +118,47 @@ export function AppShell({ isOwner = false }: { isOwner?: boolean }) {
   };
 
   return (
-    <div className="mx-auto max-w-[1180px]">
+    <div className="min-h-screen pb-24 md:pb-12">
       <AppHeader
         who={loaded ? whoLine(profile) : ""}
-        tabs={tabs?.map((t) => ({ ...t, count: tabCount(t.id, appCount) })) ?? null}
+        initials={loaded ? initialsOf(profile.name) : ""}
+        nav={nav}
         active={active}
         onSelect={go}
+        onNewApplication={() => go("nueva")}
+        wide={wide}
         isOwner={isOwner}
       />
-      <main aria-busy={!loaded && status !== "error"}>
-        {loaded ? (
-          panel()
-        ) : status === "error" ? (
-          <div role="alert" className="text-muted">
-            <p>No pudimos cargar tus datos.</p>
-            <button type="button" className={`${btn} mt-2`} onClick={() => void appStore.getState().load()}>
-              Reintentar
-            </button>
-          </div>
-        ) : (
-          <p className="text-muted">Cargando…</p>
-        )}
-      </main>
-      <SiteFooter />
+      <div className="mx-auto max-w-[1180px] px-4">
+        <main aria-busy={!loaded && status !== "error"}>
+          {loaded ? (
+            panel()
+          ) : status === "error" ? (
+            <div role="alert" className="text-muted">
+              <p>No pudimos cargar tus datos.</p>
+              <button type="button" className={`${btn} mt-2`} onClick={() => void appStore.getState().load()}>
+                Reintentar
+              </button>
+            </div>
+          ) : (
+            <AppSkeleton />
+          )}
+        </main>
+        <SiteFooter />
+      </div>
+      {!wide && nav ? (
+        <MobileNav
+          items={mobileItems}
+          more={mobileMoreTabs(mods).map(({ id, label }) => ({ id, label }))}
+          active={active}
+          onSelect={go}
+          onNewApplication={() => go("nueva")}
+        />
+      ) : null}
       {toast ? (
         <div
           role="status"
-          className="fixed bottom-5 left-1/2 z-40 max-w-[calc(100%-32px)] -translate-x-1/2 rounded-lg bg-ink px-4 py-[9px] text-[13px] text-bg"
+          className="fixed bottom-24 left-1/2 z-40 max-w-[calc(100%-32px)] -translate-x-1/2 rounded-control bg-ink px-4 py-2.5 text-small text-bg md:bottom-6"
         >
           {toast}
         </div>

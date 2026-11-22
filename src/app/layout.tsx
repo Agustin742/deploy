@@ -33,7 +33,7 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body className="min-h-screen px-4 pb-12">{children}</body>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

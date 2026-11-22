@@ -6,7 +6,7 @@ import { PricingSection } from "./pricing-section";
 
 export function LandingPage() {
   return (
-    <div className="mx-auto max-w-[1180px]">
+    <div className="mx-auto max-w-[1180px] px-4 pb-12">
       <header className="flex flex-wrap items-center gap-x-6 gap-y-3 pb-3 pt-[18px]">
         <div className="mr-auto flex flex-col leading-[1.15]">
           <b className="font-display text-[21px] font-extrabold tracking-tight">Deploy your Career</b>
