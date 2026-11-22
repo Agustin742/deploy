@@ -21,11 +21,11 @@ Owner feedback (2026-11-21): ugly buttons; bad hero; badly built country dropdow
 - No TDD (user choice); existing test/typecheck/lint/build must pass; tests that assert old markup/copy are updated.
 
 ## Tasks
-- [ ] R1 Foundations: load fonts with `next/font`; type/spacing/radius scale; `Button`, `Select`, card levels, `Kpi` sizes; tags ≥12px; stronger focus/input borders — route: delegated (writer)
-- [ ] R2 App shell: new nav (primary + Más), account menu, global "+ Cargar postulación", mobile bottom bar, no horizontal scroll, fallback tab Resumen — route: delegated (writer)
-- [ ] R3 Resumen: hero KPI row (Postuladas este mes vs meta with inline edit, En curso, Tasa de respuesta, Total), big monthly chart + Por estado, Por fuente + "Lo que sigue" (platforms today), section captions, better empty state; drop Conexiones/Coincidencia KPIs and "Esta semana" panel — route: delegated (writer)
-- [ ] R4 Applications: quick-add (link/JD first, Empresa+Puesto, rest under "Más detalles", match shown small), no example/clear buttons in the main form; table 5 columns + card list below md; one toolbar; drawer reorder with AI block collapsed — route: delegated (writer)
-- [ ] R5 Landing: sticky header with anchors, hero with image slot, value strip, pricing redesign (dominant plan, country combobox, services list, diagnostic banner), FAQ accordion under pricing, final CTA band, footer with contact/legal; draft banners only outside production — route: delegated (writer)
+- [x] R1 Foundations: load fonts with `next/font`; type/spacing/radius scale; `Button`, `Select`, card levels, `Kpi` sizes; tags ≥12px; stronger focus/input borders — route: delegated (writer)
+- [x] R2 App shell: new nav (primary + Más), account menu, global "+ Cargar postulación", mobile bottom bar, no horizontal scroll, fallback tab Resumen — route: delegated (writer)
+- [x] R3 Resumen: hero KPI row (Postuladas este mes vs meta with inline edit, En curso, Tasa de respuesta, Total), big monthly chart + Por estado, Por fuente + "Lo que sigue" (platforms today), section captions, better empty state; drop Conexiones/Coincidencia KPIs and "Esta semana" panel — route: delegated (writer)
+- [x] R4 Applications: quick-add (link/JD first, Empresa+Puesto, rest under "Más detalles", match shown small), no example/clear buttons in the main form; table 5 columns + card list below md; one toolbar; drawer reorder with AI block collapsed — route: delegated (writer)
+- [x] R5 Landing: sticky header with anchors, hero with image slot, value strip, pricing redesign (dominant plan, country combobox, services list, diagnostic banner), FAQ accordion under pricing, final CTA band, footer with contact/legal; draft banners only outside production — route: delegated (writer)
 
 ## Acceptance criteria
 - No horizontal page scroll at 360px, 768px, 1280px on landing and app screens touched.
