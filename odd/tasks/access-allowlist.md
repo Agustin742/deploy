@@ -31,7 +31,7 @@ Out: payments, redesign, Resend adapter, pending-approval flow.
 
 ## Tasks
 - [x] T3.1 Upgrade Next.js (and matching eslint-config-next if any) to the patched version; test/typecheck/lint/build pass — route: delegated (writer)
-- [ ] T3.2 Allowlist domain + `allowed_emails` table/migration + repository; gate in Better Auth (Google + magic link, before user/session creation; magic link not sent when not allowed); session check in `/app` rejects users no longer allowed; owners from `OWNER_EMAILS` always allowed; "no access" message on `/ingresar` — route: delegated (writer)
+- [x] T3.2 Allowlist domain + `allowed_emails` table/migration + repository; gate in Better Auth (Google + magic link, before user/session creation; magic link not sent when not allowed); session check in `/app` rejects users no longer allowed; owners from `OWNER_EMAILS` always allowed; "no access" message on `/ingresar` — route: delegated (writer)
 - [ ] T3.3 Owner admin page (`/app/admin` or similar): list/add/remove allowed emails via server actions authorized as owner; link visible only to owners — route: delegated (writer)
 
 Route evidence: each task touches several non-trivial files (writer trigger).
@@ -49,6 +49,9 @@ Route evidence: each task touches several non-trivial files (writer trigger).
 ## Progress / evidence
 - 2026-11-21: Branch `feat/access-allowlist` created; feature document created.
 - 2026-11-21 T3.1 done (commit 96959f4): `pnpm audit` flagged next <=16.4.4 (patched >=16.4.5); upgraded `next` and `eslint-config-next` to exact 16.4.6 (latest on 16.x). Verified: `pnpm audit` no longer lists next; `pnpm typecheck` ok; `pnpm lint` ok; `pnpm test` 60 files / 838 tests passed; `pnpm build` compiled OK. Remaining audit items are transitive dev deps (esbuild via drizzle-kit, glob/minimatch via testcontainers), out of scope.
+- 2026-11-22 T3.2 done. Commit: see `git log` (`feat(auth): gate sign-in and sessions behind an email allowlist`). Mechanism (Better Auth 1.7.18): `hooks.before` (createAuthMiddleware) on `/sign-in/magic-link` throws `APIError FORBIDDEN code=email_not_allowed` before the token/mail; `databaseHooks.user.create.before` blocks user creation on any path (Google); `databaseHooks.session.create.before` blocks session creation for existing users removed from the list (OAuth callback redirects the APIError code to the error URL as `?error=email_not_allowed`, set via `errorCallbackURL=/ingresar`). Live sessions: single helper `getAccess()`/`requireAllowedSession()` in `features/auth/infrastructure/session.ts` (used by /app layout, /ingresar, `loadMyState`, `applyCommands`; raw `getSession` removed). New: `features/access/{domain,infrastructure}` (`allowed_emails` table, migration `drizzle/0002_*`, repository, `OWNER_EMAILS` env). New env: `OWNER_EMAILS` (optional, in `.env.example`).
+  Verified: `pnpm typecheck`, `pnpm lint` ok; `pnpm test` 61 files / 846 tests passed (new: email domain, sign-in no-access UI, db access-gate tests); `pnpm build` ok. Manual (prod build on :3100, local MySQL): allowed email -> 200 + link logged; non-allowed -> 403 `email_not_allowed`, no mail; owner not in table -> allowed; verified link then email removed -> `/app` streams redirect to `/ingresar?error=email_not_allowed` and `/ingresar` shows the no-access copy; link requested then email removed before verify -> 403, no new session; `/` 200 and `/app` anonymous 307 to `/ingresar`. Unverified: real Google OAuth round trip (no credentials locally); covered by the user-create/session-create hooks tests and library code reading.
+  Note: a leftover `next dev` (PID 2716) holds :3000 and blocks a second dev server, so the manual check used `next start -p 3100`.
 
 ## Next step
-T3.2.
+T3.3.
