@@ -91,29 +91,35 @@ export function MatchView({ match, onGoCv }: MatchViewProps) {
       {match.hardM.length ? (
         <>
           <div className={sectionLabel}>Skills que ya tenés y piden</div>
-          {have.map((s) => (
-            <Chip key={s} tone="ok">
-              {s}
-            </Chip>
-          ))}
+<div className="flex flex-wrap gap-1.5">
+            {have.map((s) => (
+              <Chip key={s} tone="ok">
+                {s}
+              </Chip>
+            ))}
+          </div>
         </>
       ) : null}
       {missing.length ? (
         <>
           <div className={sectionLabel}>Skills que te faltan</div>
-          {missing.map((s) => (
-            <Chip key={s} tone="bad">
-              {s}
-            </Chip>
-          ))}
+<div className="flex flex-wrap gap-1.5">
+            {missing.map((s) => (
+              <Chip key={s} tone="bad">
+                {s}
+              </Chip>
+            ))}
+          </div>
         </>
       ) : null}
       {match.kwX.length ? (
         <>
           <div className={sectionLabel}>Palabras de la oferta que no aparecen en tu CV</div>
-          {match.kwX.map((s) => (
-            <Chip key={s}>{s}</Chip>
-          ))}
+<div className="flex flex-wrap gap-1.5">
+            {match.kwX.map((s) => (
+              <Chip key={s}>{s}</Chip>
+            ))}
+          </div>
         </>
       ) : null}
       <div className={sectionLabel}>

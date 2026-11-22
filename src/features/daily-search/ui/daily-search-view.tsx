@@ -81,10 +81,10 @@ function PlatformCell({
         {p.name} ↗
       </a>
       <span className="flex">
-        <button type="button" className={`${btnGhost} ${btnSmall} !px-[5px]`} title="Editar" aria-label={`Editar ${p.name}`} onClick={() => h.onEdit(p.id)}>
+        <button type="button" className={`${btnGhost} ${btnSmall} px-1.5`} title="Editar" aria-label={`Editar ${p.name}`} onClick={() => h.onEdit(p.id)}>
           ✎
         </button>
-        <button type="button" className={`${btnGhost} ${btnSmall} !px-[5px]`} title="Quitar página" aria-label={`Quitar ${p.name}`} onClick={() => h.onAskDelete(p.id)}>
+        <button type="button" className={`${btnGhost} ${btnSmall} px-1.5`} title="Quitar página" aria-label={`Quitar ${p.name}`} onClick={() => h.onAskDelete(p.id)}>
           ×
         </button>
       </span>

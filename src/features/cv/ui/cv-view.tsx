@@ -148,7 +148,7 @@ export function CvView({
                   ))}
                 </>
               ) : (
-                <p className="text-xs text-muted">Cuando pegues tu CV, acá aparecen las skills que se usan para el cálculo.</p>
+                <p className="text-small text-muted">Cuando pegues tu CV, acá aparecen las skills que se usan para el cálculo.</p>
               )}
             </div>
           </div>
