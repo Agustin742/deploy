@@ -119,4 +119,14 @@ describe("LandingPage", () => {
     expect(faq.textContent).toContain("archivo de respaldo");
     expect(faq.textContent).not.toMatch(/transferencia|medios de pago|reembolso|renovaci/i);
   });
+
+  it("shows the legal notice in the footer in every environment", () => {
+    render(<LandingPage />);
+    const footer = screen.getByRole("contentinfo");
+    expect(within(footer).getByText(`© ${new Date().getFullYear()} Deploy your Career. Todos los derechos reservados.`)).toBeTruthy();
+    expect(footer.textContent).toContain("no garantiza empleo ni resultados");
+    expect(footer.textContent).toContain("se brinda tal como está");
+    expect(footer.textContent).toContain("no se venden a terceros");
+    expect(footer.textContent).not.toMatch(/En preparación|Borrador/);
+  });
 });

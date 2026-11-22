@@ -1,6 +1,5 @@
 import { contactLink, WHATSAPP_DISPLAY } from "@/features/offer/domain/contact";
 import { buttonClass } from "@/shared/ui/styles";
-import { DISCLAIMER } from "@/shared/ui/site-footer";
 
 export function FinalCta() {
   const link = contactLink();
@@ -38,10 +37,20 @@ export function LandingFooter() {
             </a>
           </p>
         </div>
-        <div className="text-small text-muted">
-          <p>{DISCLAIMER}</p>
+        <div className="grid gap-2 text-small text-muted">
+          <p>
+            Deploy your Career es un apoyo para organizar tu búsqueda laboral y no garantiza empleo ni resultados. La
+            información se brinda tal como está.
+          </p>
+          <p>
+            Tus datos personales se usan solo para brindar el servicio y no se venden a terceros. Para cualquier
+            consulta, escribinos por WhatsApp.
+          </p>
         </div>
       </div>
+      <p className="mx-auto mt-8 max-w-[1180px] border-t border-line px-4 pt-4 text-small text-muted">
+        © {new Date().getFullYear()} Deploy your Career. Todos los derechos reservados.
+      </p>
     </footer>
   );
 }
