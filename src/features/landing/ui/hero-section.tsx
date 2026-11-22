@@ -13,8 +13,8 @@ export function HeroSection() {
             Seguimiento de postulaciones, plan semanal y tablero para profesionales IT de Latinoamérica.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a href="#precios" className={buttonClass("cta", "lg")}>
-              Ver precios
+            <a href="#acceso" className={buttonClass("cta", "lg")}>
+              Cómo conseguir acceso
             </a>
             <Link
               href="/app"
@@ -23,7 +23,7 @@ export function HeroSection() {
               Ya tengo cuenta → Ingresar
             </Link>
           </div>
-          <p className="mt-5 text-small text-muted">Acceso por 1 año · Pago con medios de tu país</p>
+          <p className="mt-5 text-small text-muted">Acceso por invitación · Tus datos en tu cuenta</p>
         </div>
 
         <HeroImage />

@@ -1,11 +1,9 @@
 import { contactLink } from "@/features/offer/domain/contact";
-import { offerPrice, type Product } from "@/features/offer/domain/offer";
+import type { Product } from "@/features/offer/domain/offer";
 import { buttonClass } from "@/shared/ui/styles";
 
-/** The dominant plan: the tool with 1 year of access. Payment is arranged through contact. */
-export function PlanCard({ product, country }: { product: Product; country: string }) {
-  const price = offerPrice(product, country);
-  const confirmed = price !== "Precio a confirmar";
+/** The dominant plan: the tool with 1 year of access. Access is requested over WhatsApp. */
+export function PlanCard({ product }: { product: Product }) {
   const link = contactLink();
 
   return (
@@ -15,17 +13,6 @@ export function PlanCard({ product, country }: { product: Product; country: stri
       </span>
       <h3 className="mt-4 font-display text-title font-extrabold">{product.n}</h3>
       <p className="mt-1 text-muted">{product.d}</p>
-
-      <div className="mt-6">
-        <div
-          className={`font-display font-extrabold leading-none tabular-nums ${
-            confirmed ? "text-hero sm:text-[3rem]" : "text-title text-muted"
-          }`}
-        >
-          {price}
-        </div>
-        <div className="mt-2 text-small text-muted">Precio para {country} · Pago único</div>
-      </div>
 
       <ul className="mt-6 grid gap-3">
         {product.inc.map((item) => (
@@ -51,7 +38,7 @@ export function PlanCard({ product, country }: { product: Product; country: stri
         {...link}
         className={`${buttonClass("cta", "lg")} mt-8 w-full`}
       >
-        Comprar acceso
+        Pedir acceso por WhatsApp
       </a>
     </article>
   );

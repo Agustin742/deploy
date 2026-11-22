@@ -1,5 +1,5 @@
 import { consultLink } from "@/features/offer/domain/contact";
-import { offerPrice, type Product } from "@/features/offer/domain/offer";
+import type { Product } from "@/features/offer/domain/offer";
 
 function ConsultLink({ service }: { service: string }) {
   return (
@@ -13,8 +13,8 @@ function ConsultLink({ service }: { service: string }) {
   );
 }
 
-/** The free diagnostic as a banner row and the paid services as a compact list with secondary prices. */
-export function ServicesList({ services, country }: { services: Product[]; country: string }) {
+/** The free diagnostic as a banner row and the paid services as a compact list. */
+export function ServicesList({ services }: { services: Product[] }) {
   const free = services.filter((p) => p.gratis);
   const paid = services.filter((p) => !p.gratis);
 
@@ -38,19 +38,15 @@ export function ServicesList({ services, country }: { services: Product[]; count
 
       <h3 className="font-display text-section font-bold">Servicios adicionales</h3>
       <ul className="mt-2 divide-y divide-line border-y border-line">
-        {paid.map((p) => {
-          const price = offerPrice(p, country);
-          return (
-            <li key={p.n} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3">
-              <div className="min-w-0 flex-1 basis-60">
-                <b className="font-semibold">{p.n}</b>
-                <p className="text-small text-muted">{p.d}</p>
-              </div>
-              <span className="font-mono text-small text-muted">{price}</span>
-              <ConsultLink service={p.n} />
-            </li>
-          );
-        })}
+        {paid.map((p) => (
+          <li key={p.n} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3">
+            <div className="min-w-0 flex-1 basis-60">
+              <b className="font-semibold">{p.n}</b>
+              <p className="text-small text-muted">{p.d}</p>
+            </div>
+            <ConsultLink service={p.n} />
+          </li>
+        ))}
       </ul>
     </div>
   );

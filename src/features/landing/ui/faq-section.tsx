@@ -1,12 +1,12 @@
 const FAQ = [
-  ["¿Cuánto dura el acceso a la herramienta?", "Un año desde la fecha de pago."],
+  ["¿Cuánto dura el acceso a la herramienta?", "Un año desde que te habilitamos."],
   [
     "¿Garantizan que voy a conseguir trabajo?",
     "No. La herramienta y los servicios te ayudan a organizarte y mejorar tus materiales, pero no garantizan empleo ni resultados.",
   ],
   ["¿Para quién es?", "Profesionales IT de Latinoamérica: trainee, junior, semi senior y senior."],
-  ["¿Cómo pago?", "Pagás con los medios de pago de tu país."],
-  ["¿Qué recibo después de pagar?", "Recibís tu acceso o coordinamos el servicio."],
+  ["¿Cómo consigo acceso?", "Nos escribís por WhatsApp y, una vez que lo coordinamos, habilitamos tu email."],
+  ["¿Qué pasa después de escribir?", "Habilitamos tu email y entrás con Google o con un link por email."],
   ["¿Dónde se guardan mis datos?", "Tus datos se guardan en tu cuenta."],
 ] as const;
 

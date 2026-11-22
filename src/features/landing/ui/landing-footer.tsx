@@ -1,5 +1,4 @@
 import { contactLink, WHATSAPP_DISPLAY } from "@/features/offer/domain/contact";
-import { SHOW_DRAFT_NOTICE } from "@/features/offer/domain/offer";
 import { buttonClass } from "@/shared/ui/styles";
 import { DISCLAIMER } from "@/shared/ui/site-footer";
 
@@ -9,12 +8,14 @@ export function FinalCta() {
     <section className="bg-ink py-section-sm text-bg md:py-section">
       <div className="mx-auto max-w-2xl px-4 text-center">
         <h2 className="font-display text-hero font-extrabold">Empezá a ordenar tu búsqueda</h2>
-        <p className="mt-3 opacity-80">Un año de acceso, tus postulaciones y tu tablero en un solo lugar.</p>
+        <p className="mt-3 opacity-80">
+          Escribinos por WhatsApp y te damos acceso a tus postulaciones y tu tablero en un solo lugar.
+        </p>
         <a
           {...link}
           className={`${buttonClass("cta", "lg")} mt-8`}
         >
-          Comprar acceso
+          Pedir acceso por WhatsApp
         </a>
       </div>
     </section>
@@ -39,11 +40,6 @@ export function LandingFooter() {
         </div>
         <div className="text-small text-muted">
           <p>{DISCLAIMER}</p>
-          {SHOW_DRAFT_NOTICE ? (
-            <p className="mt-2">
-              En preparación: términos y condiciones, política de privacidad y política de reembolsos.
-            </p>
-          ) : null}
         </div>
       </div>
     </footer>

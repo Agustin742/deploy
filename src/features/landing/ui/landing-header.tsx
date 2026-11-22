@@ -5,7 +5,7 @@ import { buttonClass } from "@/shared/ui/styles";
 
 const ANCHORS = [
   ["Producto", "#producto"],
-  ["Precios", "#precios"],
+  ["Acceso", "#acceso"],
   ["Preguntas", "#preguntas"],
 ] as const;
 
@@ -40,7 +40,7 @@ export function LandingHeader() {
             Ingresar
           </Link>
           <a {...contactLink()} className={`${buttonClass("primary", "md")} px-3 sm:px-4`}>
-            Comprar acceso
+            Pedir acceso
           </a>
           <ThemeToggle variant="icon" />
         </div>
