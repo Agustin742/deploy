@@ -9,3 +9,4 @@ export * from "../../../features/applications/infrastructure/schema";
 export * from "../../../features/daily-search/infrastructure/schema";
 export * from "../../../features/plan/infrastructure/schema";
 export * from "../../../features/registries/infrastructure/schema";
+export * from "../../../features/access/infrastructure/schema";

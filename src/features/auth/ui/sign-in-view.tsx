@@ -1,7 +1,8 @@
+import { NO_ACCESS_MESSAGE } from "@/features/access/domain/access-error";
 import { Notice } from "@/shared/ui/primitives";
 import { btn, btnPrimary, fieldLabel, input, panel, smallMuted } from "@/shared/ui/styles";
 
-export type SignInStatus = "idle" | "sending" | "sent" | "error";
+export type SignInStatus = "idle" | "sending" | "sent" | "error" | "noAccess";
 
 export interface SignInViewProps {
   email: string;
@@ -49,6 +50,11 @@ export function SignInView({ email, status, googleEnabled, onEmailChange, onSubm
             {status === "error" ? (
               <div role="alert">
                 <Notice tone="warn">No pudimos enviar el link. Revisá el email e intentá de nuevo.</Notice>
+              </div>
+            ) : null}
+            {status === "noAccess" ? (
+              <div role="alert">
+                <Notice tone="warn">{NO_ACCESS_MESSAGE}</Notice>
               </div>
             ) : null}
             <button type="submit" className={btnPrimary} disabled={status === "sending"}>

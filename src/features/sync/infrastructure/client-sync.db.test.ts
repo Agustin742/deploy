@@ -17,7 +17,7 @@ import { testDatabaseUrl, truncateAllTables } from "@/shared/db/testing/test-db"
 // The module boundary the actions depend on: the session and the app's database pool.
 const session = vi.hoisted(() => ({ current: null as null | { user: { id: string } } }));
 const database = vi.hoisted(() => ({ current: null as unknown }));
-vi.mock("@/features/auth/infrastructure/session", () => ({ getSession: async () => session.current }));
+vi.mock("@/features/auth/infrastructure/session", () => ({ requireAllowedSession: async () => session.current }));
 vi.mock("@/shared/db/get-db", () => ({ getDb: () => database.current }));
 
 import { applyCommands, loadMyState } from "./actions";

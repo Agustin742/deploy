@@ -15,6 +15,13 @@
       "when": 1794250891672,
       "tag": "0001_abnormal_power_pack",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1795316353541,
+      "tag": "0002_tidy_giant_girl",
+      "breakpoints": true
     }
   ]
 }

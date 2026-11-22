@@ -10,6 +10,8 @@ const SECRET = "test-secret-test-secret-test-secret-1234";
 
 let handle: DbHandle;
 let sent: Array<{ email: string; url: string }>;
+/** Emails the test access rule lets in (normalized); the real rule is the allowlist + owners. */
+let allowed: Set<string>;
 
 const sender: MagicLinkSender = {
   async send(message) {
@@ -18,7 +20,7 @@ const sender: MagicLinkSender = {
 };
 
 const makeAuth = (google: { clientId: string; clientSecret: string } | null = null) =>
-  createAuth({ db: handle.db, secret: SECRET, baseURL: "http://localhost:3000", google, sender });
+  createAuth({ db: handle.db, secret: SECRET, baseURL: "http://localhost:3000", google, sender, isEmailAllowed: async (email) => allowed.has(email.trim().toLowerCase()) });
 
 /** Turns Set-Cookie headers into a Cookie request header. */
 const cookieHeader = (res: Response) =>
@@ -42,6 +44,7 @@ describe("Better Auth on MySQL (hand-written schema smoke test)", () => {
   afterAll(() => handle.close());
   beforeEach(async () => {
     sent = [];
+    allowed = new Set(["ana@example.com"]);
     await truncateAllTables(handle.db);
   });
 
@@ -86,6 +89,35 @@ describe("Better Auth on MySQL (hand-written schema smoke test)", () => {
     await auth.api.signOut({ headers });
     expect(await handle.db.select().from(schema.session)).toHaveLength(0);
     expect(await auth.api.getSession({ headers })).toBeNull();
+  });
+
+  describe("access gate", () => {
+    it("does not send a magic link nor create anything for an email that is not allowed", async () => {
+      const auth = makeAuth();
+      const attempt = auth.api.signInMagicLink({ body: { email: "Eve@Example.com" }, headers: new Headers() });
+      await expect(attempt).rejects.toMatchObject({ body: { code: "email_not_allowed" } });
+      expect(sent).toHaveLength(0);
+      expect(await handle.db.select().from(schema.user)).toHaveLength(0);
+      expect(await handle.db.select().from(schema.verification)).toHaveLength(0);
+    });
+
+    it("blocks user creation for a disallowed email on any path (what Google sign-up goes through)", async () => {
+      const ctx = await makeAuth().$context;
+      await expect(ctx.internalAdapter.createUser({ email: "eve@example.com", name: "Eve" }, { method: "magic-link" })).rejects.toMatchObject({
+        body: { code: "email_not_allowed" },
+      });
+      expect(await handle.db.select().from(schema.user)).toHaveLength(0);
+    });
+
+    it("blocks session creation for an existing user whose email was removed", async () => {
+      const auth = makeAuth();
+      await signIn(auth, "ana@example.com");
+      allowed.delete("ana@example.com");
+      const ctx = await auth.$context;
+      const [ana] = await handle.db.select().from(schema.user);
+      await expect(ctx.internalAdapter.createSession(ana.id)).rejects.toMatchObject({ body: { code: "email_not_allowed" } });
+      expect(await handle.db.select().from(schema.session)).toHaveLength(1);
+    });
   });
 
   it("only registers Google when credentials are given", () => {

@@ -49,6 +49,19 @@ describe("SignInContainer", () => {
     expect((email() as HTMLInputElement).value).toBe("ana@example.com");
   });
 
+  it("shows the no-access message when the server rejects the email", async () => {
+    magicLink.mockResolvedValue({ data: null, error: { code: "email_not_allowed", message: "x" } });
+    render(<SignInContainer googleEnabled={false} />);
+    fireEvent.change(email(), { target: { value: "ana@example.com" } });
+    submit();
+    await waitFor(() => expect(screen.getByRole("alert").textContent).toContain("Tu email no tiene acceso"));
+  });
+
+  it("shows the no-access message up front after a rejected Google sign-in", () => {
+    render(<SignInContainer googleEnabled initialNoAccess />);
+    expect(screen.getByRole("alert").textContent).toContain("Tu email no tiene acceso");
+  });
+
   it("shows an error when the request throws", async () => {
     magicLink.mockRejectedValue(new Error("network"));
     render(<SignInContainer googleEnabled={false} />);
@@ -66,7 +79,7 @@ describe("SignInContainer", () => {
   it("starts the Google flow towards /app when Google is configured", () => {
     render(<SignInContainer googleEnabled />);
     fireEvent.click(screen.getByRole("button", { name: "Continuar con Google" }));
-    expect(social).toHaveBeenCalledWith({ provider: "google", callbackURL: "/app" });
+    expect(social).toHaveBeenCalledWith({ provider: "google", callbackURL: "/app", errorCallbackURL: "/ingresar" });
     expect(screen.queryByText(/Google todavía no está disponible/)).toBeNull();
   });
 });

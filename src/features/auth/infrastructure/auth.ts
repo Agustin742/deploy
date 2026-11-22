@@ -1,4 +1,5 @@
 import "server-only";
+import { isEmailAllowed } from "@/features/access/infrastructure/access";
 import { getDb } from "@/shared/db/get-db";
 import { readAuthEnv } from "./auth-env";
 import { consoleMagicLinkSender } from "./console-magic-link-sender";
@@ -14,6 +15,7 @@ export function getAuth(): Auth {
   instance ??= createAuth({
     db: getDb(),
     ...readAuthEnv(),
+    isEmailAllowed,
     // TODO(deploy): swap for the Resend adapter in production.
     sender: consoleMagicLinkSender,
   });
