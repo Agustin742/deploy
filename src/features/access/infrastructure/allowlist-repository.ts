@@ -1,5 +1,6 @@
-import { desc, eq } from "drizzle-orm";
+import { desc, eq, inArray } from "drizzle-orm";
 import type { Database } from "@/shared/db/client";
+import { session, user } from "@/shared/db/schema";
 import { normalizeEmail } from "../domain/email";
 import { allowedEmails } from "./schema";
 
@@ -35,6 +36,14 @@ export async function addAllowed(db: Database, email: string, addedBy: string | 
     .onDuplicateKeyUpdate({ set: { email: normalizeEmail(email) } });
 }
 
+/** Removes the email and revokes the matching user's sessions, so a later re-add does not revive them. */
 export async function removeAllowed(db: Database, email: string): Promise<void> {
-  await db.delete(allowedEmails).where(eq(allowedEmails.email, normalizeEmail(email)));
+  const normalized = normalizeEmail(email);
+  await db.transaction(async (tx) => {
+    await tx.delete(allowedEmails).where(eq(allowedEmails.email, normalized));
+    const users = await tx.select({ id: user.id }).from(user).where(eq(user.email, normalized));
+    if (users.length > 0) {
+      await tx.delete(session).where(inArray(session.userId, users.map((u) => u.id)));
+    }
+  });
 }

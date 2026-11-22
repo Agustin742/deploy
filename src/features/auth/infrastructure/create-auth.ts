@@ -49,7 +49,8 @@ export function createAuth({ db, secret, baseURL, google, sender, isEmailAllowed
       user: {
         create: {
           before: async (user) => {
-            if (!(await isEmailAllowed(user.email))) throw accessDenied();
+            // Magic link users are created verified; an unverified provider email must not claim a listed address.
+            if (!user.emailVerified || !(await isEmailAllowed(user.email))) throw accessDenied();
           },
         },
       },
