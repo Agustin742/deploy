@@ -129,4 +129,12 @@ describe("LandingPage", () => {
     expect(footer.textContent).toContain("no se venden a terceros");
     expect(footer.textContent).not.toMatch(/En preparación|Borrador/);
   });
+
+  it("shows the hero artwork directly on the page, without a framed box", () => {
+    render(<LandingPage />);
+    const img = screen.getByRole("img", { name: /Sapito de Deploy your Career/ });
+    expect(decodeURIComponent(img.getAttribute("src")!)).toContain("hero-banner.webp");
+    expect(img.closest("[class*=border]")).toBeNull();
+    expect(img.closest("[class*=bg-surface]")).toBeNull();
+  });
 });

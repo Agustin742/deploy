@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buttonClass } from "@/shared/ui/styles";
 
@@ -32,39 +33,19 @@ export function HeroSection() {
   );
 }
 
-/**
- * Fixed 4:3 slot for the hero image. Until there is one, a quiet mock of the dashboard fills it.
- * TODO(owner): replace with hero image (next/image, same aspect ratio, with `priority`).
- */
+/** Transparent artwork: it sits directly on the page background in light and dark themes. */
 function HeroImage() {
   return (
-    <div
-      aria-hidden="true"
-      className="relative aspect-[4/3] w-full overflow-hidden rounded-hero border border-line bg-surface p-5 shadow-raised sm:p-7"
-    >
-      <div className="grid h-full grid-rows-[auto_1fr] gap-4">
-        <div className="grid grid-cols-3 gap-3">
-          {[
-            ["18", "bg-accent"],
-            ["6", "bg-lime"],
-            ["42%", "bg-soft"],
-          ].map(([value, tone]) => (
-            <div key={value} className="rounded-card border border-line p-3">
-              <div className="font-display text-title font-extrabold tabular-nums">{value}</div>
-              <div className={`mt-2 h-1.5 w-2/3 rounded-full ${tone}`} />
-            </div>
-          ))}
-        </div>
-        <div className="flex items-end gap-2 rounded-card border border-line p-4">
-          {[30, 45, 35, 60, 50, 75, 90].map((h, i) => (
-            <div
-              key={i}
-              className={`flex-1 rounded-t ${i === 6 ? "bg-accent" : "bg-accent/40"}`}
-              style={{ height: `${h}%` }}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="hero-float mx-auto w-full max-w-[480px] lg:mx-0 lg:ml-auto lg:max-w-none lg:w-[112%] lg:-mr-[6%]">
+      <Image
+        src="/hero-banner.webp"
+        width={1398}
+        height={856}
+        priority
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        alt="Sapito de Deploy your Career ayudando a una persona a postularse desde su notebook"
+        className="h-auto w-full"
+      />
     </div>
   );
 }

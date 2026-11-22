@@ -411,3 +411,19 @@ html {
 .btn-lift:active:not(:disabled):not([aria-disabled="true"]) {
   transform: translateY(1px);
 }
+
+/* Hero artwork: a very slow float, only for people who have not asked for reduced motion. */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-float {
+    animation: hero-float 7s ease-in-out infinite;
+  }
+}
