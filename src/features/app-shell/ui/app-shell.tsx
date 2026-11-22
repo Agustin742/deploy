@@ -20,7 +20,7 @@ import { isTabId, resolveTab, tabCount, visibleTabs, whoLine, type TabId } from 
 import { shellUi, useShellUi } from "../store/ui-store";
 import { AppHeader } from "./app-header";
 
-export function AppShell() {
+export function AppShell({ isOwner = false }: { isOwner?: boolean }) {
   const loaded = useAppStore((s) => s.loaded);
   const status = useAppStore((s) => s.status);
   const mods = useAppStore((s) => s.state.mods);
@@ -110,6 +110,7 @@ export function AppShell() {
         tabs={tabs?.map((t) => ({ ...t, count: tabCount(t.id, appCount) })) ?? null}
         active={active}
         onSelect={go}
+        isOwner={isOwner}
       />
       <main aria-busy={!loaded && status !== "error"}>
         {loaded ? (

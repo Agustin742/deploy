@@ -28,6 +28,14 @@ describe("AppShell", () => {
   });
 
   describe("shell", () => {
+    it("shows the access admin link only to owners", () => {
+      const { unmount } = render(<AppShell />);
+      expect(screen.queryByRole("link", { name: "Accesos" })).toBeNull();
+      unmount();
+      render(<AppShell isOwner />);
+      expect(screen.getByRole("link", { name: "Accesos" }).getAttribute("href")).toBe("/app/admin");
+    });
+
     it("renders the base tab bar, with Resumen active by default", () => {
       render(<AppShell />);
       const nav = screen.getByRole("navigation", { name: "Secciones" });

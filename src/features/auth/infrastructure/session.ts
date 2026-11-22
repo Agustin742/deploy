@@ -29,3 +29,9 @@ export async function requireAllowedSession(): Promise<RawSession | null> {
   const access = await getAccess();
   return access.state === "allowed" ? access.session : null;
 }
+
+/** The current session only when its user is an owner (OWNER_EMAILS) and still allowed; null otherwise. */
+export async function requireOwnerSession(): Promise<RawSession | null> {
+  const access = await getAccess();
+  return access.state === "allowed" && access.isOwner ? access.session : null;
+}

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { SignOutButton } from "@/features/auth/ui/sign-out-button";
 import { ThemeToggle } from "@/features/theme/ui/theme-toggle";
+import { btn } from "@/shared/ui/styles";
 import type { TabId } from "../domain/tabs";
 
 export interface HeaderTab {
@@ -16,9 +18,11 @@ export interface AppHeaderProps {
   tabs: HeaderTab[] | null;
   active: TabId;
   onSelect: (tab: TabId) => void;
+  /** Shows the link to the access admin page (owners only). */
+  isOwner?: boolean;
 }
 
-export function AppHeader({ who, tabs, active, onSelect }: AppHeaderProps) {
+export function AppHeader({ who, tabs, active, onSelect, isOwner = false }: AppHeaderProps) {
   return (
     <header className="flex flex-wrap items-center gap-x-6 gap-y-3 pb-3 pt-[18px]">
       <div className="flex flex-col leading-[1.15]">
@@ -49,6 +53,11 @@ export function AppHeader({ who, tabs, active, onSelect }: AppHeaderProps) {
       ) : (
         <div className="flex-1" />
       )}
+      {isOwner ? (
+        <Link href="/app/admin" className={btn}>
+          Accesos
+        </Link>
+      ) : null}
       <SignOutButton />
       <ThemeToggle />
     </header>
