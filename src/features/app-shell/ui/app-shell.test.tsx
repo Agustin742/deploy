@@ -88,9 +88,9 @@ describe("AppShell", () => {
     it("keeps the new-application view out of the navigation, behind a global action", () => {
       render(<AppShell />);
       const nav = screen.getByRole("navigation", { name: "Secciones" });
-      expect(within(nav).queryByRole("button", { name: "Nueva oferta" })).toBeNull();
+      expect(within(nav).queryByRole("button", { name: "Cargar postulación" })).toBeNull();
       fireEvent.click(newApplication());
-      expect(screen.getByRole("heading", { level: 2, name: "Nueva oferta" })).toBeTruthy();
+      expect(screen.getByRole("heading", { level: 2, name: "Cargar postulación" })).toBeTruthy();
     });
 
     it("keeps theme and sign out in the account menu, which closes with Escape", () => {
@@ -183,7 +183,7 @@ describe("AppShell", () => {
     it("lets the summary shortcuts navigate", () => {
       render(<AppShell />);
       fireEvent.click(screen.getByRole("button", { name: "Cargar mi primera postulación" }));
-      expect(screen.getByRole("heading", { level: 2, name: "Nueva oferta" })).toBeTruthy();
+      expect(screen.getByRole("heading", { level: 2, name: "Cargar postulación" })).toBeTruthy();
       fireEvent.click(tab("Resumen"));
       fireEvent.click(screen.getByRole("button", { name: "Cargar mi CV" }));
       expect(screen.getByRole("heading", { level: 2, name: "Mi CV" })).toBeTruthy();

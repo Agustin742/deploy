@@ -30,7 +30,7 @@ describe("visibleTabs", () => {
   it("uses the legacy Spanish labels", () => {
     const labels = visibleTabs({ ...blank().mods, empleadores: true }).map((t) => t.label);
     expect(labels).toContain("Búsqueda diaria");
-    expect(labels).toContain("Nueva oferta");
+    expect(labels).toContain("Cargar postulación");
     expect(labels).toContain("Empleadores");
   });
 });

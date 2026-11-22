@@ -26,7 +26,7 @@ describe("NewOfferTab", () => {
 
   it("renders the form and asks to paste the offer text", () => {
     renderTab();
-    expect(screen.getByRole("heading", { level: 2, name: "Nueva oferta" })).toBeTruthy();
+    expect(screen.getByRole("heading", { level: 2, name: "Cargar postulación" })).toBeTruthy();
     expect(screen.getByLabelText("Empresa")).toBeTruthy();
     expect(screen.getByLabelText("Fuente")).toBeTruthy();
     expect(screen.getByText("Pegá el texto de la oferta")).toBeTruthy();
@@ -71,8 +71,8 @@ describe("NewOfferTab", () => {
 
   it("saves the application, clears the draft and hands over the new id", async () => {
     const { onNotify, onSaved } = renderTab();
-    fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
     fireEvent.click(screen.getByRole("button", { name: "Probar con una oferta de ejemplo" }));
+    fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
     fireEvent.click(screen.getByRole("button", { name: "Guardar postulación" }));
     expect(state().apps).toHaveLength(1);
     expect(state().apps[0]).toMatchObject({ empresa: "Acme", puesto: "Frontend Developer", estado: "Postulado" });
@@ -81,6 +81,36 @@ describe("NewOfferTab", () => {
     expect(onSaved).toHaveBeenCalledWith(state().apps[0].id);
     expect(onNotify).toHaveBeenCalledWith("Postulación guardada");
     await waitFor(() => expect(sentCommands().map((c) => c.type).slice(-2)).toEqual(["draft.clear", "app.create"]));
+  });
+
+  it("offers the example only while the form is empty, and keeps it out of the main actions", () => {
+    renderTab();
+    expect(screen.getByRole("button", { name: "Probar con una oferta de ejemplo" })).toBeTruthy();
+    fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
+    expect(screen.queryByRole("button", { name: "Probar con una oferta de ejemplo" })).toBeNull();
+  });
+
+  it("saves with Ctrl+Enter from the description", () => {
+    const { onSaved } = renderTab();
+    fireEvent.change(screen.getByLabelText("Empresa"), { target: { value: "Acme" } });
+    fireEvent.keyDown(screen.getByLabelText(/Descripción del puesto/), { key: "Enter", ctrlKey: true });
+    expect(state().apps).toHaveLength(1);
+    expect(onSaved).toHaveBeenCalledWith(state().apps[0].id);
+  });
+
+  it("asks for the link and description first, with the secondary fields under \"Más detalles\"", () => {
+    renderTab();
+    const positions = [
+      screen.getByLabelText("Link de la oferta"),
+      screen.getByPlaceholderText(/Pegá acá los requisitos/),
+      screen.getByLabelText("Empresa"),
+      screen.getByLabelText("Puesto"),
+      screen.getByLabelText("Fuente"),
+    ];
+    for (let i = 1; i < positions.length; i++) {
+      expect(positions[i - 1].compareDocumentPosition(positions[i]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    }
+    expect(screen.getByText("Más detalles").closest("details")?.contains(screen.getByLabelText("Fuente"))).toBe(true);
   });
 
   it("clears the draft", () => {

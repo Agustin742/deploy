@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { MatchView } from "@/features/matching/ui/match-view";
 import type { Application, MatchResult } from "@/features/state/domain/types";
-import { Notice } from "@/shared/ui/primitives";
+import { Notice, Select } from "@/shared/ui/primitives";
 import { btn, btnDanger, btnGhostDanger, btnPrimary, fieldLabel, fieldsGrid, input, panel, row } from "@/shared/ui/styles";
 import { ESTADOS } from "../domain/applications";
 import { Collapsible, Interviews, PreInterview, section, type FieldChange } from "./drawer-sections";
@@ -74,13 +74,71 @@ export function ApplicationDrawerView(p: ApplicationDrawerViewProps) {
     <>
       <div className="mb-3 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h2 className="text-2xl font-extrabold">{a.empresa || "Sin empresa"}</h2>
+          <h2 className="text-title font-extrabold">{a.empresa || "Sin empresa"}</h2>
           <div className="text-muted">{a.puesto || "Sin puesto"}</div>
         </div>
         <button type="button" className={btn} aria-label="Cerrar" onClick={p.onClose}>
           Cerrar
         </button>
       </div>
+
+      <div className={section}>
+        <h3 className="mb-3 text-base font-bold">Postulación</h3>
+        <div className={fieldsGrid}>
+          <label className={fieldLabel}>
+            Estado
+            <Select value={a.estado} onChange={(e) => onField("estado", e.target.value, true)}>
+              {ESTADOS.map((e) => (
+                <option key={e} value={e}>
+                  {e}
+                </option>
+              ))}
+            </Select>
+          </label>
+          <label className={fieldLabel}>
+            Fecha de postulación
+            <input className={input} type="date" value={a.fecha} onChange={(e) => onField("fecha", e.target.value, true)} />
+          </label>
+        </div>
+        <label className={`${fieldLabel} mt-3`}>
+          Próximos pasos
+          <textarea className={`${input} resize-y leading-normal`} rows={2} value={a.proximos} onChange={(e) => onField("proximos", e.target.value, false)} />
+        </label>
+        <label className={`${fieldLabel} mt-3`}>
+          Comentarios
+          <textarea className={`${input} resize-y leading-normal`} rows={3} value={a.comentarios} onChange={(e) => onField("comentarios", e.target.value, false)} />
+        </label>
+        <h4 className="mb-3 mt-5 text-small font-semibold uppercase tracking-wide text-muted">Datos de la oferta</h4>
+        <div className={fieldsGrid}>
+          <Text app={a} path="empresa" label="Empresa" onField={onField} />
+          <Text app={a} path="puesto" label="Puesto" onField={onField} />
+          <Text app={a} path="link" label="Link de la oferta" placeholder="https://…" onField={onField} />
+          <label className={fieldLabel}>
+            Fuente
+            <Select value={a.fuente} onChange={(e) => onField("fuente", e.target.value, true)}>
+              <option value="">—</option>
+              {fuentes.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </Select>
+          </label>
+          <Text app={a} path="respuesta" label="Respuesta recibida" onField={onField} />
+          <Text app={a} path="reclutador" label="Reclutador/a" onField={onField} />
+          <Text app={a} path="contacto" label="Contacto (LinkedIn o email)" onField={onField} />
+        </div>
+        {a.link ? (
+          <p className="mt-2.5">
+            <a href={a.link} target="_blank" rel="noopener" className="text-accent">
+              Abrir la oferta ↗
+            </a>
+          </p>
+        ) : null}
+      </div>
+
+      <PreInterview app={a} onChange={onField} />
+      <Interviews app={a} onChange={onField} onAdd={p.onAddInterview} onRemove={p.onRemoveInterview} />
 
       <div className={panel}>
         <h3 className="mb-3 text-base font-bold">Match con tu CV</h3>
@@ -93,8 +151,33 @@ export function ApplicationDrawerView(p: ApplicationDrawerViewProps) {
       </div>
 
       <div className={section}>
+        <h3 className="mb-2 text-base font-bold">Descripción del puesto</h3>
+        <textarea
+          className={`${input} resize-y leading-normal`}
+          rows={9}
+          value={a.jd}
+          placeholder="Pegá la job description para calcular el match"
+          onChange={(e) => onField("jd", e.target.value, false)}
+        />
+      </div>
+
+      <Collapsible title="Ficha de la empresa (antes de la entrevista)">
+        <div className="grid gap-4">
+          <div className={fieldsGrid}>
+            <FichaText app={a} k="industria" label="Industria / sector" onField={onField} />
+            <FichaText app={a} k="tamano" label="Tamaño" onField={onField} />
+            <FichaText app={a} k="modalidad" label="Modalidad" placeholder="Remoto, híbrido…" onField={onField} />
+          </div>
+          <FichaText app={a} k="valores" label="Misión, visión y valores declarados" area onField={onField} />
+          <FichaText app={a} k="cultura" label="Cultura laboral (Glassdoor, LinkedIn)" area onField={onField} />
+          <FichaText app={a} k="notas" label="Notas: recruiters, novedades, gente conocida" area onField={onField} />
+        </div>
+      </Collapsible>
+
+      <Collapsible title="Avanzado: informe de Job Matching con IA">
+      <div>
         <h3 className="mb-2 text-base font-bold">Informe de Job Matching</h3>
-        <p className="mb-3 mt-1 text-xs text-muted">
+        <p className="mb-3 mt-1 text-small text-muted">
           Análisis FODA, porcentaje de matching y recomendaciones para postularte, a partir de tu CV y esta oferta.
         </p>
         <div className={row}>
@@ -107,7 +190,7 @@ export function ApplicationDrawerView(p: ApplicationDrawerViewProps) {
             </button>
           ) : null}
         </div>
-        <p className="mt-2 text-xs text-muted">
+        <p className="mt-2 text-small text-muted">
           En esta vista no se puede generar el informe dentro de la página. Copiá el prompt y pegalo en Claude.
         </p>
         {p.aiAsk ? (
@@ -137,13 +220,13 @@ export function ApplicationDrawerView(p: ApplicationDrawerViewProps) {
             <div className="mt-2.5">
               <ReportView source={a.report} />
             </div>
-            <p className="mt-2.5 text-xs text-muted">
+            <p className="mt-2.5 text-small text-muted">
               La IA sugiere; vos decidís. Verificá el informe antes de usarlo: puede contener errores o datos inventados.
             </p>
             {p.iaModule ? (
               <>
                 <label className={`${fieldLabel} mt-2 justify-end`}>
-                  <span className="flex items-center gap-2 text-[13px] text-ink">
+                  <span className="flex items-center gap-2 text-small text-ink">
                     <input type="checkbox" checked={a.revisado} onChange={(e) => onField("revisado", e.target.checked, true)} /> Revisé el informe contra mi CV y la
                     oferta; la decisión es mía
                   </span>
@@ -157,84 +240,6 @@ export function ApplicationDrawerView(p: ApplicationDrawerViewProps) {
           </>
         ) : null}
       </div>
-
-      <div className={section}>
-        <h3 className="mb-3 text-base font-bold">Postulación</h3>
-        <div className={fieldsGrid}>
-          <Text app={a} path="empresa" label="Empresa" onField={onField} />
-          <Text app={a} path="puesto" label="Puesto" onField={onField} />
-          <Text app={a} path="link" label="Link de la oferta" placeholder="https://…" onField={onField} />
-          <label className={fieldLabel}>
-            Fuente
-            <select className={input} value={a.fuente} onChange={(e) => onField("fuente", e.target.value, true)}>
-              <option value="">—</option>
-              {fuentes.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className={fieldLabel}>
-            Estado
-            <select className={input} value={a.estado} onChange={(e) => onField("estado", e.target.value, true)}>
-              {ESTADOS.map((e) => (
-                <option key={e} value={e}>
-                  {e}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label className={fieldLabel}>
-            Fecha de postulación
-            <input className={input} type="date" value={a.fecha} onChange={(e) => onField("fecha", e.target.value, true)} />
-          </label>
-          <Text app={a} path="respuesta" label="Respuesta recibida" onField={onField} />
-          <Text app={a} path="reclutador" label="Reclutador/a" onField={onField} />
-          <Text app={a} path="contacto" label="Contacto (LinkedIn o email)" onField={onField} />
-        </div>
-        {a.link ? (
-          <p className="mt-2.5">
-            <a href={a.link} target="_blank" rel="noopener" className="text-accent">
-              Abrir la oferta ↗
-            </a>
-          </p>
-        ) : null}
-        <label className={`${fieldLabel} mt-3`}>
-          Próximos pasos
-          <textarea className={`${input} resize-y leading-normal`} rows={2} value={a.proximos} onChange={(e) => onField("proximos", e.target.value, false)} />
-        </label>
-        <label className={`${fieldLabel} mt-3`}>
-          Comentarios
-          <textarea className={`${input} resize-y leading-normal`} rows={3} value={a.comentarios} onChange={(e) => onField("comentarios", e.target.value, false)} />
-        </label>
-      </div>
-
-      <PreInterview app={a} onChange={onField} />
-      <Interviews app={a} onChange={onField} onAdd={p.onAddInterview} onRemove={p.onRemoveInterview} />
-
-      <div className={section}>
-        <h3 className="mb-2 text-base font-bold">Descripción del puesto</h3>
-        <textarea
-          className={`${input} resize-y leading-normal`}
-          rows={9}
-          value={a.jd}
-          placeholder="Pegá la job description para calcular el match"
-          onChange={(e) => onField("jd", e.target.value, false)}
-        />
-      </div>
-
-      <Collapsible title="Ficha de la empresa (antes de la entrevista)">
-        <div className="grid gap-4">
-          <div className={fieldsGrid}>
-            <FichaText app={a} k="industria" label="Industria / sector" onField={onField} />
-            <FichaText app={a} k="tamano" label="Tamaño" onField={onField} />
-            <FichaText app={a} k="modalidad" label="Modalidad" placeholder="Remoto, híbrido…" onField={onField} />
-          </div>
-          <FichaText app={a} k="valores" label="Misión, visión y valores declarados" area onField={onField} />
-          <FichaText app={a} k="cultura" label="Cultura laboral (Glassdoor, LinkedIn)" area onField={onField} />
-          <FichaText app={a} k="notas" label="Notas: recruiters, novedades, gente conocida" area onField={onField} />
-        </div>
       </Collapsible>
 
       <div className={`${row} mt-3.5`}>

@@ -49,7 +49,7 @@ describe("ApplicationsTab", () => {
       seed([]);
       renderTab();
       expect(screen.getByText("No hay postulaciones")).toBeTruthy();
-      expect(screen.getByText(/Cargá la primera desde “Nueva oferta”/)).toBeTruthy();
+      expect(screen.getByText(/Cargá la primera/)).toBeTruthy();
     });
 
     it("lists the applications newest first with match, status and missing skills", () => {
@@ -63,13 +63,30 @@ describe("ApplicationsTab", () => {
       expect((within(rows[0]).getByLabelText("Estado") as HTMLSelectElement).value).toBe("Entrevista");
     });
 
-    it("filters by status and explains an empty result", () => {
+    it("filters by status from the toolbar, with counts, and explains an empty result", () => {
       seed([acme(), beta()]);
       renderTab();
-      fireEvent.click(screen.getByRole("button", { name: "Entrevista" }));
+      const filter = screen.getByLabelText("Filtrar por estado") as HTMLSelectElement;
+      expect(within(filter).getByRole("option", { name: "Todos (2)" })).toBeTruthy();
+      expect(within(filter).getByRole("option", { name: "Entrevista (1)" })).toBeTruthy();
+      fireEvent.change(filter, { target: { value: "Entrevista" } });
       expect(screen.getAllByRole("row")).toHaveLength(2);
-      fireEvent.click(screen.getByRole("button", { name: "Oferta" }));
+      fireEvent.change(filter, { target: { value: "Oferta" } });
       expect(screen.getByText("Nada con ese filtro")).toBeTruthy();
+    });
+
+    it("shows only company and position, status, date, match and source (no skills columns)", () => {
+      seed([acme()]);
+      renderTab();
+      const headers = screen.getAllByRole("columnheader").map((h) => h.textContent);
+      expect(headers).toEqual(["Empresa y puesto", "Estado", "Fecha", "Match", "Fuente"]);
+    });
+
+    it("opens an application from the keyboard-reachable company button", () => {
+      seed([acme()]);
+      renderTab();
+      fireEvent.click(screen.getByRole("button", { name: /Acme/ }));
+      expect(drawer()).toBeTruthy();
     });
 
     it("searches by company", () => {
@@ -98,10 +115,10 @@ describe("ApplicationsTab", () => {
       expect(screen.queryByRole("complementary")).toBeNull();
     });
 
-    it("navigates to Nueva oferta from the header button", () => {
+    it("navigates to the new-application view from the empty state", () => {
       seed([]);
       const { onNavigate } = renderTab();
-      fireEvent.click(screen.getByRole("button", { name: "+ Nueva oferta" }));
+      fireEvent.click(screen.getByRole("button", { name: "Cargar postulación" }));
       expect(onNavigate).toHaveBeenCalledWith("nueva");
     });
   });

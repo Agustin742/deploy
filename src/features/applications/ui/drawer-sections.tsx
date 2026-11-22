@@ -11,8 +11,8 @@ export const section = `${panel} mt-3.5`;
 
 export function Collapsible({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <details className={`${section} group !p-0`}>
-      <summary className="cursor-pointer list-none px-4 py-3 font-display text-[15px] font-semibold after:float-right after:font-mono after:content-['+'] group-open:after:content-['–']">
+    <details className={`${section} group p-0`}>
+      <summary className="cursor-pointer list-none px-4 py-3 font-display text-body font-semibold after:float-right after:font-mono after:content-['+'] group-open:after:content-['–']">
         {title}
       </summary>
       <div className="px-4 pb-4">{children}</div>
@@ -25,11 +25,11 @@ export function PreInterview({ app, onChange }: { app: Application; onChange: Fi
   const done = PRE.filter(([k]) => pre[k]?.ok).length;
   return (
     <Collapsible title={`Pre-entrevista: cosas para averiguar (${done} de ${PRE.length})`}>
-      <p className="mb-1.5 text-xs text-muted">Marcá lo que ya averiguaste y anotá lo que encontraste.</p>
+      <p className="mb-1.5 text-small text-muted">Marcá lo que ya averiguaste y anotá lo que encontraste.</p>
       {PRE.map(([k, label]) => {
         const v = pre[k] ?? {};
         return (
-          <div key={k} className="grid grid-cols-[auto_1fr] items-center gap-x-2.5 gap-y-1.5 border-t border-line py-2 text-[13px]">
+          <div key={k} className="grid grid-cols-[auto_1fr] items-center gap-x-2.5 gap-y-1.5 border-t border-line py-2 text-small">
             <input
               type="checkbox"
               checked={Boolean(v.ok)}
@@ -38,7 +38,7 @@ export function PreInterview({ app, onChange }: { app: Application; onChange: Fi
             />
             <span>{label}</span>
             <input
-              className={`${input} col-span-full !px-2 !py-[5px] text-xs`}
+              className={`${input} col-span-full min-h-8 px-2 py-1 text-small`}
               value={v.txt ?? ""}
               placeholder="Lo que averigüé"
               aria-label={label}
@@ -114,7 +114,7 @@ export function Interviews({
           </div>
         ))
       ) : (
-        <p className="mt-2 text-xs text-muted">Todavía no registraste entrevistas para esta postulación.</p>
+        <p className="mt-2 text-small text-muted">Todavía no registraste entrevistas para esta postulación.</p>
       )}
     </div>
   );

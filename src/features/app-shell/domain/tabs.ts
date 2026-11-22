@@ -32,7 +32,7 @@ export function visibleTabs(mods: Mods): TabDef[] {
     { id: "resumen", label: "Resumen" },
     { id: "plan", label: "Plan" },
     { id: "postulaciones", label: "Postulaciones" },
-    { id: "nueva", label: "Nueva oferta" },
+    { id: "nueva", label: "Cargar postulación" },
     { id: "red", label: "Red" },
     { id: "visibilidad", label: "Visibilidad" },
   ];
@@ -56,7 +56,7 @@ export function primaryTabs(mods: Mods): TabDef[] {
 }
 
 /**
- * Tabs behind the "Más" menu: everything that is neither primary nor the "Nueva oferta" view,
+ * Tabs behind the "Más" menu: everything that is neither primary nor the new-application view,
  * which is reached from the global "Cargar postulación" action.
  */
 export function moreTabs(mods: Mods): TabDef[] {

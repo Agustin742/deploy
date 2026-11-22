@@ -30,6 +30,13 @@ export function visibleApps(apps: readonly Application[], { filter, q, sort }: L
   return list;
 }
 
+/** Number of applications per status. */
+export function countByStatus(apps: readonly Application[]): Record<string, number> {
+  const counts: Record<string, number> = {};
+  for (const a of apps) counts[a.estado] = (counts[a.estado] ?? 0) + 1;
+  return counts;
+}
+
 /** Hard then soft skills the offer asks for and the CV lacks. */
 export const missingSkills = (match: MatchSuccess | null | undefined): string[] =>
   match ? match.hardX.concat(match.softX) : [];

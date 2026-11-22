@@ -4,7 +4,7 @@ import { useState } from "react";
 import { appStore, useAppStore } from "@/features/state/store/use-app-store";
 import { todayIso } from "@/shared/lib/dates";
 import { applyAppEdit } from "../domain/edit";
-import { visibleApps } from "../domain/list";
+import { countByStatus, visibleApps } from "../domain/list";
 import { applicationsUi, useApplicationsUi } from "../store/applications-ui";
 import { ApplicationDrawer } from "./application-drawer";
 import { ApplicationsView } from "./applications-view";
@@ -27,6 +27,7 @@ export function ApplicationsTab({ onNavigate, onNotify }: ApplicationsTabProps) 
       <ApplicationsView
         apps={visibleApps(apps, { filter, q, sort })}
         total={apps.length}
+        counts={countByStatus(apps)}
         filter={filter}
         q={q}
         sort={sort}
