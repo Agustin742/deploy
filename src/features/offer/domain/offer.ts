@@ -18,6 +18,9 @@ export interface Offer {
 
 export const OFERTA: Offer = OFERTA_DATA;
 
+/** Draft notices (unconfirmed prices and legal texts) are shown outside production only. */
+export const SHOW_DRAFT_NOTICE: boolean = OFERTA.borrador && process.env.NODE_ENV !== "production";
+
 const DEFAULT_COUNTRY = "Argentina";
 
 export const resolveCountry = (pais: string | undefined | null): string =>

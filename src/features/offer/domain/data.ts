@@ -26,8 +26,8 @@ export const OFERTA_DATA: Offer = {
       tipo: "Producto digital · Pago único",
       d: "Organizá tu búsqueda laboral en un solo lugar y avanzá con un plan claro.",
       inc: [
-        "Acceso por 1 año desde la fecha de pago",
-        "Seguimiento de tus postulaciones y coincidencia con tu CV",
+        "Cargá tus postulaciones rápido, con la coincidencia con tu CV",
+        "Tablero con tus números: estados, respuestas y postulaciones por mes",
         "Plan semanal y mensual con objetivos SMART",
         "Registro de tu red y de tu visibilidad en LinkedIn",
         "Preparación y registro de entrevistas"

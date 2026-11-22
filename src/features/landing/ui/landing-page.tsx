@@ -1,52 +1,23 @@
-import Link from "next/link";
-import { ThemeToggle } from "@/features/theme/ui/theme-toggle";
-import { SiteFooter } from "@/shared/ui/site-footer";
-import { LandingInfo } from "./landing-info";
+import { FaqSection } from "./faq-section";
+import { HeroSection } from "./hero-section";
+import { FinalCta, LandingFooter } from "./landing-footer";
+import { LandingHeader } from "./landing-header";
 import { PricingSection } from "./pricing-section";
+import { ProductSection, ValueStrip } from "./value-sections";
 
 export function LandingPage() {
   return (
-    <div className="mx-auto max-w-[1180px] px-4 pb-12">
-      <header className="flex flex-wrap items-center gap-x-6 gap-y-3 pb-3 pt-[18px]">
-        <div className="mr-auto flex flex-col leading-[1.15]">
-          <b className="font-display text-[21px] font-extrabold tracking-tight">Deploy your Career</b>
-        </div>
-        <Link
-          href="/app"
-          className="rounded-lg border border-accent bg-accent px-3.5 py-2 font-semibold text-accent-ink hover:brightness-110"
-        >
-          Ingresar
-        </Link>
-        <ThemeToggle />
-      </header>
+    <>
+      <LandingHeader />
       <main>
-        <section className="mb-5 mt-2 rounded-xl border border-line bg-surface p-7">
-          <h1 className="mb-2.5 text-[clamp(28px,5vw,44px)] font-extrabold">
-            Organizá tu búsqueda laboral IT y avanzá con un plan claro
-          </h1>
-          <p className="mb-4 max-w-[640px] text-[17px] text-muted">
-            Una herramienta de seguimiento, plan semanal y mensual, y servicios de empleabilidad para
-            profesionales IT de Latinoamérica.
-          </p>
-          <div className="flex flex-wrap items-center gap-2">
-            <Link
-              href="/app"
-              className="rounded-lg border border-accent bg-accent px-3.5 py-2 font-semibold text-accent-ink hover:brightness-110"
-            >
-              Ingresar a la herramienta
-            </Link>
-            <a
-              href="#planes-lista"
-              className="rounded-lg border border-line bg-surface px-3.5 py-2 font-medium text-accent hover:border-muted"
-            >
-              Ver planes y precios
-            </a>
-          </div>
-        </section>
+        <HeroSection />
+        <ValueStrip />
+        <ProductSection />
         <PricingSection />
-        <LandingInfo />
+        <FaqSection />
+        <FinalCta />
       </main>
-      <SiteFooter />
-    </div>
+      <LandingFooter />
+    </>
   );
 }
