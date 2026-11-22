@@ -11,14 +11,14 @@ export function PricingSection() {
   return (
     <section id="acceso" className="bg-soft py-section-sm md:py-section">
       <div className="mx-auto max-w-[1180px] px-4">
-        <div className="mx-auto max-w-xl text-center">
+        <div className="reveal mx-auto max-w-xl text-center">
           <h2 className="font-display text-hero font-extrabold">Conseguí tu acceso</h2>
           <p className="mt-3 text-muted">
             Escribinos por WhatsApp y te damos acceso a la herramienta. Los servicios se consultan aparte.
           </p>
         </div>
 
-        <div className="mt-8">
+        <div className="reveal mt-8">
           <PlanCard product={tool} />
         </div>
 

@@ -48,7 +48,7 @@ const FAQ = [
 export function FaqSection() {
   return (
     <section id="preguntas" className="py-section-sm md:py-section">
-      <div className="mx-auto max-w-3xl px-4">
+      <div className="reveal mx-auto max-w-3xl px-4">
         <h2 className="text-center font-display text-hero font-extrabold">Preguntas frecuentes</h2>
         <div className="mt-8 divide-y divide-line border-y border-line">
           {FAQ.map(([question, answer]) => (

@@ -5,7 +5,7 @@ function Stage({ children }: { children: ReactNode }) {
   return (
     <div
       aria-hidden="true"
-      className="w-full min-w-0 select-none overflow-hidden rounded-hero border border-line bg-soft p-4 sm:p-6"
+      className="lift w-full min-w-0 select-none overflow-hidden rounded-hero border border-line bg-soft p-4 sm:p-6"
     >
       <div className="rounded-card border border-line bg-surface p-4 shadow-card sm:p-5">{children}</div>
     </div>

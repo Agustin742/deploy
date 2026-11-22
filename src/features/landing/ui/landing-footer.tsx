@@ -6,14 +6,14 @@ export function FinalCta() {
   const link = contactLink();
   return (
     <section className="bg-ink py-section-sm text-bg md:py-section">
-      <div className="mx-auto max-w-2xl px-4 text-center">
+      <div className="reveal mx-auto max-w-2xl px-4 text-center">
         <h2 className="font-display text-hero font-extrabold">Empezá a ordenar tu búsqueda</h2>
         <p className="mt-3 opacity-80">
           Escribinos por WhatsApp y te damos acceso a tus postulaciones y tu tablero en un solo lugar.
         </p>
         <a
           {...link}
-          className={`${buttonClass("cta", "lg")} mt-8`}
+          className={`${buttonClass("cta", "lg")} btn-lift mt-8`}
         >
           Pedir acceso por WhatsApp
         </a>

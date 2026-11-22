@@ -10,7 +10,7 @@ const VALUES = [
 export function ValueStrip() {
   return (
     <section className="border-y border-line bg-surface py-section-sm">
-      <ul className="mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-3">
+      <ul className="reveal mx-auto grid max-w-[1180px] gap-8 px-4 md:grid-cols-3">
         {VALUES.map(([title, text]) => (
           <li key={title}>
             <h2 className="font-display text-section font-bold">{title}</h2>
@@ -34,7 +34,7 @@ function ProductRow({
   flip?: boolean;
 }) {
   return (
-    <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <div className="reveal grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       <div className={`min-w-0 ${flip ? "lg:order-2" : ""}`}>
         <h3 className="font-display text-title font-extrabold">{title}</h3>
         <p className="mt-3 max-w-md text-muted">{children}</p>

@@ -13,7 +13,7 @@ export function HeroSection() {
             Seguimiento de postulaciones, plan semanal y tablero para profesionales IT de Latinoamérica.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <a href="#acceso" className={buttonClass("cta", "lg")}>
+            <a href="#acceso" className={`${buttonClass("cta", "lg")} btn-lift`}>
               Cómo conseguir acceso
             </a>
             <Link

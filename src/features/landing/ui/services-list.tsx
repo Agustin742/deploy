@@ -19,11 +19,11 @@ export function ServicesList({ services }: { services: Product[] }) {
   const paid = services.filter((p) => !p.gratis);
 
   return (
-    <div className="mx-auto mt-14 max-w-3xl">
+    <div className="reveal mx-auto mt-14 max-w-3xl">
       {free.map((p) => (
         <div
           key={p.n}
-          className="card card-quiet mb-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-4"
+          className="card card-quiet lift mb-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-4"
         >
           <div className="min-w-0">
             <b className="font-display text-section">{p.n}</b>
@@ -39,7 +39,7 @@ export function ServicesList({ services }: { services: Product[] }) {
       <h3 className="font-display text-section font-bold">Servicios adicionales</h3>
       <ul className="mt-2 divide-y divide-line border-y border-line">
         {paid.map((p) => (
-          <li key={p.n} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3">
+          <li key={p.n} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 transition-colors hover:bg-soft/60">
             <div className="min-w-0 flex-1 basis-60">
               <b className="font-semibold">{p.n}</b>
               <p className="text-small text-muted">{p.d}</p>

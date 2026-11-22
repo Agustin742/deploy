@@ -39,7 +39,7 @@ export function LandingHeader() {
           <Link href="/app" className={`${buttonClass("ghost", "md")} px-3`}>
             Ingresar
           </Link>
-          <a {...contactLink()} className={`${buttonClass("primary", "md")} px-3 sm:px-4`}>
+          <a {...contactLink()} className={`${buttonClass("primary", "md")} btn-lift px-3 sm:px-4`}>
             Pedir acceso
           </a>
           <ThemeToggle variant="icon" />

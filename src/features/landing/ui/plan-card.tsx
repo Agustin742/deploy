@@ -7,7 +7,7 @@ export function PlanCard({ product }: { product: Product }) {
   const link = contactLink();
 
   return (
-    <article className="card card-hero relative mx-auto w-full max-w-xl p-6 sm:p-8">
+    <article className="card card-hero plan-glow relative mx-auto w-full max-w-xl p-6 sm:p-8">
       <span className="inline-block rounded-full bg-accent px-3 py-1 text-caption font-semibold text-accent-ink">
         Acceso por 1 año
       </span>
@@ -36,7 +36,7 @@ export function PlanCard({ product }: { product: Product }) {
 
       <a
         {...link}
-        className={`${buttonClass("cta", "lg")} mt-8 w-full`}
+        className={`${buttonClass("cta", "lg")} btn-lift mt-8 w-full`}
       >
         Pedir acceso por WhatsApp
       </a>
