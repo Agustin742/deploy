@@ -39,6 +39,7 @@ Owner feedback (2026-11-21): ugly buttons; bad hero; badly built country dropdow
 ## Progress / evidence
 - 2026-11-21: Reviews done (impeccable audit + UX/IA). Document created. Waits for `feat/access-allowlist` to finish (shared files: app header, sign-in).
 - 2026-11-22 R1 (ec80f59): Fonts loaded via next/font (Exo 2, Source Sans 3, IBM Plex Mono) and wired to the --f-* tokens; type/radius/spacing scale and derived tokens (--line-strong, shadows) added; palette values untouched. Button/Select/Card/Kpi size primitives; old class strings kept as thin handles over the new CSS component layer (no !important). Checks: typecheck ok, lint ok, build ok (fonts fetched), unit tests 56 files / 715 tests ok (run at R2 head). Deviation: R1 and R2 test runs were combined at R2 head.
+- 2026-11-22 R2 (095d542): Primary nav (Resumen, Postulaciones, Análisis, Plan, Mi CV) + accessible Más menu, global cta Cargar postulación, account menu (name, theme, Accesos for owners, Salir), mobile bottom bar with center +, skeleton, FALLBACK_TAB=Resumen, count badge dropped, body padding moved to routes. Checks: typecheck, lint, build, unit (715) ok. Tests updated to the new markup. Unverified: visual/overflow at 360/768/1280 (see final entry).
 
 ## Next step
 R1 after access-allowlist is merged.
