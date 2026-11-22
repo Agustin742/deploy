@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { contactLink } from "@/features/offer/domain/contact";
 import { ThemeToggle } from "@/features/theme/ui/theme-toggle";
 import { buttonClass } from "@/shared/ui/styles";
 
@@ -38,7 +39,7 @@ export function LandingHeader() {
           <Link href="/app" className={`${buttonClass("ghost", "md")} px-3`}>
             Ingresar
           </Link>
-          <a href="#precios" className={`${buttonClass("primary", "md")} px-3 sm:px-4`}>
+          <a {...contactLink()} className={`${buttonClass("primary", "md")} px-3 sm:px-4`}>
             Comprar acceso
           </a>
           <ThemeToggle variant="icon" />

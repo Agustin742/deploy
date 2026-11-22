@@ -1,13 +1,11 @@
-import { contactLink } from "@/features/offer/domain/contact";
+import { consultLink } from "@/features/offer/domain/contact";
 import { offerPrice, type Product } from "@/features/offer/domain/offer";
 
-function ConsultLink({ label }: { label: string }) {
-  const link = contactLink();
+function ConsultLink({ service }: { service: string }) {
   return (
     <a
-      href={link.href}
-      {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      aria-label={label}
+      {...consultLink(service)}
+      aria-label={`Consultar: ${service}`}
       className="inline-flex min-h-10 shrink-0 items-center rounded-control px-2 text-small font-semibold text-accent underline-offset-4 hover:underline"
     >
       Consultar
@@ -34,7 +32,7 @@ export function ServicesList({ services, country }: { services: Product[]; count
             </span>
             <p className="mt-0.5 text-small text-muted">{p.d}</p>
           </div>
-          <ConsultLink label={`Consultar: ${p.n}`} />
+          <ConsultLink service={p.n} />
         </div>
       ))}
 
@@ -49,7 +47,7 @@ export function ServicesList({ services, country }: { services: Product[]; count
                 <p className="text-small text-muted">{p.d}</p>
               </div>
               <span className="font-mono text-small text-muted">{price}</span>
-              <ConsultLink label={`Consultar: ${p.n}`} />
+              <ConsultLink service={p.n} />
             </li>
           );
         })}

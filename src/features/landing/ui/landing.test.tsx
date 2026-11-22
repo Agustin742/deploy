@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
+import { CONTACT_URL, WHATSAPP_NUMBER } from "@/features/offer/domain/contact";
 import { OFERTA } from "@/features/offer/domain/offer";
 import { LandingPage } from "./landing-page";
 
@@ -30,7 +31,10 @@ describe("LandingPage", () => {
     ]);
     const header = screen.getByRole("banner");
     expect(within(header).getByRole("link", { name: "Ingresar" }).getAttribute("href")).toBe("/app");
-    expect(within(header).getByRole("link", { name: "Comprar acceso" }).getAttribute("href")).toBe("#precios");
+    const buy = within(header).getByRole("link", { name: "Comprar acceso" });
+    expect(buy.getAttribute("href")).toBe(CONTACT_URL);
+    expect(buy.getAttribute("target")).toBe("_blank");
+    expect(buy.getAttribute("rel")).toBe("noopener noreferrer");
   });
 
   it("makes the tool the one dominant plan, with a purchase link instead of a payment button", () => {
@@ -41,7 +45,7 @@ describe("LandingPage", () => {
     expect(within(card).getByText("Precio a confirmar")).toBeTruthy();
     expect(within(card).getByText("Precio para Argentina · Pago único")).toBeTruthy();
     expect(within(card).getAllByRole("listitem")).toHaveLength(tool.inc.length);
-    expect(within(card).getByRole("link", { name: "Comprar acceso" }).getAttribute("href")).toBe("#contacto");
+    expect(within(card).getByRole("link", { name: "Comprar acceso" }).getAttribute("href")).toBe(CONTACT_URL);
     expect(screen.queryByRole("button", { name: /pagar|comprar/i })).toBeNull();
   });
 
@@ -53,6 +57,24 @@ describe("LandingPage", () => {
     expect(within(list).getAllByText("Precio a confirmar")).toHaveLength(services.length);
     expect(screen.getByText("Gratis")).toBeTruthy();
     expect(screen.getAllByRole("link", { name: /^Consultar:/ })).toHaveLength(services.length + 1);
+  });
+
+  it("routes every purchase and contact action to WhatsApp in a new tab", () => {
+    render(<LandingPage />);
+    expect(CONTACT_URL).toBe(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20quiero%20comprar%20el%20acceso%20a%20Deploy%20your%20Career`,
+    );
+    const links = screen.getAllByRole("link").filter((l) => l.getAttribute("href")?.startsWith("https://wa.me/"));
+    expect(links.length).toBeGreaterThanOrEqual(6);
+    for (const l of links) {
+      expect(l.getAttribute("target")).toBe("_blank");
+      expect(l.getAttribute("rel")).toBe("noopener noreferrer");
+    }
+    const consult = screen.getByRole("link", { name: `Consultar: ${OFERTA.productos[2].n}` });
+    expect(decodeURIComponent(consult.getAttribute("href")!)).toContain(
+      `Hola, quiero consultar por ${OFERTA.productos[2].n}`,
+    );
+    expect(screen.getByRole("link", { name: "WhatsApp +54 11 2407-4603" })).toBeTruthy();
   });
 
   it("changes the country from a searchable listbox instead of a native select", () => {

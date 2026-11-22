@@ -1,4 +1,4 @@
-import { contactLink } from "@/features/offer/domain/contact";
+import { contactLink, WHATSAPP_DISPLAY } from "@/features/offer/domain/contact";
 import { SHOW_DRAFT_NOTICE } from "@/features/offer/domain/offer";
 import { buttonClass } from "@/shared/ui/styles";
 import { DISCLAIMER } from "@/shared/ui/site-footer";
@@ -11,8 +11,7 @@ export function FinalCta() {
         <h2 className="font-display text-hero font-extrabold">Empezá a ordenar tu búsqueda</h2>
         <p className="mt-3 opacity-80">Un año de acceso, tus postulaciones y tu tablero en un solo lugar.</p>
         <a
-          href={link.href}
-          {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...link}
           className={`${buttonClass("cta", "lg")} mt-8`}
         >
           Comprar acceso
@@ -30,7 +29,12 @@ export function LandingFooter() {
           <b className="font-display text-section font-extrabold">Deploy your Career</b>
           <h2 className="mt-4 text-small font-semibold uppercase tracking-wide text-muted">Contacto</h2>
           <p className="mt-1 text-muted">
-            Para consultas, escribinos por la página de servicios de LinkedIn de Deploy your Career.
+            <a
+              {...contactLink()}
+              className="inline-flex min-h-10 items-center font-semibold text-accent underline-offset-4 hover:underline"
+            >
+              WhatsApp {WHATSAPP_DISPLAY}
+            </a>
           </p>
         </div>
         <div className="text-small text-muted">

@@ -1,19 +1,29 @@
 /**
- * Where "Comprar acceso" and "Consultar" lead. Payment is a manual transfer coordinated by contact,
- * so there is no checkout: the landing sends people to its contact section.
- *
- * TODO(owner): set the URL of the Deploy your Career services page on LinkedIn.
- * While it is null the links point to the contact section of the landing itself.
+ * Where "Comprar acceso" and "Consultar" lead. Payment is a manual transfer coordinated over
+ * WhatsApp, so there is no checkout: every purchase and contact action opens a prefilled chat.
  */
-export const CONTACT_URL: string | null = null;
+export const WHATSAPP_NUMBER = "5491124074603";
+export const WHATSAPP_DISPLAY = "+54 11 2407-4603";
 
-export const CONTACT_ANCHOR = "#contacto";
+export const PURCHASE_MESSAGE = "Hola, quiero comprar el acceso a Deploy your Career";
 
+export const whatsappUrl = (message: string): string =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+export const CONTACT_URL: string = whatsappUrl(PURCHASE_MESSAGE);
+
+/** Anchor attributes for an external contact link: always a new tab, never leaking the opener. */
 export interface ContactLink {
   href: string;
-  /** External links open in a new tab. */
-  external: boolean;
+  target: "_blank";
+  rel: "noopener noreferrer";
 }
 
-export const contactLink = (url: string | null = CONTACT_URL): ContactLink =>
-  url ? { href: url, external: true } : { href: CONTACT_ANCHOR, external: false };
+const toLink = (href: string): ContactLink => ({ href, target: "_blank", rel: "noopener noreferrer" });
+
+/** Link for buying access. */
+export const contactLink = (url: string = CONTACT_URL): ContactLink => toLink(url);
+
+/** Link that asks about one service by name. */
+export const consultLink = (serviceName: string): ContactLink =>
+  toLink(whatsappUrl(`Hola, quiero consultar por ${serviceName}`));

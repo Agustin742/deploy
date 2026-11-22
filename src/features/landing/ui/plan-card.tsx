@@ -48,8 +48,7 @@ export function PlanCard({ product, country }: { product: Product; country: stri
       </ul>
 
       <a
-        href={link.href}
-        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        {...link}
         className={`${buttonClass("cta", "lg")} mt-8 w-full`}
       >
         Comprar acceso
