@@ -182,8 +182,11 @@ describe("AppShell", () => {
 
     it("lets the summary shortcuts navigate", () => {
       render(<AppShell />);
-      fireEvent.click(screen.getByRole("button", { name: "Armar mi plan" }));
-      expect(screen.getByRole("heading", { level: 2, name: "Plan" })).toBeTruthy();
+      fireEvent.click(screen.getByRole("button", { name: "Cargar mi primera postulación" }));
+      expect(screen.getByRole("heading", { level: 2, name: "Nueva oferta" })).toBeTruthy();
+      fireEvent.click(tab("Resumen"));
+      fireEvent.click(screen.getByRole("button", { name: "Cargar mi CV" }));
+      expect(screen.getByRole("heading", { level: 2, name: "Mi CV" })).toBeTruthy();
     });
   });
 
@@ -195,16 +198,43 @@ describe("AppShell", () => {
 
       stored({ apps: [newApp({ empresa: "Acme", fuente: "LinkedIn" }, todayIso())] });
       render(<AppShell />);
-      expect(screen.getByText("Ofertas cargadas")).toBeTruthy();
+      expect(screen.getByText("Total de postulaciones")).toBeTruthy();
       expect(screen.getByText("Por fuente")).toBeTruthy();
+      expect(screen.queryByText("Todavía no cargaste postulaciones")).toBeNull();
     });
 
-    it("writes the monthly goal to the store", () => {
+    it("writes the monthly goal to the store from the hero KPI, and lets it be edited in place", () => {
+      stored({ apps: [newApp({ empresa: "Acme", fuente: "LinkedIn" }, todayIso())] });
       render(<AppShell />);
-      fireEvent.change(screen.getByLabelText("Meta"), { target: { value: "20" } });
+      fireEvent.change(screen.getByLabelText("Meta del mes"), { target: { value: "20" } });
       expect(state().goal).toBe(20);
       expect(state().goalSet).toBe(true);
-      expect(screen.getByText(/Meta del mes/)).toBeTruthy();
+      fireEvent.blur(screen.getByLabelText("Meta del mes"));
+      expect(screen.getByText(/de la meta/)).toBeTruthy();
+      fireEvent.click(screen.getByRole("button", { name: "editar meta" }));
+      expect((screen.getByLabelText("Meta del mes") as HTMLInputElement).value).toBe("20");
+    });
+
+    it("hides the data panels until there is an application", () => {
+      render(<AppShell />);
+      expect(screen.queryByText("Por estado")).toBeNull();
+      expect(screen.queryByText("Lo que sigue")).toBeNull();
+      expect(screen.getByRole("button", { name: "Cargar mi primera postulación" })).toBeTruthy();
+    });
+
+    it("offers a text link to the CV in the empty state and leaves out the removed panels", () => {
+      stored({ apps: [newApp({ empresa: "Acme" }, todayIso())] });
+      render(<AppShell />);
+      expect(screen.queryByText("Esta semana")).toBeNull();
+      expect(screen.queryByText("Conexiones en la red")).toBeNull();
+      expect(screen.queryByText(/Coincidencia promedio/)).toBeNull();
+      expect(screen.getByText("Lo que sigue")).toBeTruthy();
+    });
+
+    it("describes the monthly chart in text for assistive tech", () => {
+      stored({ apps: [newApp({ empresa: "Acme", fecha: todayIso() }, todayIso())] });
+      render(<AppShell />);
+      expect(screen.getByRole("img", { name: /^Postulaciones por mes en \d{4}\. Enero: / })).toBeTruthy();
     });
   });
 
